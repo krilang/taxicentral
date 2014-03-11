@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project
     title="no.ntnu.item.ttm4115.termassignment" 
-    version="2.4.1" 
+    version="2.4.2" 
     uuid="_NuSVsKOdEeOlvM2Rtrpuog" 
     purpose="This project contains some basic GUI classes for the TTM4115 Term Assignment. Students are encouraged to use this project as a starting point for the term assignment. For more info, see https://github.com/yorn/ttm4115-workspace" 
     >
