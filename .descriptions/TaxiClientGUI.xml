@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="TaxiClientGUI" 
+    author="&#216;yvin Richardsen &lt;desarc00@gmail.com&gt;, Y&#248;rn de Jong &lt;git@yorn.priv.no&gt;" 
+    provider="NTNU" 
+    purpose="Allow taxis to start and stop listening for MQTT, and communicate with the dispatcher" 
+    uuid="_svMB8aOdEeOlvM2Rtrpuog" 
+    status="published" 
+    type="block" 
+    >
+    <required>
+        <package name="no.ntnu.item.ttm4115.termassignment.clientframe"/>
+        <package name="no.ntnu.item.ttm4115.termassignment.taxiclientgui"/>
+    </required>
+</block>
