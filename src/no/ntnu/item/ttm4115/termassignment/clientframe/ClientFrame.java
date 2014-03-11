@@ -125,7 +125,9 @@ public class ClientFrame extends JFrame {
 	 * @return	the table that was added
 	 */
 	public LogTable addLogTable() {
-		add(new JScrollPane(logTable = new LogTable()), BorderLayout.CENTER);
+		JScrollPane scrollPane;
+		add(scrollPane = new JScrollPane(logTable = new LogTable()), BorderLayout.CENTER);
+		logTable.setScrollPane(scrollPane);
 		return logTable;
 	}
 	/**
@@ -144,7 +146,9 @@ public class ClientFrame extends JFrame {
 	public LogTable addLogTable(Object constraints) {
 		logTable = new LogTable();
 		if (constraints != null) {
-			add(new JScrollPane(logTable), constraints);
+			JScrollPane scrollPane;
+			add(scrollPane = new JScrollPane(logTable), constraints);
+			logTable.setScrollPane(scrollPane);
 		}
 		return logTable;
 	}
