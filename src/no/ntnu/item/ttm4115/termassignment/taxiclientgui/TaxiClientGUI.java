@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import no.ntnu.item.arctis.runtime.Block;
@@ -54,8 +53,6 @@ public class TaxiClientGUI extends Block {
 	private JPanel buttons;
 	/* The buttons */
 	private JButton onDuty, offDuty, available, unavailable, confirm;
-	/** Label that indicates the current state */
-	private JLabel stateLabel;
 	/**
 	 * The log
 	 * use {@link LogTable#addLogEntry(no.ntnu.item.ttm4115.termassignment.clientframe.LogTable.Direction, String)}
@@ -70,8 +67,6 @@ public class TaxiClientGUI extends Block {
 		frame = new ClientFrame(this, alias);
 		buttons = new JPanel();
 		buttons.setLayout(new BoxLayout(buttons, BoxLayout.Y_AXIS));
-		stateLabel = new JLabel();
-		setState("offline");
 		
 		onDuty = frame.createEventButton(ON_DUTY, "On duty");
 		offDuty = frame.createEventButton(OFF_DUTY, "Off duty");
@@ -88,7 +83,6 @@ public class TaxiClientGUI extends Block {
 
 		messages = frame.addLogTable();
 		frame.add(buttons, BorderLayout.WEST);
-		frame.add(stateLabel, BorderLayout.NORTH);
 		
 		frame.pack();
 		frame.setVisible(true);
@@ -111,11 +105,4 @@ public class TaxiClientGUI extends Block {
 		messages.addLogEntry(LogTable.Direction.IN, message);
 	}
 
-	/**
-	 * Change the state of the taxi
-	 * @param state	the new state
-	 */
-	public void setState(String state) {
-		stateLabel.setText("<html>State: <b>"+state.replace("<", "&lt;").replace("&", "&amp;"));
-	}
 }
