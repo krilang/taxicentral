@@ -61,9 +61,6 @@ public class TaxiClientGUI extends Block {
 	 * use {@link LogTable#addLogEntry(no.ntnu.item.ttm4115.termassignment.clientframe.LogTable.Direction, String)}
 	 */
 	private LogTable messages;
-
-	/** Alias for this taxi */
-	private String alias;
 	
 	/** Current state of the taxi */
 	public String state;
@@ -73,7 +70,6 @@ public class TaxiClientGUI extends Block {
 	 * @param alias	Alias for this taxi
 	 */
 	public void show(String alias) {
-		this.alias = alias;
 		frame = new ClientFrame(this, alias);
 		buttons = new JPanel();
 		buttons.setLayout(new BoxLayout(buttons, BoxLayout.Y_AXIS));

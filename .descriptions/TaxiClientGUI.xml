@@ -6,6 +6,7 @@
     purpose="Allow taxis to start and stop listening for MQTT, and communicate with the dispatcher" 
     uuid="_svMB8aOdEeOlvM2Rtrpuog" 
     status="published" 
+    session="normal" 
     type="block" 
     >
     <required>

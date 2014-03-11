@@ -50,9 +50,6 @@ public class UserClientGUI extends Block {
 	 */
 	private LogTable messages;
 	
-	/** Alias for this user */
-	private String alias;
-	
 	/** Object for retrieving the requested address */
 	private Object taxiRequest = new Object(){
 		public String toString() {
@@ -65,7 +62,6 @@ public class UserClientGUI extends Block {
 	 * @param alias	Alias for this user
 	 */
 	public void show(String alias) {
-		this.alias = alias;
 		frame = new ClientFrame(this, alias);
 		controls = new JPanel(new GridBagLayout());
 		stateLabel = new JLabel("<html>Location: <i>unknown");
