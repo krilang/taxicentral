@@ -63,7 +63,6 @@
       <edge xmi:type="uml:ControlFlow" xmi:id="_IXrYMKiREeOFfujtF58JjQ" name="e12" inPartition="_svMCFKOdEeOlvM2Rtrpuog" source="_FblagKiREeOFfujtF58JjQ" target="_JjjVcKiREeOFfujtF58JjQ"/>
       <edge xmi:type="uml:ControlFlow" xmi:id="_ImxkIKiREeOFfujtF58JjQ" name="e13" inPartition="_svMCFKOdEeOlvM2Rtrpuog" source="_HBVQUKiREeOFfujtF58JjQ" target="_svMCP6OdEeOlvM2Rtrpuog"/>
       <edge xmi:type="uml:ControlFlow" xmi:id="_K9MB4KiREeOFfujtF58JjQ" name="e14" inPartition="_svMCFKOdEeOlvM2Rtrpuog" source="_JjjVcKiREeOFfujtF58JjQ" target="_HBVQUKiREeOFfujtF58JjQ"/>
-      <variable xmi:id="_B0_WAKiLEeOFfujtF58JjQ" name="state" type="_svMCVqOdEeOlvM2Rtrpuog"/>
       <group xmi:type="uml:ActivityPartition" xmi:id="_svMCFKOdEeOlvM2Rtrpuog" name="main" node="_svMCJaOdEeOlvM2Rtrpuog _svMCJ6OdEeOlvM2Rtrpuog _svMCKKOdEeOlvM2Rtrpuog _svMCK6OdEeOlvM2Rtrpuog _svMCLqOdEeOlvM2Rtrpuog _svMCMaOdEeOlvM2Rtrpuog _svMCNKOdEeOlvM2Rtrpuog _svMCN6OdEeOlvM2Rtrpuog _svMCOKOdEeOlvM2Rtrpuog _svMCOaOdEeOlvM2Rtrpuog _svMCOqOdEeOlvM2Rtrpuog _svMCO6OdEeOlvM2Rtrpuog _svMCPKOdEeOlvM2Rtrpuog _svMCPaOdEeOlvM2Rtrpuog _svMCP6OdEeOlvM2Rtrpuog _svMCQKOdEeOlvM2Rtrpuog _svMCQaOdEeOlvM2Rtrpuog _svMCQqOdEeOlvM2Rtrpuog _svMCQ6OdEeOlvM2Rtrpuog _svMCRKOdEeOlvM2Rtrpuog _svMCRaOdEeOlvM2Rtrpuog _FblagKiREeOFfujtF58JjQ _HBVQUKiREeOFfujtF58JjQ _JjjVcKiREeOFfujtF58JjQ _vRpAgKiTEeOFfujtF58JjQ" edge="_svMCFaOdEeOlvM2Rtrpuog _svMCF6OdEeOlvM2Rtrpuog _svMCGKOdEeOlvM2Rtrpuog _svMCGaOdEeOlvM2Rtrpuog _svMCGqOdEeOlvM2Rtrpuog _svMCG6OdEeOlvM2Rtrpuog _svMCHKOdEeOlvM2Rtrpuog _svMCHaOdEeOlvM2Rtrpuog _svMCHqOdEeOlvM2Rtrpuog _svMCH6OdEeOlvM2Rtrpuog _svMCIKOdEeOlvM2Rtrpuog _svMCIaOdEeOlvM2Rtrpuog _svMCIqOdEeOlvM2Rtrpuog _svMCI6OdEeOlvM2Rtrpuog _svMCJKOdEeOlvM2Rtrpuog _4Dm-YKUPEeOPg9pJIGq8wA _IXrYMKiREeOFfujtF58JjQ _ImxkIKiREeOFfujtF58JjQ _K9MB4KiREeOFfujtF58JjQ"/>
       <node xmi:type="uml:CallOperationAction" xmi:id="_svMCJaOdEeOlvM2Rtrpuog" name="o0" inPartition="_svMCFKOdEeOlvM2Rtrpuog" outgoing="_svMCH6OdEeOlvM2Rtrpuog" operation="_svMCAKOdEeOlvM2Rtrpuog">
         <argument xmi:id="_vRpAgKiTEeOFfujtF58JjQ" name="alias" inPartition="_svMCFKOdEeOlvM2Rtrpuog" incoming="_svMCFaOdEeOlvM2Rtrpuog" type="_svMCVqOdEeOlvM2Rtrpuog"/>
@@ -191,8 +190,6 @@
   <graphics:Shape xmi:id="_svMCgKOdEeOlvM2Rtrpuog" x="72" y="342" base_Element="_svMCQ6OdEeOlvM2Rtrpuog" orientation="west"/>
   <graphics:Shape xmi:id="_svMCgaOdEeOlvM2Rtrpuog" x="198" y="324" width="163" height="55" base_Element="_svMCRKOdEeOlvM2Rtrpuog" orientation="east"/>
   <arctis:event xmi:id="_svMCgqOdEeOlvM2Rtrpuog" base_Transition="_svMB_KOdEeOlvM2Rtrpuog" triggers="_svMCQ6OdEeOlvM2Rtrpuog"/>
-  <arctis:location xmi:id="_B4IJkKiLEeOFfujtF58JjQ" base_Variable="_B0_WAKiLEeOFfujtF58JjQ" partition="_svMCFKOdEeOlvM2Rtrpuog"/>
-  <graphics:Shape xmi:id="_B4JXsKiLEeOFfujtF58JjQ" x="234" y="144" base_Element="_B0_WAKiLEeOFfujtF58JjQ"/>
   <graphics:Shape xmi:id="_FbvLgKiREeOFfujtF58JjQ" x="126" y="396" base_Element="_FblagKiREeOFfujtF58JjQ" orientation="west"/>
   <graphics:Shape xmi:id="_HBY6sKiREeOFfujtF58JjQ" x="441" y="387" width="37" height="37" base_Element="_HBVQUKiREeOFfujtF58JjQ"/>
   <graphics:Shape xmi:id="_Jjm_0KiREeOFfujtF58JjQ" x="198" y="378" width="163" height="55" base_Element="_JjjVcKiREeOFfujtF58JjQ"/>

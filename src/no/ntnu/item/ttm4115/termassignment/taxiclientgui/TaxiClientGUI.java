@@ -62,9 +62,6 @@ public class TaxiClientGUI extends Block {
 	 */
 	private LogTable messages;
 	
-	/** Current state of the taxi */
-	public String state;
-
 	/**
 	 * Initialise and show the GUI. Should only be called *once* per taxi
 	 * @param alias	Alias for this taxi
@@ -120,6 +117,5 @@ public class TaxiClientGUI extends Block {
 	 */
 	public void setState(String state) {
 		stateLabel.setText("<html>State: <b>"+state.replace("<", "&lt;").replace("&", "&amp;"));
-		this.state = state;
 	}
 }
