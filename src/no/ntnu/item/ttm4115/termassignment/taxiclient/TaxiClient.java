@@ -1,6 +1,7 @@
 package no.ntnu.item.ttm4115.termassignment.taxiclient;
 
 import no.ntnu.item.arctis.runtime.Block;
+import no.ntnu.item.ttm4115.mqtt.basicmqtt.BasicMQTT.AdvancedConfiguration;
 import no.ntnu.item.ttm4115.termassignment.Status.Status;
 import no.ntnu.item.ttm4115.termassignment.order.Order;
 
@@ -18,11 +19,13 @@ public class TaxiClient extends Block {
 		return current_order.msg_to_taxi;
 	}
 	
-	public void onDuty() {
+	public boolean onDuty() {
 		setDutyStatus(true);
+		return true;
 	}
-	public void offDufy() {
+	public boolean offDufy() {
 		setDutyStatus(false);
+		return true;
 	}
 
 	public void setDutyStatus(boolean duty_status) {
@@ -33,12 +36,14 @@ public class TaxiClient extends Block {
 		current_order.on_duty = duty_status;
 	}
 
-	public void unavailable() {
+	public boolean unavailable() {
 		setAvailableStatus(false);
+		return true;
 	}
 	
-	public void available() {
+	public boolean available() {
 		setAvailableStatus(true);
+		return true;
 	}
 	
 	public void setAvailableStatus(boolean bol) {
@@ -55,13 +60,14 @@ public class TaxiClient extends Block {
 		}
 	}
 
-	public void confirm() {
+	public boolean confirm() {
 		if(current_order == null || current_order.order_status != Status.CENTRAL_TAXI_OFFER) {
-			return;
+			return false;
 		}
 		
 		current_order.order_status = Status.TAXI_ANSWER;
 		current_order.answer = true;
+		return true;
 	}
 	
 	public static String getAlias(String taxi_id) {
@@ -70,6 +76,10 @@ public class TaxiClient extends Block {
 	
 	public static String getAlias(Order order) {
 		return order.taxi_id;
+	}
+
+	public AdvancedConfiguration advConfig() {
+		return new AdvancedConfiguration("test", 99);
 	}
 	
 }
