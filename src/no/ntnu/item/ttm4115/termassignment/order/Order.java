@@ -9,6 +9,7 @@ public class Order {
 	//Status related
 	
 	public Status order_status;
+	public String topic;
 	public boolean confirmed; //Order is confirmed at central
 	public int queue_position;
 

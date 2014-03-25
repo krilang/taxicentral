@@ -8,4 +8,9 @@ public class BasicSerialisedMQTT extends Block {
 	public Order objectToOrder(Object obj) {
 		return (Order) obj;
 	}
+
+	public String getOrderTopic(Order order) {
+		
+		return "test";
+	}
 }
