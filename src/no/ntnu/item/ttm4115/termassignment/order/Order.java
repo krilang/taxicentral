@@ -9,7 +9,7 @@ public class Order {
 	public Status order_status;
 
 	// User related
-	public int user_id;
+	public String user_id;
 	public String address;
 	
 	public boolean confirmed = false;
@@ -18,7 +18,7 @@ public class Order {
 	public String msg_to_user;
 	
 	// Taxi related
-	public int taxi_id;
+	public String taxi_id;
 	public boolean on_duty = false;
 	public boolean answer = false;
 	
