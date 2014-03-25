@@ -28,22 +28,40 @@ public class TaxiClient extends Block {
 	public void setDutyStatus(boolean duty_status) {
 		
 		current_order = new Order();
+		current_order.taxi_id = taxi_id;
 		current_order.order_status = Status.TAXI_DUTY;
 		current_order.on_duty = duty_status;
 	}
 
 	public void unavailable() {
-		if (current_order.order_status == Status.CENTRAL_TAXI_OFFER) {
+		setAvailableStatus(false);
+	}
+	
+	public void available() {
+		setAvailableStatus(true);
+	}
+	
+	public void setAvailableStatus(boolean bol) {
+		if (current_order != null && current_order.order_status == Status.CENTRAL_TAXI_OFFER) {
 			current_order.order_status = Status.TAXI_ANSWER;
 			current_order.answer = false;
 			current_order.reject_list.add(taxi_id);
 		}
-	}
-
-	public void available() {
+		else {
+			current_order = new Order();
+			current_order.taxi_id = taxi_id;
+			current_order.order_status = Status.TAXI_AVAILABLE;
+			current_order.available = false; 
+		}
 	}
 
 	public void confirm() {
+		if(current_order == null || current_order.order_status != Status.CENTRAL_TAXI_OFFER) {
+			return;
+		}
+		
+		current_order.order_status = Status.TAXI_ANSWER;
+		current_order.answer = true;
 	}
 	
 	public static String getAlias(String taxi_id) {

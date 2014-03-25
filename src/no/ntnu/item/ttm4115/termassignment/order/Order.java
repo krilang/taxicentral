@@ -9,7 +9,7 @@ public class Order {
 	//Status related
 	
 	public Status order_status;
-	public boolean confirmed = false; //Order is confirmed at central
+	public boolean confirmed; //Order is confirmed at central
 	public int queue_position;
 
 	// User related
@@ -20,8 +20,9 @@ public class Order {
 	
 	// Taxi related
 	public String taxi_id;
-	public boolean on_duty = false; // To central
-	public boolean answer = false; // Answer to central
+	public boolean on_duty; // To central
+	public boolean available; // To central
+	public boolean answer; // Answer to central
 	
 	public ArrayList<String> reject_list = new ArrayList<String>();
 	
