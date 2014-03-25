@@ -22,7 +22,9 @@ public class Order {
 	public String taxi_id;
 	public boolean on_duty = false; // To central
 	public boolean answer = false; // Answer to central
+	
 	public ArrayList<String> reject_list = new ArrayList<String>();
+	
 	public String msg_to_taxi;
 	
 	public Order() {};
