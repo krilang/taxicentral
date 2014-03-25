@@ -254,7 +254,11 @@ public class ClientFrame extends JFrame {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			block.sendToBlock(signal);
+			if (data == null) {
+				block.sendToBlock(signal);
+			} else {
+				block.sendToBlock(signal, data.toString());
+			}
 			if (logTable != null) {
 				if (data == null) {
 					logTable.addLogEntry(LogTable.Direction.OUT, signal+" button pressed");
