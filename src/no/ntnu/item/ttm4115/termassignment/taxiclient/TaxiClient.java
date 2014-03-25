@@ -27,12 +27,17 @@ public class TaxiClient extends Block {
 
 	public void setDutyStatus(boolean duty_status) {
 		
-		this.current_order = new Order();
+		current_order = new Order();
 		current_order.order_status = Status.TAXI_DUTY;
 		current_order.on_duty = duty_status;
 	}
 
 	public void unavailable() {
+		if (current_order.order_status == Status.CENTRAL_TAXI_OFFER) {
+			current_order.order_status = Status.TAXI_ANSWER;
+			current_order.answer = false;
+			current_order.reject_list.add(taxi_id);
+		}
 	}
 
 	public void available() {
