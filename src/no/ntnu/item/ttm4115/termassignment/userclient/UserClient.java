@@ -24,6 +24,9 @@ public class UserClient extends Block {
 	public void request() {
 		current_order=new Order();
 		current_order.order_status=Status.USER_ORDER;
+		current_order.user_id=user_ID;
+		current_order.topic="1";
+		
 	}
 
 	public void cancel() {
@@ -35,8 +38,15 @@ public class UserClient extends Block {
 	}
 
 	public AdvancedConfiguration generateConf() {
-		return new AdvancedConfiguration("test", 99);
+		String s=user_ID;
+		return new AdvancedConfiguration("test,"+s+"", 99);
 		
+	}
+
+	public String genString(Order order) {
+		
+		
+		return order.user_id+" has sent a "+order.order_status+" with topic: "+order.topic;
 	}
 	
 	

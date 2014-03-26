@@ -11,6 +11,10 @@ public class BasicSerialisedMQTT extends Block {
 
 	public String getOrderTopic(Order order) {
 		
-		return "test";
+		return order.topic;
+	}
+
+	public void printer(String s) {
+		System.out.println(s);
 	}
 }
