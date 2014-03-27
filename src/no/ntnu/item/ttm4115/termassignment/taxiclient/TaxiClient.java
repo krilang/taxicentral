@@ -12,6 +12,10 @@ public class TaxiClient extends Block {
 
 	public String getOrderMessage() {
 		
+		if (current_order == null) {
+			return "No orders in the system";
+		}
+		
 		if (current_order.order_status == Status.CENTRAL_TAXI_OFFER) {
 			return "New incomming order. Accept/Decline order at "+ current_order.address;
 		}
@@ -46,8 +50,8 @@ public class TaxiClient extends Block {
 		return true;
 	}
 	
-	public void setAvailableStatus(boolean bol) {
-		if (current_order != null && current_order.order_status == Status.CENTRAL_TAXI_OFFER) {
+	public void setAvailableStatus(boolean bool) {
+		if (current_order != null && current_order.order_status == Status.CENTRAL_TAXI_OFFER && !bool) {
 			current_order.order_status = Status.TAXI_ANSWER;
 			current_order.answer = false;
 			current_order.reject_list.add(taxi_id);
@@ -56,7 +60,7 @@ public class TaxiClient extends Block {
 			current_order = new Order();
 			current_order.taxi_id = taxi_id;
 			current_order.order_status = Status.TAXI_AVAILABLE;
-			current_order.available = false; 
+			current_order.available = bool; 
 		}
 	}
 
