@@ -11,6 +11,7 @@ public class BasicSerialisedMQTT extends Block {
 
 	public String getOrderTopic(Order order) {
 		
+		System.out.println("Sending order with topic:"+ order.topic);
 		return order.topic;
 	}
 

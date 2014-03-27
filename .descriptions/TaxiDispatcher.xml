@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="TaxiDispatcher" 
+    uuid="_8Z0u8rWdEeOv-KguLGS39w" 
+    status="under construction" 
+    type="block" 
+    >
+    <required>
+        <block name="c0" uuid="__ZjgceOgEd2kaNmTXraxzw"/>
+    </required>
+</block>

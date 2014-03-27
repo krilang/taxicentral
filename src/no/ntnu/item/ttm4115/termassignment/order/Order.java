@@ -21,14 +21,28 @@ public class Order {
 	
 	// Taxi related
 	public String taxi_id;
-	public boolean on_duty; // To central
-	public boolean available; // To central
+	public boolean on_duty; // Update to central
+	public boolean available; // Update to central
 	public boolean answer; // Answer to central
 	
 	public ArrayList<String> reject_list = new ArrayList<String>();
 	
 	public String msg_to_taxi;
 	
-	public Order() {};
+	// Central related
+	
+	public String msg_to_central;
+	
+	public Order() {
+		// nix
+	};
+	
+	public Integer taxiIDToInteger() {
+		return new Integer(taxi_id);
+	}
+	
+	public Integer userIDToString() {
+		return new Integer(user_id);
+	}
 	
 }
