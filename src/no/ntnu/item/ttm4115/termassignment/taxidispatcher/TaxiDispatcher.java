@@ -31,6 +31,11 @@ public class TaxiDispatcher extends Block {
 		case TAXI_ANSWER:
 		
 			return null;
+			
+		case USER_ORDER:
+			
+			return performReceivedUserOrder(object);
+		
 		case USER_CANCEL:
 			return performCancelOrder(object);
 			
@@ -98,6 +103,37 @@ public class TaxiDispatcher extends Block {
 		return object;
 	}
 	
+	private Order performReceivedUserOrder(Order object) {
+		
+		if(availableMatch(object)) {
+			return object;
+		}
+		else {
+			queued_orders.add(object);
+			object.order_status = Status.CENTRAL_USER_ORDER_Q;
+			object.topic = "u"+object.user_id;
+			object.queue_position = queued_orders.size();
+			return object;
+		}
+	}
+	
+	private boolean availableMatch(Order object) {
+		
+		if(! (available_taxies.size() > 0)) {
+			return false;
+		}
+		
+		for(int i = 0; i < available_taxies.size(); i++) {
+			if(! (object.reject_list.contains(available_taxies.get(i)))) {
+				object.order_status = Status.CENTRAL_TAXI_OFFER;
+				object.taxi_id = available_taxies.remove(i);
+				object.topic = "t"+object.taxi_id;
+				return true;
+			}
+		}
+		return false;
+	}
+
 	private Order performCancelOrder(Order object) {
 		
 		canceled_orders.add(object.orderIDToInteger());

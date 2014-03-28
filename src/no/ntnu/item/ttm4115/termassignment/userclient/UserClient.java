@@ -9,6 +9,7 @@ public class UserClient extends Block {
 
 	public String user_id;
 	public Order current_order;
+	public java.lang.String user_ID;
 	
 	
 
