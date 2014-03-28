@@ -29,11 +29,9 @@ public class TaxiDispatcher extends Block {
 			return performAvailableUpdate(object);
 			
 		case TAXI_ANSWER:
-		
-			return null;
+			return performTaxiAnswerAction(object);
 			
 		case USER_ORDER:
-			
 			return performReceivedUserOrder(object);
 		
 		case USER_CANCEL:
@@ -41,6 +39,20 @@ public class TaxiDispatcher extends Block {
 			
 		default:
 			return null;
+		}
+		
+		
+	}
+
+	private Order performTaxiAnswerAction(Order object) {
+		
+		if(object.answer) {
+			object.order_status = Status.CENTRAL_USER_ORDER_CONF;
+			object.topic = "u"+object.user_id;
+			return object;
+		}
+		else {
+			return performReceivedUserOrder(object);
 		}
 		
 		
@@ -54,7 +66,12 @@ public class TaxiDispatcher extends Block {
 		String central_msg = " is still " + ((object.available) ? "AVAILABLE." : "UNAVAILABLE.");
 		
 		if(object.available) {
-			if(!available_taxies.contains(current_taxi_id)) { 
+			if(!available_taxies.contains(current_taxi_id)) {
+				
+				if(availableOrderMatch(object)) {
+					return object;
+				}
+				
 				available_taxies.add(current_taxi_id);
 				msg = "You are now registred as AVAILABLE.";
 				central_msg = " is now AVAILABLE.";
@@ -71,6 +88,25 @@ public class TaxiDispatcher extends Block {
 		object.msg_to_central = senderAsString + central_msg;
 	
 		return object;
+	}
+
+	private boolean availableOrderMatch(Order taxi_avail_object) {
+		
+		if(queued_orders.size() == 0) {
+			return false;
+		}
+		
+		for (int i = 0; i < queued_orders.size(); i++) {
+			Order o = queued_orders.get(i);
+			if(! (o.reject_list.contains(taxi_avail_object.taxi_id))) {
+				taxi_avail_object.order_status = Status.CENTRAL_TAXI_OFFER;
+				taxi_avail_object.user_id = o.user_id;
+				taxi_avail_object.address = o.address;
+				return true;
+			}
+		}
+		
+		return false;
 	}
 
 	private Order performDutyUpdate(Order object) {
@@ -105,7 +141,7 @@ public class TaxiDispatcher extends Block {
 	
 	private Order performReceivedUserOrder(Order object) {
 		
-		if(availableMatch(object)) {
+		if(availableTaxiMatch(object)) {
 			return object;
 		}
 		else {
@@ -117,17 +153,17 @@ public class TaxiDispatcher extends Block {
 		}
 	}
 	
-	private boolean availableMatch(Order object) {
+	private boolean availableTaxiMatch(Order new_order_object) {
 		
 		if(! (available_taxies.size() > 0)) {
 			return false;
 		}
 		
 		for(int i = 0; i < available_taxies.size(); i++) {
-			if(! (object.reject_list.contains(available_taxies.get(i)))) {
-				object.order_status = Status.CENTRAL_TAXI_OFFER;
-				object.taxi_id = available_taxies.remove(i);
-				object.topic = "t"+object.taxi_id;
+			if(! (new_order_object.reject_list.contains(available_taxies.get(i)))) {
+				new_order_object.order_status = Status.CENTRAL_TAXI_OFFER;
+				new_order_object.taxi_id = available_taxies.remove(i);
+				new_order_object.topic = "t"+new_order_object.taxi_id;
 				return true;
 			}
 		}
@@ -138,6 +174,7 @@ public class TaxiDispatcher extends Block {
 		
 		canceled_orders.add(object.orderIDToInteger());
 		int pos = getQueuedOrderByID(object.order_id);
+		
 		if(pos != -1) {
 			queued_orders.remove(pos);
 		}
