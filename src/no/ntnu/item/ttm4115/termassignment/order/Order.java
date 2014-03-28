@@ -9,8 +9,8 @@ public class Order {
 	//Status related
 	
 	public Status order_status;
+	public final int order_id;
 	public String topic;
-	public boolean confirmed; //Order is confirmed at central
 	public int queue_position;
 
 	// User related
@@ -33,16 +33,25 @@ public class Order {
 	
 	public String msg_to_central;
 	
+	// Static field
+	private static int ORDER_COUNT;
+	
 	public Order() {
-		// nix
+		ORDER_COUNT++;
+		order_id = ORDER_COUNT;
 	};
 	
 	public Integer taxiIDToInteger() {
 		return new Integer(taxi_id);
 	}
 	
-	public Integer userIDToString() {
+	public Integer userIDToInteger() {
 		return new Integer(user_id);
 	}
+	
+	public Integer orderIDToInteger() {
+		return new Integer(order_id);
+	}
+	
 	
 }

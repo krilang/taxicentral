@@ -7,46 +7,52 @@ import no.ntnu.item.ttm4115.termassignment.order.Order;
 
 public class UserClient extends Block {
 
-	public java.lang.String user_ID;
-	public no.ntnu.item.ttm4115.termassignment.order.Order current_order;
+	public String user_id;
+	public Order current_order;
 	
 	
 
-	public static java.lang.String getAlias(String user_ID) {
-		return user_ID;
+	public static String getAlias(String user_id) {
+		return user_id;
 	}
 
-//	public void createRequest(String request) {
-//		current_order=new Order();
-//		current_order.order_status=Status.USER_ORDER;
-//	}
-
-	public void request() {
-		current_order=new Order();
-		current_order.order_status=Status.USER_ORDER;
-		current_order.user_id=user_ID;
-		current_order.topic="1";
+	public boolean request() {
 		
+		if (current_order != null) {
+			current_order.msg_to_user = "Please cancel your previous order to make a new request.";
+			return false;
+		}
+		
+		current_order = new Order();
+		current_order.order_status = Status.USER_ORDER;
+		current_order.topic = "central";
+		current_order.user_id = user_id;
+		current_order.address = "Lool";
+		
+		return true;
 	}
 
-	public void cancel() {
+	public boolean cancel() {
 		if(current_order!=null){
-		current_order.order_status=Status.USER_CANCEL;
-		}else return;
-		
-		
+			current_order.order_status=Status.USER_CANCEL;
+			return true;
+		}
+		return false;
 	}
 
 	public AdvancedConfiguration generateConf() {
-		String s=user_ID;
-		return new AdvancedConfiguration("test,"+s+"", 99);
+		return new AdvancedConfiguration("test,u"+user_id, 99);
 		
 	}
 
-	public String genString(Order order) {
+	public String getOrderMessage() {
 		
+		if(current_order != null && current_order.order_status == Status.CENTRAL_USER_CANCEL_CONF) {
+			current_order = null;
+			return "Your order has been canceled."; 
+		}
 		
-		return order.user_id+" has sent a "+order.order_status+" with topic: "+order.topic;
+		return current_order.user_id+" has sent a "+current_order.order_status+" with topic: "+current_order.topic;
 	}
 	
 	
