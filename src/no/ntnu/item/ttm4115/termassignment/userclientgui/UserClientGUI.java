@@ -53,6 +53,7 @@ public class UserClientGUI extends Block {
 	/** Object for retrieving the requested address */
 	private Object taxiRequest = new Object(){
 		public String toString() {
+			
 			return address.getText();
 		}
 	};
@@ -117,4 +118,8 @@ public class UserClientGUI extends Block {
 	public void displayLocation(String location) {
 		stateLabel.setText("<html>Location: <b>"+location.replace("<", "&lt;").replace("&", "&amp;"));
 	}
+
+	
+
+	
 }
