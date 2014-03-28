@@ -7,14 +7,17 @@ import no.ntnu.item.ttm4115.termassignment.order.Order;
 
 public class UserClient extends Block {
 
-	public String user_id;
 	public Order current_order;
-	public java.lang.String user_ID;
+	public String user_id;
 	
 	
 
 	public static String getAlias(String user_id) {
 		return user_id;
+	}
+	
+	public static String getAlias(Order order) {
+		return order.user_id;
 	}
 
 	public boolean request() {
