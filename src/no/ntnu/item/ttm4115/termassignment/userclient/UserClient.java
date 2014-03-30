@@ -24,6 +24,7 @@ public class UserClient extends Block {
 
 		if (current_order != null) {
 			current_order.msg_to_user = "Please cancel your previous order to make a new request.";
+			
 			return false;
 		}
 
@@ -33,7 +34,7 @@ public class UserClient extends Block {
 		current_order.user_id = user_id;
 		current_order.address = address;
 		//System.out.println("requset med adresse "+address);
-		
+		System.out.println("requsest returnerer true");
 
 		return true;
 	}
@@ -45,6 +46,7 @@ public class UserClient extends Block {
 
 			return true;
 		}
+		
 		return false;
 	}
 
@@ -54,7 +56,7 @@ public class UserClient extends Block {
 	}
 
 	public String getOrderMessage() {
-
+		System.out.println("Getordermessage");
 		if(current_order != null){
 
 			if(current_order.order_status == Status.CENTRAL_USER_CANCEL_CONF) {
@@ -67,6 +69,8 @@ public class UserClient extends Block {
 				
 				return "You are currently inn queue, in position "+current_order.queue_position;
 				
+			}else if (current_order.order_status == Status.USER_ORDER){
+				return "You already have an pending request, cancel it to create a new";
 			}
 
 		}
@@ -90,6 +94,10 @@ public class UserClient extends Block {
 
 	public void print(String s) {
 		System.out.println(s);
+	}
+
+	public void te(boolean b) {
+		System.out.println("kommer hit da");
 	}
 
 
