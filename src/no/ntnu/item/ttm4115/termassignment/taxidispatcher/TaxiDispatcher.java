@@ -186,7 +186,7 @@ public class TaxiDispatcher extends Block {
 	
 	private int getQueuedOrderByID(int id) {		
 		for (int i = 0; i < queued_orders.size(); i++) {
-			if(queued_orders.get(i).order_id == i) {
+			if(queued_orders.get(i).order_id == id) {
 				return i;
 			}
 		}
@@ -194,6 +194,19 @@ public class TaxiDispatcher extends Block {
 	}
 
 	public String getOrderMessage(Order object) {
-		return object.msg_to_central;
+		
+		switch (object.order_status) {
+		
+		case USER_ORDER:
+			return "User "+object.user_id+" placed an order at address: "+object.address;
+			
+		case USER_CANCEL:
+			return "User "+object.user_id+" canceled order "+object.order_id+" at "+object.address; 
+		
+		
+		default:
+			
+			return object.msg_to_central;
+		}
 	}
 }
