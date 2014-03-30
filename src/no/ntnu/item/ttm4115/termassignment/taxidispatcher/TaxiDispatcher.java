@@ -47,8 +47,15 @@ public class TaxiDispatcher extends Block {
 	private Order performTaxiAnswerAction(Order object) {
 		
 		if(object.answer) {
-			object.order_status = Status.CENTRAL_USER_ORDER_CONF;
-			object.topic = "u"+object.user_id;
+			
+			if (! (canceled_orders.contains(object.orderIDToInteger()))) {
+				queued_orders.remove(getQueuedOrderByID(object.order_id));
+				object.order_status = Status.CENTRAL_TAXI_ORDER_CONF;
+				object.topic = "t"+object.taxi_id;
+			} else {
+				object.order_status = Status.CENTRAL_TAXI_ORDER_CANCELED;
+				object.topic = "t"+object.taxi_id;
+			}
 			return object;
 		}
 		else {
@@ -145,6 +152,7 @@ public class TaxiDispatcher extends Block {
 			return object;
 		}
 		else {
+			
 			queued_orders.add(object);
 			object.order_status = Status.CENTRAL_USER_ORDER_Q;
 			object.topic = "u"+object.user_id;
