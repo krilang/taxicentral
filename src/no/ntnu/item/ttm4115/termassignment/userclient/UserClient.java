@@ -50,9 +50,7 @@ public class UserClient extends Block {
 	}
 
 	public String getOrderMessage() {
-		
-		System.out.println("Halla");
-		
+
 		if(current_order == null){
 			return "There is no order to cancel";
 		}
@@ -67,7 +65,7 @@ public class UserClient extends Block {
 			return "Your order is handeld, you will be picked up by "+current_order.taxi_id;
 			
 		case CENTRAL_USER_ORDER_Q:
-			return "You are currently in queue. Position: "+current_order.queue_position;
+			return current_order.msg_to_user;
 			
 		case USER_ORDER:
 			return "You already have an pending request, cancel it to create a new";
@@ -90,19 +88,4 @@ public class UserClient extends Block {
 	public String orderExists() {
 		return current_order.msg_to_user = "Please cancel your previous order to make a new request.";
 	}
-
-	public Order test(Order o) {
-		System.out.println("incoming to user");
-		return o;
-	}
-
-
-
-
-
-
-
-
-
-
 }

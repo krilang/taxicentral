@@ -24,7 +24,7 @@ public class TaxiDispatcher extends Block {
 		switch (object.order_status) {
 		case TAXI_DUTY:
 			return performDutyUpdate(object);
-
+			
 		case TAXI_AVAILABLE:
 			return performAvailableUpdate(object);
 			
@@ -32,18 +32,31 @@ public class TaxiDispatcher extends Block {
 			return performTaxiAnswerAction(object);
 			
 		case USER_ORDER:
-			return performReceivedUserOrder(object);
+			return performReceivedUserOrder(object, false);
 		
 		case USER_CANCEL:
 			return performCancelOrder(object);
 			
+		case TAXI_USER_ABORT:
+			return performTaxiAbortAction(object);
+			
 		default:
+			System.out.println(object.order_status.toString());
 			object.msg_to_central = "Default action was triggered";
 			object.topic = "";
 			return object;
 		}
 		
 		
+	}
+
+	private Order performTaxiAbortAction(Order object) {
+		
+		if(! (available_taxies.contains(object))) {
+			available_taxies.add(object.taxi_id);
+		}
+		
+		return performReceivedUserOrder(object,true);
 	}
 
 	private Order performTaxiAnswerAction(Order object) {
@@ -69,7 +82,7 @@ public class TaxiDispatcher extends Block {
 			return object;
 		}
 		else {
-			return performReceivedUserOrder(object);
+			return performReceivedUserOrder(object, false);
 		}
 		
 		
@@ -156,7 +169,7 @@ public class TaxiDispatcher extends Block {
 		return object;
 	}
 	
-	private Order performReceivedUserOrder(Order object) {
+	private Order performReceivedUserOrder(Order object, boolean prioritized) {
 		
 		object.msg_to_central = "User "+object.user_id+"s order at address: "+object.address+", is being processed.";
 		
@@ -165,10 +178,19 @@ public class TaxiDispatcher extends Block {
 		}
 		else {
 			
-			queued_orders.add(object);
+			if(prioritized) {
+				queued_orders.add(0,object);
+				object.queue_position = 1;
+				object.msg_to_user = "Your order was aborted. You are currently in queue. Position: 1";
+			} else {
+				queued_orders.add(object);
+				object.queue_position = queued_orders.size();
+				object.msg_to_user = "You are currently in queue. Position: "+object.queue_position;
+			}
+			
 			object.order_status = Status.CENTRAL_USER_ORDER_Q;
 			object.topic = "u"+object.user_id;
-			object.queue_position = queued_orders.size();
+			
 			return object;
 		}
 	}

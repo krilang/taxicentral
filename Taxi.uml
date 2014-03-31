@@ -6,10 +6,9 @@
       <ownedBehavior xmi:type="uml:Activity" xmi:id="_pQAvILQhEeOO6P0Ijuj5iw" name="Taxi" group="_pQHc0LQhEeOO6P0Ijuj5iw" partition="_pQHc0LQhEeOO6P0Ijuj5iw" node="_qwzzgLQhEeOO6P0Ijuj5iw _H63A8LQkEeOO6P0Ijuj5iw _BsH54LQ8EeOO6P0Ijuj5iw">
         <edge xmi:type="uml:ControlFlow" xmi:id="_DfKk0LQ8EeOO6P0Ijuj5iw" name="e0" inPartition="_pQHc0LQhEeOO6P0Ijuj5iw" source="_H63A8LQkEeOO6P0Ijuj5iw" target="_BsWjYLQ8EeOO6P0Ijuj5iw"/>
         <edge xmi:type="uml:ObjectFlow" xmi:id="_D2KvkLQ8EeOO6P0Ijuj5iw" name="e1" inPartition="_pQHc0LQhEeOO6P0Ijuj5iw" source="_BsYYkLQ8EeOO6P0Ijuj5iw" target="_90aogLQ7EeOO6P0Ijuj5iw"/>
-        <group xmi:type="uml:ActivityPartition" xmi:id="_pQHc0LQhEeOO6P0Ijuj5iw" name="component" node="_qwzzgLQhEeOO6P0Ijuj5iw _H63A8LQkEeOO6P0Ijuj5iw _90aogLQ7EeOO6P0Ijuj5iw _BsH54LQ8EeOO6P0Ijuj5iw _BsWjYLQ8EeOO6P0Ijuj5iw _BsYYkLQ8EeOO6P0Ijuj5iw _Bsbb4LQ8EeOO6P0Ijuj5iw _GoXU8LQ9EeOO6P0Ijuj5iw" edge="_DfKk0LQ8EeOO6P0Ijuj5iw _D2KvkLQ8EeOO6P0Ijuj5iw"/>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_pQHc0LQhEeOO6P0Ijuj5iw" name="component" node="_qwzzgLQhEeOO6P0Ijuj5iw _H63A8LQkEeOO6P0Ijuj5iw _90aogLQ7EeOO6P0Ijuj5iw _BsH54LQ8EeOO6P0Ijuj5iw _BsWjYLQ8EeOO6P0Ijuj5iw _BsYYkLQ8EeOO6P0Ijuj5iw _Bsbb4LQ8EeOO6P0Ijuj5iw" edge="_DfKk0LQ8EeOO6P0Ijuj5iw _D2KvkLQ8EeOO6P0Ijuj5iw"/>
         <node xmi:type="uml:CallBehaviorAction" xmi:id="_qwzzgLQhEeOO6P0Ijuj5iw" name="c0" inPartition="_pQHc0LQhEeOO6P0Ijuj5iw" behavior="_k3eoobQhEeOO6P0Ijuj5iw">
           <argument xmi:id="_90aogLQ7EeOO6P0Ijuj5iw" name="init" inPartition="_pQHc0LQhEeOO6P0Ijuj5iw" incoming="_D2KvkLQ8EeOO6P0Ijuj5iw" type="_EAXhULQkEeOO6P0Ijuj5iw"/>
-          <result xmi:id="_GoXU8LQ9EeOO6P0Ijuj5iw" name="end" inPartition="_pQHc0LQhEeOO6P0Ijuj5iw"/>
         </node>
         <node xmi:type="uml:InitialNode" xmi:id="_H63A8LQkEeOO6P0Ijuj5iw" name="i0" inPartition="_pQHc0LQhEeOO6P0Ijuj5iw" outgoing="_DfKk0LQ8EeOO6P0Ijuj5iw"/>
         <node xmi:type="uml:CallBehaviorAction" xmi:id="_BsH54LQ8EeOO6P0Ijuj5iw" name="c1" inPartition="_pQHc0LQhEeOO6P0Ijuj5iw" behavior="__m9lcGJOEeGrjfXhcH6cAA">
@@ -23,7 +22,7 @@
       </ownedBehavior>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_qw4sALQhEeOO6P0Ijuj5iw" name="no.ntnu.item.ttm4115.termassignment">
-      <packagedElement xmi:type="uml:Activity" xmi:id="_k3eoobQhEeOO6P0Ijuj5iw" name="TaxiClient" classifierBehavior="_qw56ILQhEeOO6P0Ijuj5iw" group="_qw5TEbQhEeOO6P0Ijuj5iw" partition="_qw5TEbQhEeOO6P0Ijuj5iw" node="_90ZaYLQ7EeOO6P0Ijuj5iw _GoTDgLQ9EeOO6P0Ijuj5iw">
+      <packagedElement xmi:type="uml:Activity" xmi:id="_k3eoobQhEeOO6P0Ijuj5iw" name="TaxiClient" classifierBehavior="_qw56ILQhEeOO6P0Ijuj5iw" group="_qw5TEbQhEeOO6P0Ijuj5iw" partition="_qw5TEbQhEeOO6P0Ijuj5iw" node="_90ZaYLQ7EeOO6P0Ijuj5iw">
         <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_qw56ILQhEeOO6P0Ijuj5iw" name="TaxiClient">
           <region xmi:id="_q2AckLQhEeOO6P0Ijuj5iw" name="&lt;region>">
             <transition xmi:id="_GoURoLQ9EeOO6P0Ijuj5iw" name="init / " source="_q2AckbQhEeOO6P0Ijuj5iw" target="_GoTqkLQ9EeOO6P0Ijuj5iw"/>
@@ -33,11 +32,9 @@
             <subvertex xmi:type="uml:FinalState" xmi:id="_GoTqkbQ9EeOO6P0Ijuj5iw" name="&lt;final>"/>
           </region>
         </ownedBehavior>
-        <ownedParameter xmi:id="_GoSccLQ9EeOO6P0Ijuj5iw" name="init" type="_EAXhULQkEeOO6P0Ijuj5iw"/>
-        <ownedParameter xmi:id="_GoTDgbQ9EeOO6P0Ijuj5iw" name="end" direction="out"/>
-        <group xmi:type="uml:ActivityPartition" xmi:id="_qw5TEbQhEeOO6P0Ijuj5iw" name="main" node="_90ZaYLQ7EeOO6P0Ijuj5iw _GoTDgLQ9EeOO6P0Ijuj5iw"/>
-        <node xmi:type="uml:ActivityParameterNode" xmi:id="_90ZaYLQ7EeOO6P0Ijuj5iw" name="init" inPartition="_qw5TEbQhEeOO6P0Ijuj5iw" type="_EAXhULQkEeOO6P0Ijuj5iw" parameter="_GoSccLQ9EeOO6P0Ijuj5iw"/>
-        <node xmi:type="uml:ActivityParameterNode" xmi:id="_GoTDgLQ9EeOO6P0Ijuj5iw" name="end" inPartition="_qw5TEbQhEeOO6P0Ijuj5iw" parameter="_GoTDgbQ9EeOO6P0Ijuj5iw"/>
+        <ownedParameter xmi:id="_Rae_ELjwEeOcc6u_zLSy7A" name="init" type="_EAXhULQkEeOO6P0Ijuj5iw"/>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_qw5TEbQhEeOO6P0Ijuj5iw" name="main" node="_90ZaYLQ7EeOO6P0Ijuj5iw"/>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_90ZaYLQ7EeOO6P0Ijuj5iw" name="init" inPartition="_qw5TEbQhEeOO6P0Ijuj5iw" type="_EAXhULQkEeOO6P0Ijuj5iw" parameter="_Rae_ELjwEeOcc6u_zLSy7A"/>
       </packagedElement>
       <profileApplication xmi:id="_qw56IbQhEeOO6P0Ijuj5iw">
         <eAnnotations xmi:id="_qw6hMLQhEeOO6P0Ijuj5iw" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -130,5 +127,5 @@
   <graphics:Shape xmi:id="_BsfGQLQ8EeOO6P0Ijuj5iw" x="18" y="18" base_Element="_BsWjYLQ8EeOO6P0Ijuj5iw" orientation="north"/>
   <graphics:Shape xmi:id="_Bsg7cLQ8EeOO6P0Ijuj5iw" x="288" y="180" width="198" height="144" base_Element="_BsH54LQ8EeOO6P0Ijuj5iw"/>
   <arctis:event xmi:id="_GoU4sLQ9EeOO6P0Ijuj5iw" base_Transition="_GoURoLQ9EeOO6P0Ijuj5iw" triggers="_90ZaYLQ7EeOO6P0Ijuj5iw"/>
-  <arctis:event xmi:id="_GoWG0LQ9EeOO6P0Ijuj5iw" base_Transition="_GoVfwLQ9EeOO6P0Ijuj5iw" effects="_GoTDgLQ9EeOO6P0Ijuj5iw"/>
+  <arctis:event xmi:id="_GoWG0LQ9EeOO6P0Ijuj5iw" base_Transition="_GoVfwLQ9EeOO6P0Ijuj5iw"/>
 </xmi:XMI>
