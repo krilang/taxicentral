@@ -91,6 +91,11 @@ public class UserClient extends Block {
 		return current_order.msg_to_user = "Please cancel your previous order to make a new request.";
 	}
 
+	public Order test(Order o) {
+		System.out.println("incoming to user");
+		return o;
+	}
+
 
 
 
