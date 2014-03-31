@@ -38,7 +38,9 @@ public class TaxiDispatcher extends Block {
 			return performCancelOrder(object);
 			
 		default:
-			return null;
+			object.msg_to_central = "Default action was triggered";
+			object.topic = "";
+			return object;
 		}
 		
 		
@@ -49,9 +51,17 @@ public class TaxiDispatcher extends Block {
 		if(object.answer) {
 			
 			if (! (canceled_orders.contains(object.orderIDToInteger()))) {
-				queued_orders.remove(getQueuedOrderByID(object.order_id));
+				
+				int pos = getQueuedOrderByID(object.order_id);
+				
+				if(pos != -1) {
+					queued_orders.remove(pos);
+				}
+				
 				object.order_status = Status.CENTRAL_TAXI_ORDER_CONF;
 				object.topic = "t"+object.taxi_id;
+				object.msg_to_central = "Order "+object.order_id+" is now being hadeled by taxi "+object.taxi_id+".";
+				
 			} else {
 				object.order_status = Status.CENTRAL_TAXI_ORDER_CANCELED;
 				object.topic = "t"+object.taxi_id;
@@ -148,6 +158,8 @@ public class TaxiDispatcher extends Block {
 	
 	private Order performReceivedUserOrder(Order object) {
 		
+		object.msg_to_central = "User "+object.user_id+"s order at address: "+object.address+", is being processed.";
+		
 		if(availableTaxiMatch(object)) {
 			return object;
 		}
@@ -188,6 +200,7 @@ public class TaxiDispatcher extends Block {
 		}
 		object.order_status = Status.CENTRAL_USER_CANCEL_CONF;
 		object.topic = "u"+object.user_id;
+		object.msg_to_central = "User "+object.user_id+" canceled order "+object.order_id+" at "+object.address;
 		
 		return object;
 	}
@@ -201,20 +214,7 @@ public class TaxiDispatcher extends Block {
 		return -1;
 	}
 
-	public String getOrderMessage(Order object) {
-		
-		switch (object.order_status) {
-		
-		case USER_ORDER:
-			return "User "+object.user_id+" placed an order at address: "+object.address;
-			
-		case USER_CANCEL:
-			return "User "+object.user_id+" canceled order "+object.order_id+" at "+object.address; 
-		
-		
-		default:
-			
-			return object.msg_to_central;
-		}
+	public String getOrderMessage(Order object) {		
+		return object.msg_to_central;
 	}
 }

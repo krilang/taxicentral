@@ -109,7 +109,6 @@ public class TaxiClient extends Block {
 	
 	private boolean initialReceivedOfferCheck() {
 		if (current_order != null && current_order.order_status == Status.CENTRAL_TAXI_OFFER) {
-			current_order.msg_to_taxi = "Please answer the tour offer from the central first..";
 			return true;
 		}
 		return false;
@@ -130,11 +129,16 @@ public class TaxiClient extends Block {
 			return "No orders in the system";
 		}
 		
-		if (current_order.order_status == Status.CENTRAL_TAXI_OFFER) {
+		switch (current_order.order_status) {
+		
+		case CENTRAL_TAXI_OFFER:
 			return "New incomming order. Accept/Decline order at "+ current_order.address;
+
+		default:
+			return current_order.msg_to_taxi;
 		}
 		
-		return current_order.msg_to_taxi;
+		
 	}
 	
 	public static String getAlias(String taxi_id) {
@@ -147,7 +151,37 @@ public class TaxiClient extends Block {
 
 	public AdvancedConfiguration advConfig() {
 		
-		return new AdvancedConfiguration("test,t"+taxi_id+"", 99);
+		return new AdvancedConfiguration("t"+taxi_id, 99);
+	}
+
+	public boolean isEstablished() {
+		return current_order.order_status == Status.CENTRAL_TAXI_ORDER_CONF;
+	}
+
+	public boolean isTaxiUserCom() {
+		return current_order.order_status == Status.TAXI_USER_COM;
+	}
+
+	public boolean objectReceived() {
+		
+		switch (current_order.order_status) {
+		
+		case CENTRAL_TAXI_ORDER_CONF:
+			current_order.order_status = Status.TAXI_USER_CONF;
+			current_order.topic = "u"+current_order.user_id;
+			current_order.msg_to_user = "Your order has been confirmed.";
+			current_order.msg_to_taxi = "Your tour with User "+current_order.user_id+" has been confirmed. Pick up at "+current_order.address;
+			return true;
+			
+		case TAXI_USER_COM:
+			
+			return false;
+		default:
+			break;
+		}
+		
+		
+		return false;
 	}
 	
 }

@@ -45,51 +45,48 @@ public class UserClient extends Block {
 	}
 
 	public AdvancedConfiguration generateConf() {
-		return new AdvancedConfiguration("test,u"+user_id, 99);
+		return new AdvancedConfiguration("u"+user_id, 99);
 
 	}
 
 	public String getOrderMessage() {
 		
-		if(current_order != null){
-
-			if(current_order.order_status == Status.CENTRAL_USER_CANCEL_CONF) {
-				current_order = null;
-				return "Your order has been canceled."; 
-			}else if(current_order.order_status == Status.CENTRAL_USER_ORDER_CONF){
-				 
-				return "Your order is handeld, you will be picked up by "+current_order.taxi_id;
-			}else if(current_order.order_status == Status.CENTRAL_USER_ORDER_Q){
-				
-				return "You are currently inn queue, in position "+current_order.queue_position;
-				
-			}else if (current_order.order_status == Status.USER_ORDER){
-				return "You already have an pending request, cancel it to create a new";
-			}
-
-		}
-		else if(current_order == null){
-
+		System.out.println("Halla");
+		
+		if(current_order == null){
 			return "There is no order to cancel";
-
 		}
+		
+		switch (current_order.order_status) {
+		
+		case CENTRAL_USER_CANCEL_CONF:
+			current_order = null;
+			return "Your order has been canceled."; 
 
-		//Skal ikke bli kjørt
-		return current_order.user_id+" has sent a "+current_order.order_status+" with topic: "+current_order.topic;
+		case CENTRAL_USER_ORDER_CONF:
+			return "Your order is handeld, you will be picked up by "+current_order.taxi_id;
+			
+		case CENTRAL_USER_ORDER_Q:
+			return "You are currently in queue. Position: "+current_order.queue_position;
+			
+		case USER_ORDER:
+			return "You already have an pending request, cancel it to create a new";
+		
+		case TAXI_USER_CONF:
+			return current_order.msg_to_user;
+			
+		case TAXI_USER_COM:
+			return current_order.msg_to_user;
+			
+		default:
+			return current_order.order_status.toString();
+		}
 	}
 
 	public String requestSent() {
 		return "Your request is beeing handeled";
 	}
-
-	public void print(String s) {
-		System.out.println(s);
-	}
-
-	public void te(boolean b) {
-		System.out.println("kommer hit da");
-	}
-
+	
 	public String orderExists() {
 		return current_order.msg_to_user = "Please cancel your previous order to make a new request.";
 	}

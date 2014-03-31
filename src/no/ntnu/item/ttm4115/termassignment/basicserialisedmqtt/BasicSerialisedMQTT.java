@@ -16,6 +16,6 @@ public class BasicSerialisedMQTT extends Block {
 	}
 
 	public void printer(String s) {
-		System.out.println(s);
+		System.out.println("Error at BasicSerializedMQTT: "+s);
 	}
 }
