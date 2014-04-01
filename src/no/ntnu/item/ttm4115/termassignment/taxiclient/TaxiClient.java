@@ -197,6 +197,11 @@ public class TaxiClient extends Block {
 		case TAXI_USER_COM:
 			return false;
 			
+		case USER_CANCEL:
+			current_order.topic = "central";
+			current_order.msg_to_taxi = "Your tour was canceled. You are set as available at the central.";
+			return true;
+		
 		default:
 			return false;
 		}

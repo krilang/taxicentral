@@ -9,7 +9,7 @@ public class Order {
 	//Status related
 	
 	public Status order_status;
-	public final int order_id;
+	public int order_id;
 	public String topic;
 	public int queue_position;
 
@@ -24,6 +24,7 @@ public class Order {
 	public boolean on_duty; // Update to central
 	public boolean available; // Update to central
 	public boolean answer; // Answer to central
+	public boolean incomming_taxi;
 	
 	public ArrayList<String> reject_list = new ArrayList<String>();
 	

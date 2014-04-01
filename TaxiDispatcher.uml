@@ -16,6 +16,7 @@
       <ownedOperation xmi:id="_FFbNILWeEeOv-KguLGS39w" name="initialize"/>
       <ownedOperation xmi:id="_vifd4LWiEeOv-KguLGS39w" name="objectRecieved"/>
       <ownedOperation xmi:id="_BRneILW7EeOv-KguLGS39w" name="getOrderMessage"/>
+      <ownedOperation xmi:id="_2PfBkLmYEeOcc6u_zLSy7A" name="setTaxiAsAvailable"/>
       <ownedParameter xmi:id="_ArhNoLWeEeOv-KguLGS39w" name="init"/>
       <ownedParameter xmi:id="_RooAQLWkEeOv-KguLGS39w" name="receivedObject" type="_wfRkULWkEeOv-KguLGS39w" isStream="true"/>
       <ownedParameter xmi:id="_6SlxILWnEeOv-KguLGS39w" name="sendObject" type="_wfRkULWkEeOv-KguLGS39w" direction="out" isStream="true"/>

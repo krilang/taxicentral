@@ -52,7 +52,8 @@ public class TaxiDispatcher extends Block {
 
 	private Order performTaxiAbortAction(Order object) {
 		
-		setAsAvailable(object);
+		setTaxiAsAvailable(object);
+		object.taxi_id = null;
 		
 		return performReceivedUserOrder(object,true);
 	}
@@ -60,8 +61,8 @@ public class TaxiDispatcher extends Block {
 	private Order performTaxiAnswerAction(Order object) {
 		
 		if(object.answer) {
-			
-			if (! (canceled_orders.contains(object.orderIDToInteger()))) {
+
+			if (! (canceled_orders.contains(Integer.valueOf(object.order_id)))) {
 				
 				int pos = getQueuedOrderByID(object.order_id);
 				
@@ -76,14 +77,25 @@ public class TaxiDispatcher extends Block {
 			} else {
 				object.order_status = Status.CENTRAL_TAXI_ORDER_CANCELED;
 				object.msg_to_taxi = "The order was canceled. You are set as available.";
+				object.msg_to_central = "Taxi "+object.taxi_id+" was informed that the order was canceled.";
 				object.topic = "t"+object.taxi_id;
 				
-				setAsAvailable(object);
+				setTaxiAsAvailable(object);
 			}
 			return object;
 		}
+		else if(object.incomming_taxi) {
+			
+			int pos = getQueuedOrderByID(object.order_id);
+			
+			if(pos != -1) {
+				queued_orders.get(pos).reject_list.add(object.taxi_id);
+			}
+			
+			return performAvailableUpdate(object);
+		}
 		else {
-			setAsAvailable(object);
+			setTaxiAsAvailable(object);
 			return performReceivedUserOrder(object, false);
 		}
 		
@@ -103,6 +115,7 @@ public class TaxiDispatcher extends Block {
 				if(availableOrderMatch(object)) {
 					return object;
 				}
+				object.incomming_taxi = false;
 				
 				available_taxies.add(current_taxi_id);
 				msg = "You are now registred as AVAILABLE.";
@@ -132,8 +145,14 @@ public class TaxiDispatcher extends Block {
 			Order o = queued_orders.get(i);
 			if(! (o.reject_list.contains(taxi_avail_object.taxi_id))) {
 				taxi_avail_object.order_status = Status.CENTRAL_TAXI_OFFER;
+				taxi_avail_object.topic = "t"+taxi_avail_object.taxi_id;
+				taxi_avail_object.order_id = o.order_id;
 				taxi_avail_object.user_id = o.user_id;
 				taxi_avail_object.address = o.address;
+				taxi_avail_object.incomming_taxi = true;
+				
+				taxi_avail_object.msg_to_central = "Taxi "+taxi_avail_object.taxi_id+" was offered order "+o.order_id+" at "+o.address;
+				
 				return true;
 			}
 		}
@@ -216,12 +235,15 @@ public class TaxiDispatcher extends Block {
 
 	private Order performCancelOrder(Order object) {
 		
-		canceled_orders.add(object.orderIDToInteger());
+		canceled_orders.add(Integer.valueOf(object.order_id));
+			
 		int pos = getQueuedOrderByID(object.order_id);
 		
 		if(pos != -1) {
 			queued_orders.remove(pos);
 		}
+		
+		setTaxiAsAvailable(object);
 		
 		object.order_status = Status.CENTRAL_USER_CANCEL_CONF;
 		object.topic = "u"+object.user_id;
@@ -243,8 +265,12 @@ public class TaxiDispatcher extends Block {
 		return object.msg_to_central;
 	}
 	
-	public void setAsAvailable(Order object) {
-		if(! (available_taxies.contains(object))) {
+	public void setTaxiAsAvailable(Order object) {
+		if (object.taxi_id == null) {
+			return;
+		}
+		
+		if(! (available_taxies.contains(object.taxi_id))) {
 			available_taxies.add(object.taxi_id);
 		}
 	}

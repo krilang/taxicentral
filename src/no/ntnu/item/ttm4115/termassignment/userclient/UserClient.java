@@ -35,9 +35,15 @@ public class UserClient extends Block {
 
 	public boolean cancel() {
 		if(current_order!=null){
-			current_order.order_status=Status.USER_CANCEL;
-			current_order.topic="central";
-
+			
+			current_order.order_status = Status.USER_CANCEL;
+			
+			if(current_order.taxi_id == null) {
+				current_order.topic = "central";
+			} else {
+				current_order.topic = "t"+current_order.taxi_id;
+			}
+			
 			return true;
 		}
 		
@@ -74,6 +80,9 @@ public class UserClient extends Block {
 			return current_order.msg_to_user;
 			
 		case TAXI_USER_COM:
+			return current_order.msg_to_user;
+			
+		case TAXI_USER_ABORT:
 			return current_order.msg_to_user;
 			
 		default:
