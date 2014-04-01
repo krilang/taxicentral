@@ -20,6 +20,7 @@ public class Component extends Block {
 	public com.bitreactive.library.android.maps.model.Position taxiPoint;
 
 	public Journey CreateJourney() {
+		System.out.println("creating journey");
 		Position p=new Position(63.429200, 10.390869);
 		
 		//String fromAddress="Vangslunds gate 3, 7030 Trondheim, Norge";
@@ -81,6 +82,12 @@ public class Component extends Block {
 		return tms;
 		
 		
+	}
+
+	public taxiMapStatus removeTaxi() {
+		System.out.println("removing taxi");
+		taxiMapStatus tms= new taxiMapStatus(taxiId, taxiPoint);
+		return tms;
 	}
 	
 

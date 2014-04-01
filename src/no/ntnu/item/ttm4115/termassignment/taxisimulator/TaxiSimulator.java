@@ -34,4 +34,16 @@ public class TaxiSimulator extends Block {
 		return tms;
 	}
 
+	
+
+	public MapUpdate taxiRemove(taxiMapStatus tms) {
+
+		Marker m1 = Marker.createMarker(tms.mTaxiID);
+		m1.remove();
+		MapUpdate mu= new MapUpdate();
+		mu.addMarker(m1);
+		
+		return mu;
+	}
+
 }

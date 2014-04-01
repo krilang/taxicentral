@@ -3,7 +3,7 @@
   <uml:Package xmi:id="_fToUcLjVEeOAS6yevuLbXw" name="no.ntnu.item.ttm4115.termassignment">
     <packagedElement xmi:type="uml:Collaboration" xmi:id="_fTo7grjVEeOAS6yevuLbXw" name="MapTest" classifierBehavior="_fbWGAbjVEeOAS6yevuLbXw" collaborationRole="_fbaXcLjVEeOAS6yevuLbXw">
       <ownedAttribute xmi:id="_fbaXcLjVEeOAS6yevuLbXw" name="component"/>
-      <ownedBehavior xmi:type="uml:Activity" xmi:id="_fbWGAbjVEeOAS6yevuLbXw" name="MapTest" group="_fbcMoLjVEeOAS6yevuLbXw" partition="_fbcMoLjVEeOAS6yevuLbXw" node="_xbli4LjWEeOAS6yevuLbXw _EmaC0LmkEeOfytKDws6UEg _gnAm0LmkEeOfytKDws6UEg _38q6ILmuEeOfytKDws6UEg _THgTwLmvEeOfytKDws6UEg _W9XLALmvEeOfytKDws6UEg _abEoAbmvEeOfytKDws6UEg">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_fbWGAbjVEeOAS6yevuLbXw" name="MapTest" group="_fbcMoLjVEeOAS6yevuLbXw" partition="_fbcMoLjVEeOAS6yevuLbXw" node="_xbli4LjWEeOAS6yevuLbXw _EmaC0LmkEeOfytKDws6UEg _gnAm0LmkEeOfytKDws6UEg _38q6ILmuEeOfytKDws6UEg _THgTwLmvEeOfytKDws6UEg _g01-wLm1EeOfytKDws6UEg _sieqkbm1EeOfytKDws6UEg __L1rAbm4EeOfytKDws6UEg">
         <ownedOperation xmi:id="_qobCcLjVEeOAS6yevuLbXw" name="CreateJourney"/>
         <ownedOperation xmi:id="_GOWYcLjdEeOAS6yevuLbXw" name="CreateMarker"/>
         <ownedOperation xmi:id="_F6BicLmGEeOfytKDws6UEg" name="createMapUpdate"/>
@@ -15,32 +15,40 @@
         <ownedOperation xmi:id="_j24jgLmhEeOfytKDws6UEg" name="setPosition"/>
         <ownedOperation xmi:id="_gnB08LmkEeOfytKDws6UEg" name="setVirtualTaxi"/>
         <ownedOperation xmi:id="_IDAQELmlEeOfytKDws6UEg" name="createTaxiMapUpdate"/>
-        <edge xmi:type="uml:ObjectFlow" xmi:id="_38psALmuEeOfytKDws6UEg" name="e5" inPartition="_fbcMoLjVEeOAS6yevuLbXw" source="_38ukgLmuEeOfytKDws6UEg" target="_EmlpALmkEeOfytKDws6UEg"/>
+        <ownedOperation xmi:id="_g02l0Lm1EeOfytKDws6UEg" name="removeTaxi"/>
+        <edge xmi:type="uml:ObjectFlow" xmi:id="_38psALmuEeOfytKDws6UEg" name="e5" inPartition="_fbcMoLjVEeOAS6yevuLbXw" source="_38ukgLmuEeOfytKDws6UEg" target="__L1rAbm4EeOfytKDws6UEg"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_KpF9ALmvEeOfytKDws6UEg" name="e0" inPartition="_fbcMoLjVEeOAS6yevuLbXw" source="_xbli4LjWEeOAS6yevuLbXw" target="_gnAm0LmkEeOfytKDws6UEg"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_UfeMQLmvEeOfytKDws6UEg" name="e1" inPartition="_fbcMoLjVEeOAS6yevuLbXw" source="_gnAm0LmkEeOfytKDws6UEg" target="_THgTwLmvEeOfytKDws6UEg"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_UrZIYLmvEeOfytKDws6UEg" name="e2" inPartition="_fbcMoLjVEeOAS6yevuLbXw" source="_THgTwLmvEeOfytKDws6UEg" target="_38q6ILmuEeOfytKDws6UEg"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="_X8XJ4LmvEeOfytKDws6UEg" name="e3" inPartition="_fbcMoLjVEeOAS6yevuLbXw" source="_THgTwLmvEeOfytKDws6UEg" target="_W9XLALmvEeOfytKDws6UEg"/>
-        <edge xmi:type="uml:ObjectFlow" xmi:id="_YRJuILmvEeOfytKDws6UEg" name="e4" inPartition="_fbcMoLjVEeOAS6yevuLbXw" source="_W9aOULmvEeOfytKDws6UEg" target="_abEoAbmvEeOfytKDws6UEg"/>
-        <edge xmi:type="uml:ObjectFlow" xmi:id="_abEA8LmvEeOfytKDws6UEg" name="e6" inPartition="_fbcMoLjVEeOAS6yevuLbXw" source="_abEoAbmvEeOfytKDws6UEg" target="_Emka4LmkEeOfytKDws6UEg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_VHu3YLm1EeOfytKDws6UEg" name="e7" inPartition="_fbcMoLjVEeOAS6yevuLbXw" source="_THgTwLmvEeOfytKDws6UEg" target="_EmlpALmkEeOfytKDws6UEg"/>
+        <edge xmi:type="uml:ObjectFlow" xmi:id="_qtfe4Lm1EeOfytKDws6UEg" name="e8" inPartition="_fbcMoLjVEeOAS6yevuLbXw" source="_prZIsLm1EeOfytKDws6UEg" target="_Hv9lALm1EeOfytKDws6UEg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_rCZX4Lm1EeOfytKDws6UEg" name="e9" inPartition="_fbcMoLjVEeOAS6yevuLbXw" source="_THgTwLmvEeOfytKDws6UEg" target="_sieqkbm1EeOfytKDws6UEg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_sidccLm1EeOfytKDws6UEg" name="e10" inPartition="_fbcMoLjVEeOAS6yevuLbXw" source="_sieqkbm1EeOfytKDws6UEg" target="_g01-wLm1EeOfytKDws6UEg"/>
+        <edge xmi:type="uml:ObjectFlow" xmi:id="__L1D8Lm4EeOfytKDws6UEg" name="e3" inPartition="_fbcMoLjVEeOAS6yevuLbXw" source="__L1rAbm4EeOfytKDws6UEg" target="_Hv8W4Lm1EeOfytKDws6UEg"/>
         <variable xmi:id="_OBp1QLmkEeOfytKDws6UEg" name="taxiId" type="_isMywLjVEeOAS6yevuLbXw"/>
         <variable xmi:id="_QcgHELmkEeOfytKDws6UEg" name="taxiPoint" type="_fheCcLmhEeOfytKDws6UEg"/>
-        <group xmi:type="uml:ActivityPartition" xmi:id="_fbcMoLjVEeOAS6yevuLbXw" name="component" node="_xbli4LjWEeOAS6yevuLbXw _EmaC0LmkEeOfytKDws6UEg _Emka4LmkEeOfytKDws6UEg _EmlpALmkEeOfytKDws6UEg _Emm3ILmkEeOfytKDws6UEg _gnAm0LmkEeOfytKDws6UEg _38q6ILmuEeOfytKDws6UEg _38ukgLmuEeOfytKDws6UEg _THgTwLmvEeOfytKDws6UEg _W9XLALmvEeOfytKDws6UEg _W9aOULmvEeOfytKDws6UEg _abEoAbmvEeOfytKDws6UEg" edge="_38psALmuEeOfytKDws6UEg _KpF9ALmvEeOfytKDws6UEg _UfeMQLmvEeOfytKDws6UEg _UrZIYLmvEeOfytKDws6UEg _X8XJ4LmvEeOfytKDws6UEg _YRJuILmvEeOfytKDws6UEg _abEA8LmvEeOfytKDws6UEg"/>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_fbcMoLjVEeOAS6yevuLbXw" name="component" node="_xbli4LjWEeOAS6yevuLbXw _EmaC0LmkEeOfytKDws6UEg _Emka4LmkEeOfytKDws6UEg _EmlpALmkEeOfytKDws6UEg _Emm3ILmkEeOfytKDws6UEg _gnAm0LmkEeOfytKDws6UEg _38q6ILmuEeOfytKDws6UEg _38ukgLmuEeOfytKDws6UEg _THgTwLmvEeOfytKDws6UEg _Hv8W4Lm1EeOfytKDws6UEg _Hv9lALm1EeOfytKDws6UEg _g01-wLm1EeOfytKDws6UEg _prZIsLm1EeOfytKDws6UEg _sieqkbm1EeOfytKDws6UEg __L1rAbm4EeOfytKDws6UEg" edge="_38psALmuEeOfytKDws6UEg _KpF9ALmvEeOfytKDws6UEg _UfeMQLmvEeOfytKDws6UEg _UrZIYLmvEeOfytKDws6UEg _VHu3YLm1EeOfytKDws6UEg _qtfe4Lm1EeOfytKDws6UEg _rCZX4Lm1EeOfytKDws6UEg _sidccLm1EeOfytKDws6UEg __L1D8Lm4EeOfytKDws6UEg"/>
         <node xmi:type="uml:InitialNode" xmi:id="_xbli4LjWEeOAS6yevuLbXw" name="i0" inPartition="_fbcMoLjVEeOAS6yevuLbXw" outgoing="_KpF9ALmvEeOfytKDws6UEg"/>
         <node xmi:type="uml:CallBehaviorAction" xmi:id="_EmaC0LmkEeOfytKDws6UEg" name="c0" inPartition="_fbcMoLjVEeOAS6yevuLbXw" behavior="_O0CjQrjaEeOAS6yevuLbXw">
-          <argument xmi:id="_Emka4LmkEeOfytKDws6UEg" name="journey" inPartition="_fbcMoLjVEeOAS6yevuLbXw" incoming="_abEA8LmvEeOfytKDws6UEg" type="_isLkobjVEeOAS6yevuLbXw"/>
-          <argument xmi:id="_EmlpALmkEeOfytKDws6UEg" name="init" inPartition="_fbcMoLjVEeOAS6yevuLbXw" incoming="_38psALmuEeOfytKDws6UEg" type="_EmdtMrmkEeOfytKDws6UEg"/>
+          <argument xmi:id="_Emka4LmkEeOfytKDws6UEg" name="journey" inPartition="_fbcMoLjVEeOAS6yevuLbXw" type="_isLkobjVEeOAS6yevuLbXw"/>
+          <argument xmi:id="_EmlpALmkEeOfytKDws6UEg" name="init" inPartition="_fbcMoLjVEeOAS6yevuLbXw" incoming="_VHu3YLm1EeOfytKDws6UEg"/>
+          <argument xmi:id="_Hv8W4Lm1EeOfytKDws6UEg" name="taxiAdd" inPartition="_fbcMoLjVEeOAS6yevuLbXw" incoming="__L1D8Lm4EeOfytKDws6UEg" type="_EmdtMrmkEeOfytKDws6UEg"/>
+          <argument xmi:id="_Hv9lALm1EeOfytKDws6UEg" name="taxiRemove" inPartition="_fbcMoLjVEeOAS6yevuLbXw" incoming="_qtfe4Lm1EeOfytKDws6UEg" type="_EmdtMrmkEeOfytKDws6UEg"/>
           <result xmi:id="_Emm3ILmkEeOfytKDws6UEg" name="outTaxiUpdate" inPartition="_fbcMoLjVEeOAS6yevuLbXw" type="_EmdtMrmkEeOfytKDws6UEg"/>
         </node>
         <node xmi:type="uml:CallOperationAction" xmi:id="_gnAm0LmkEeOfytKDws6UEg" name="o0" inPartition="_fbcMoLjVEeOAS6yevuLbXw" outgoing="_UfeMQLmvEeOfytKDws6UEg" incoming="_KpF9ALmvEeOfytKDws6UEg" operation="_gnB08LmkEeOfytKDws6UEg"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_38q6ILmuEeOfytKDws6UEg" name="o1" inPartition="_fbcMoLjVEeOAS6yevuLbXw" incoming="_UrZIYLmvEeOfytKDws6UEg" operation="_IDAQELmlEeOfytKDws6UEg">
           <result xmi:id="_38ukgLmuEeOfytKDws6UEg" name="" inPartition="_fbcMoLjVEeOAS6yevuLbXw" outgoing="_38psALmuEeOfytKDws6UEg" type="_EmdtMrmkEeOfytKDws6UEg"/>
         </node>
-        <node xmi:type="uml:ForkNode" xmi:id="_THgTwLmvEeOfytKDws6UEg" name="f0" inPartition="_fbcMoLjVEeOAS6yevuLbXw" outgoing="_UrZIYLmvEeOfytKDws6UEg _X8XJ4LmvEeOfytKDws6UEg" incoming="_UfeMQLmvEeOfytKDws6UEg"/>
-        <node xmi:type="uml:CallOperationAction" xmi:id="_W9XLALmvEeOfytKDws6UEg" name="o2" inPartition="_fbcMoLjVEeOAS6yevuLbXw" incoming="_X8XJ4LmvEeOfytKDws6UEg" operation="_qobCcLjVEeOAS6yevuLbXw">
-          <result xmi:id="_W9aOULmvEeOfytKDws6UEg" name="" inPartition="_fbcMoLjVEeOAS6yevuLbXw" outgoing="_YRJuILmvEeOfytKDws6UEg" type="_isLkobjVEeOAS6yevuLbXw"/>
+        <node xmi:type="uml:ForkNode" xmi:id="_THgTwLmvEeOfytKDws6UEg" name="f0" inPartition="_fbcMoLjVEeOAS6yevuLbXw" outgoing="_UrZIYLmvEeOfytKDws6UEg _VHu3YLm1EeOfytKDws6UEg _rCZX4Lm1EeOfytKDws6UEg" incoming="_UfeMQLmvEeOfytKDws6UEg"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_g01-wLm1EeOfytKDws6UEg" name="o3" inPartition="_fbcMoLjVEeOAS6yevuLbXw" incoming="_sidccLm1EeOfytKDws6UEg" operation="_g02l0Lm1EeOfytKDws6UEg">
+          <result xmi:id="_prZIsLm1EeOfytKDws6UEg" name="" inPartition="_fbcMoLjVEeOAS6yevuLbXw" outgoing="_qtfe4Lm1EeOfytKDws6UEg" type="_EmdtMrmkEeOfytKDws6UEg"/>
         </node>
-        <node xmi:type="uml:AcceptEventAction" xmi:id="_abEoAbmvEeOfytKDws6UEg" name="t0" inPartition="_fbcMoLjVEeOAS6yevuLbXw" outgoing="_abEA8LmvEeOfytKDws6UEg" incoming="_YRJuILmvEeOfytKDws6UEg">
-          <trigger xmi:id="_abEoArmvEeOfytKDws6UEg" name="t0" event="_abEoALmvEeOfytKDws6UEg"/>
+        <node xmi:type="uml:AcceptEventAction" xmi:id="_sieqkbm1EeOfytKDws6UEg" name="t1" inPartition="_fbcMoLjVEeOAS6yevuLbXw" outgoing="_sidccLm1EeOfytKDws6UEg" incoming="_rCZX4Lm1EeOfytKDws6UEg">
+          <trigger xmi:id="_sieqkrm1EeOfytKDws6UEg" name="t1" event="_sieqkLm1EeOfytKDws6UEg"/>
+        </node>
+        <node xmi:type="uml:AcceptEventAction" xmi:id="__L1rAbm4EeOfytKDws6UEg" name="t0" inPartition="_fbcMoLjVEeOAS6yevuLbXw" outgoing="__L1D8Lm4EeOfytKDws6UEg" incoming="_38psALmuEeOfytKDws6UEg">
+          <trigger xmi:id="__L1rArm4EeOfytKDws6UEg" name="t0" event="__L1rALm4EeOfytKDws6UEg"/>
         </node>
       </ownedBehavior>
     </packagedElement>
@@ -68,25 +76,31 @@
     </packagedElement>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_fheCcLmhEeOfytKDws6UEg" name="com.bitreactive.library.android.maps.model.Position"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_EmcfELmkEeOfytKDws6UEg" name="no.ntnu.item.ttm4115.termassignment">
-      <packagedElement xmi:type="uml:Activity" xmi:id="_O0CjQrjaEeOAS6yevuLbXw" name="TaxiSimulator" classifierBehavior="_EmeUQbmkEeOfytKDws6UEg" group="_EmdGILmkEeOfytKDws6UEg" partition="_EmdGILmkEeOfytKDws6UEg" node="_EmdGIbmkEeOfytKDws6UEg _EmdtMLmkEeOfytKDws6UEg _EmdtM7mkEeOfytKDws6UEg">
+      <packagedElement xmi:type="uml:Activity" xmi:id="_O0CjQrjaEeOAS6yevuLbXw" name="TaxiSimulator" classifierBehavior="_EmeUQbmkEeOfytKDws6UEg" group="_EmdGILmkEeOfytKDws6UEg" partition="_EmdGILmkEeOfytKDws6UEg" node="_EmdGIbmkEeOfytKDws6UEg _EmdtMLmkEeOfytKDws6UEg _EmdtM7mkEeOfytKDws6UEg _Hv6hsrm1EeOfytKDws6UEg _Hv7IwLm1EeOfytKDws6UEg">
         <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_EmeUQbmkEeOfytKDws6UEg" name="TaxiSimulator">
           <region xmi:id="_EmgwgrmkEeOfytKDws6UEg" name="&lt;region>">
             <transition xmi:id="_PxzSUbmmEeOfytKDws6UEg" name="journey / " source="_EmhXkbmkEeOfytKDws6UEg" target="_EmhXkbmkEeOfytKDws6UEg"/>
             <transition xmi:id="_Pxz5YLmmEeOfytKDws6UEg" name="init / " source="_EmhXkLmkEeOfytKDws6UEg" target="_EmhXkbmkEeOfytKDws6UEg"/>
             <transition xmi:id="_Px0gcLmmEeOfytKDws6UEg" name=" / outTaxiUpdate" source="_EmhXkbmkEeOfytKDws6UEg" target="_EmhXkbmkEeOfytKDws6UEg"/>
-            <transition xmi:id="_Px1HgrmmEeOfytKDws6UEg" name=" / terminate" source="_EmhXkbmkEeOfytKDws6UEg" target="_PxzSULmmEeOfytKDws6UEg"/>
+            <transition xmi:id="_X1Ex8Lm2EeOfytKDws6UEg" name="taxiAdd / " source="_EmhXkbmkEeOfytKDws6UEg" target="_EmhXkbmkEeOfytKDws6UEg"/>
+            <transition xmi:id="_X1GAELm2EeOfytKDws6UEg" name="taxiRemove / " source="_EmhXkbmkEeOfytKDws6UEg" target="_EmhXkbmkEeOfytKDws6UEg"/>
+            <transition xmi:id="_x2fscLm2EeOfytKDws6UEg" name=" / close" source="_EmhXkbmkEeOfytKDws6UEg" target="_x2fFYLm2EeOfytKDws6UEg"/>
             <subvertex xmi:type="uml:Pseudostate" xmi:id="_EmhXkLmkEeOfytKDws6UEg" name="&lt;initial>"/>
             <subvertex xmi:type="uml:State" xmi:id="_EmhXkbmkEeOfytKDws6UEg" name="active"/>
-            <subvertex xmi:type="uml:FinalState" xmi:id="_PxzSULmmEeOfytKDws6UEg" name="&lt;final>"/>
+            <subvertex xmi:type="uml:FinalState" xmi:id="_x2fFYLm2EeOfytKDws6UEg" name="&lt;final>"/>
           </region>
         </ownedBehavior>
-        <ownedParameter xmi:id="_ML_h4LmpEeOfytKDws6UEg" name="journey" type="_isLkobjVEeOAS6yevuLbXw" isStream="true"/>
-        <ownedParameter xmi:id="_ML_h4bmpEeOfytKDws6UEg" name="outTaxiUpdate" type="_EmdtMrmkEeOfytKDws6UEg" direction="out" isStream="true"/>
-        <ownedParameter xmi:id="_MMAI8LmpEeOfytKDws6UEg" name="init" type="_EmdtMrmkEeOfytKDws6UEg"/>
-        <group xmi:type="uml:ActivityPartition" xmi:id="_EmdGILmkEeOfytKDws6UEg" name="main" node="_EmdGIbmkEeOfytKDws6UEg _EmdtMLmkEeOfytKDws6UEg _EmdtM7mkEeOfytKDws6UEg"/>
-        <node xmi:type="uml:ActivityParameterNode" xmi:id="_EmdGIbmkEeOfytKDws6UEg" name="journey" inPartition="_EmdGILmkEeOfytKDws6UEg" type="_isLkobjVEeOAS6yevuLbXw" parameter="_ML_h4LmpEeOfytKDws6UEg"/>
-        <node xmi:type="uml:ActivityParameterNode" xmi:id="_EmdtMLmkEeOfytKDws6UEg" name="init" inPartition="_EmdGILmkEeOfytKDws6UEg" type="_EmdtMrmkEeOfytKDws6UEg" parameter="_MMAI8LmpEeOfytKDws6UEg"/>
-        <node xmi:type="uml:ActivityParameterNode" xmi:id="_EmdtM7mkEeOfytKDws6UEg" name="outTaxiUpdate" inPartition="_EmdGILmkEeOfytKDws6UEg" type="_EmdtMrmkEeOfytKDws6UEg" parameter="_ML_h4bmpEeOfytKDws6UEg"/>
+        <ownedParameter xmi:id="_slJcsLm4EeOfytKDws6UEg" name="journey" type="_isLkobjVEeOAS6yevuLbXw" isStream="true"/>
+        <ownedParameter xmi:id="_slJcsbm4EeOfytKDws6UEg" name="outTaxiUpdate" type="_EmdtMrmkEeOfytKDws6UEg" direction="out" isStream="true"/>
+        <ownedParameter xmi:id="_slJcsrm4EeOfytKDws6UEg" name="init"/>
+        <ownedParameter xmi:id="_slKDwLm4EeOfytKDws6UEg" name="taxiAdd" type="_EmdtMrmkEeOfytKDws6UEg" isStream="true"/>
+        <ownedParameter xmi:id="_slKDwbm4EeOfytKDws6UEg" name="taxiRemove" type="_EmdtMrmkEeOfytKDws6UEg" isStream="true"/>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_EmdGILmkEeOfytKDws6UEg" name="main" node="_EmdGIbmkEeOfytKDws6UEg _EmdtMLmkEeOfytKDws6UEg _EmdtM7mkEeOfytKDws6UEg _Hv6hsrm1EeOfytKDws6UEg _Hv7IwLm1EeOfytKDws6UEg"/>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_EmdGIbmkEeOfytKDws6UEg" name="journey" inPartition="_EmdGILmkEeOfytKDws6UEg" type="_isLkobjVEeOAS6yevuLbXw" parameter="_slJcsLm4EeOfytKDws6UEg"/>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_EmdtMLmkEeOfytKDws6UEg" name="init" inPartition="_EmdGILmkEeOfytKDws6UEg" parameter="_slJcsrm4EeOfytKDws6UEg"/>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_EmdtM7mkEeOfytKDws6UEg" name="outTaxiUpdate" inPartition="_EmdGILmkEeOfytKDws6UEg" type="_EmdtMrmkEeOfytKDws6UEg" parameter="_slJcsbm4EeOfytKDws6UEg"/>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_Hv6hsrm1EeOfytKDws6UEg" name="taxiAdd" inPartition="_EmdGILmkEeOfytKDws6UEg" type="_EmdtMrmkEeOfytKDws6UEg" parameter="_slKDwLm4EeOfytKDws6UEg"/>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_Hv7IwLm1EeOfytKDws6UEg" name="taxiRemove" inPartition="_EmdGILmkEeOfytKDws6UEg" type="_EmdtMrmkEeOfytKDws6UEg" parameter="_slKDwbm4EeOfytKDws6UEg"/>
       </packagedElement>
       <profileApplication xmi:id="_EmeUQrmkEeOfytKDws6UEg">
         <eAnnotations xmi:id="_EmgwgLmkEeOfytKDws6UEg" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -99,6 +113,21 @@
     <packagedElement xmi:type="uml:TimeEvent" xmi:id="_abEoALmvEeOfytKDws6UEg" name="t0">
       <when xmi:id="_abFPELmvEeOfytKDws6UEg" name="t0">
         <expr xmi:type="uml:LiteralString" xmi:id="_abFPEbmvEeOfytKDws6UEg" name="t0" value="1000"/>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_sieqkLm1EeOfytKDws6UEg" name="t1">
+      <when xmi:id="_uRqwQLm1EeOfytKDws6UEg" name="t1">
+        <expr xmi:type="uml:LiteralString" xmi:id="_uRqwQbm1EeOfytKDws6UEg" name="t1" value="10000"/>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_9FgYALm1EeOfytKDws6UEg" name="t2">
+      <when xmi:id="__gZtILm1EeOfytKDws6UEg" name="t2">
+        <expr xmi:type="uml:LiteralString" xmi:id="__gZtIbm1EeOfytKDws6UEg" name="t2" value="1000"/>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="__L1rALm4EeOfytKDws6UEg" name="t0">
+      <when xmi:id="__L25ILm4EeOfytKDws6UEg" name="t0">
+        <expr xmi:type="uml:LiteralString" xmi:id="__L25Ibm4EeOfytKDws6UEg" name="t0" value="1000"/>
       </when>
     </packagedElement>
     <profileApplication xmi:id="_fTo7gLjVEeOAS6yevuLbXw">
@@ -121,10 +150,10 @@
   <graphics:Shape xmi:id="_fbczsbjVEeOAS6yevuLbXw" x="126" y="108" width="739" height="433" base_Element="_fbcMoLjVEeOAS6yevuLbXw"/>
   <graphics:Shape xmi:id="_xbqbYLjWEeOAS6yevuLbXw" x="225" y="135" base_Element="_xbli4LjWEeOAS6yevuLbXw"/>
   <arctis:esm xmi:id="_EmgwgbmkEeOfytKDws6UEg" base_StateMachine="_EmeUQbmkEeOfytKDws6UEg"/>
-  <graphics:Shape xmi:id="_EmlB8LmkEeOfytKDws6UEg" x="1" y="36" base_Element="_Emka4LmkEeOfytKDws6UEg" orientation="west"/>
+  <graphics:Shape xmi:id="_EmlB8LmkEeOfytKDws6UEg" x="8" y="171" base_Element="_Emka4LmkEeOfytKDws6UEg" orientation="west"/>
   <graphics:Shape xmi:id="_Emm3IbmkEeOfytKDws6UEg" x="88" y="161" base_Element="_Emm3ILmkEeOfytKDws6UEg" orientation="east"/>
   <graphics:Shape xmi:id="_Emp6cLmkEeOfytKDws6UEg" x="18" y="18" base_Element="_EmlpALmkEeOfytKDws6UEg" orientation="north"/>
-  <graphics:Shape xmi:id="_EmrIkLmkEeOfytKDws6UEg" x="414" y="288" width="361" height="235" base_Element="_EmaC0LmkEeOfytKDws6UEg"/>
+  <graphics:Shape xmi:id="_EmrIkLmkEeOfytKDws6UEg" x="450" y="306" width="361" height="235" base_Element="_EmaC0LmkEeOfytKDws6UEg"/>
   <arctis:location xmi:id="_OBqcULmkEeOfytKDws6UEg" base_Variable="_OBp1QLmkEeOfytKDws6UEg" partition="_fbcMoLjVEeOAS6yevuLbXw"/>
   <graphics:Shape xmi:id="_OBrDYLmkEeOfytKDws6UEg" x="630" y="126" base_Element="_OBp1QLmkEeOfytKDws6UEg"/>
   <arctis:location xmi:id="_QcguILmkEeOfytKDws6UEg" base_Variable="_QcgHELmkEeOfytKDws6UEg" partition="_fbcMoLjVEeOAS6yevuLbXw"/>
@@ -133,9 +162,14 @@
   <arctis:event xmi:id="_PxzSUrmmEeOfytKDws6UEg" base_Transition="_PxzSUbmmEeOfytKDws6UEg" triggers="_EmdGIbmkEeOfytKDws6UEg"/>
   <arctis:event xmi:id="_Pxz5YbmmEeOfytKDws6UEg" base_Transition="_Pxz5YLmmEeOfytKDws6UEg" triggers="_EmdtMLmkEeOfytKDws6UEg"/>
   <arctis:event xmi:id="_Px0gcbmmEeOfytKDws6UEg" base_Transition="_Px0gcLmmEeOfytKDws6UEg" effects="_EmdtM7mkEeOfytKDws6UEg"/>
-  <arctis:event xmi:id="_Px1Hg7mmEeOfytKDws6UEg" base_Transition="_Px1HgrmmEeOfytKDws6UEg"/>
-  <graphics:Shape xmi:id="_38wZsLmuEeOfytKDws6UEg" x="306" y="234" width="199" height="55" base_Element="_38q6ILmuEeOfytKDws6UEg"/>
-  <graphics:Shape xmi:id="_THhh4LmvEeOfytKDws6UEg" x="249" y="261" width="54" height="18" base_Element="_THgTwLmvEeOfytKDws6UEg" orientation="north"/>
-  <graphics:Shape xmi:id="_W9cDgLmvEeOfytKDws6UEg" x="108" y="270" width="145" height="55" base_Element="_W9XLALmvEeOfytKDws6UEg"/>
-  <graphics:Shape xmi:id="_abF2ILmvEeOfytKDws6UEg" x="261" y="351" width="37" height="37" base_Element="_abEoAbmvEeOfytKDws6UEg"/>
+  <graphics:Shape xmi:id="_38wZsLmuEeOfytKDws6UEg" x="216" y="288" width="163" height="55" base_Element="_38q6ILmuEeOfytKDws6UEg"/>
+  <graphics:Shape xmi:id="_THhh4LmvEeOfytKDws6UEg" x="216" y="270" width="54" height="19" base_Element="_THgTwLmvEeOfytKDws6UEg" orientation="north"/>
+  <graphics:Shape xmi:id="_Hv898Lm1EeOfytKDws6UEg" x="10" y="19" base_Element="_Hv8W4Lm1EeOfytKDws6UEg" orientation="west"/>
+  <graphics:Shape xmi:id="_Hv-MELm1EeOfytKDws6UEg" x="5" y="105" base_Element="_Hv9lALm1EeOfytKDws6UEg" orientation="west"/>
+  <graphics:Shape xmi:id="_g09TgLm1EeOfytKDws6UEg" x="90" y="432" width="199" height="55" base_Element="_g01-wLm1EeOfytKDws6UEg"/>
+  <graphics:Shape xmi:id="_sif4sLm1EeOfytKDws6UEg" x="99" y="315" width="37" height="37" base_Element="_sieqkbm1EeOfytKDws6UEg"/>
+  <arctis:event xmi:id="_X1FZALm2EeOfytKDws6UEg" base_Transition="_X1Ex8Lm2EeOfytKDws6UEg" triggers="_Hv6hsrm1EeOfytKDws6UEg"/>
+  <arctis:event xmi:id="_X1GAEbm2EeOfytKDws6UEg" base_Transition="_X1GAELm2EeOfytKDws6UEg" triggers="_Hv7IwLm1EeOfytKDws6UEg"/>
+  <arctis:event xmi:id="_x2fscbm2EeOfytKDws6UEg" base_Transition="_x2fscLm2EeOfytKDws6UEg"/>
+  <graphics:Shape xmi:id="__L25Irm4EeOfytKDws6UEg" x="369" y="351" width="37" height="37" base_Element="__L1rAbm4EeOfytKDws6UEg"/>
 </xmi:XMI>
