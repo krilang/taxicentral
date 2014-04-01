@@ -1,15 +1,19 @@
 package no.ntnu.item.ttm4115.termassignment.taxiclient;
 
+import com.bitreactive.library.android.maps.model.Position;
+
 import no.ntnu.item.arctis.runtime.Block;
 import no.ntnu.item.ttm4115.mqtt.basicmqtt.BasicMQTT.AdvancedConfiguration;
 import no.ntnu.item.ttm4115.termassignment.Status.Status;
 import no.ntnu.item.ttm4115.termassignment.order.Order;
+import no.ntnu.item.ttm4115.termassignment.taximapstatus.taxiMapStatus;
 
 public class TaxiClient extends Block {
 
 	public no.ntnu.item.ttm4115.termassignment.order.Order current_order;
 	public String taxi_id;
 	public boolean on_duty;
+	public com.bitreactive.library.android.maps.model.Position position;
 	
 	public boolean onDuty() {
 		
@@ -54,6 +58,7 @@ public class TaxiClient extends Block {
 		current_order.topic = "central";
 		current_order.order_status = Status.TAXI_DUTY;
 		current_order.on_duty = duty_status;
+
 	}
 
 	public boolean unavailable() {
@@ -226,5 +231,22 @@ public class TaxiClient extends Block {
 		}
 	
 		return  current_order.msg_to_taxi.length() > 0;
+	}
+
+	public boolean isDutyUpdate() {
+		if (current_order == null) { return false; }
+		return current_order.order_status == Status.TAXI_DUTY;
+	}
+
+	public boolean goesOnDuty() {
+		return current_order.on_duty;
+	}
+
+	public taxiMapStatus taxiOnMap() {
+		return new taxiMapStatus(taxi_id, position);
+	}
+
+	public void setPositionStatic() {
+		position = new Position(63430549, 10394967);
 	}
 }
