@@ -52,9 +52,7 @@ public class TaxiDispatcher extends Block {
 
 	private Order performTaxiAbortAction(Order object) {
 		
-		if(! (available_taxies.contains(object))) {
-			available_taxies.add(object.taxi_id);
-		}
+		setAsAvailable(object);
 		
 		return performReceivedUserOrder(object,true);
 	}
@@ -77,11 +75,15 @@ public class TaxiDispatcher extends Block {
 				
 			} else {
 				object.order_status = Status.CENTRAL_TAXI_ORDER_CANCELED;
+				object.msg_to_taxi = "The order was canceled. You are set as available.";
 				object.topic = "t"+object.taxi_id;
+				
+				setAsAvailable(object);
 			}
 			return object;
 		}
 		else {
+			setAsAvailable(object);
 			return performReceivedUserOrder(object, false);
 		}
 		
@@ -220,6 +222,7 @@ public class TaxiDispatcher extends Block {
 		if(pos != -1) {
 			queued_orders.remove(pos);
 		}
+		
 		object.order_status = Status.CENTRAL_USER_CANCEL_CONF;
 		object.topic = "u"+object.user_id;
 		object.msg_to_central = "User "+object.user_id+" canceled order "+object.order_id+" at "+object.address;
@@ -238,5 +241,11 @@ public class TaxiDispatcher extends Block {
 
 	public String getOrderMessage(Order object) {		
 		return object.msg_to_central;
+	}
+	
+	public void setAsAvailable(Order object) {
+		if(! (available_taxies.contains(object))) {
+			available_taxies.add(object.taxi_id);
+		}
 	}
 }

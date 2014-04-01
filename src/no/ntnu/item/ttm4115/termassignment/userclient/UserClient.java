@@ -88,4 +88,16 @@ public class UserClient extends Block {
 	public String orderExists() {
 		return current_order.msg_to_user = "Please cancel your previous order to make a new request.";
 	}
+
+	public boolean taxiCanceled() {
+		if(current_order == null) {
+			return false;
+		}
+		if (current_order.order_status == Status.TAXI_USER_ABORT) {
+			current_order.topic = "central";
+			current_order.msg_to_user = "Your order was aborted, but is being procesed at the central.";
+			return true;
+		}
+		return false;
+	}
 }

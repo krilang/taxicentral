@@ -66,6 +66,16 @@ public class TaxiClient extends Block {
 		if (!isOnDutyCheck()) {
 			return false;
 		}
+		if (current_order != null && current_order.order_status == Status.CENTRAL_TAXI_OFFER) {
+			current_order.order_status = Status.TAXI_ANSWER;
+			current_order.topic = "central";
+			current_order.answer = false;
+			current_order.reject_list.add(taxi_id);
+			
+			current_order.msg_to_taxi = "You declined the tour.";
+			
+			return true;
+		}
 		
 		return setAvailableStatus(false);
 	}
@@ -74,8 +84,9 @@ public class TaxiClient extends Block {
 		
 		if(isOnTour()) {
 			current_order.order_status = Status.TAXI_USER_ABORT;
-			current_order.topic = "central";
+			current_order.topic = "u"+current_order.user_id;
 			current_order.msg_to_taxi = "Your tour has been aborted. You are set as available at the taxicentral.";
+			current_order.reject_list.add(taxi_id);
 			return true;
 		}
 		if (!isOnDutyCheck()) {
@@ -88,30 +99,21 @@ public class TaxiClient extends Block {
 		setAvailableStatus(true);
 		return true;
 	}
-	
+
 	public boolean setAvailableStatus(boolean bool) {
-		if (current_order != null && current_order.order_status == Status.CENTRAL_TAXI_OFFER && !bool) {
-			current_order.order_status = Status.TAXI_ANSWER;
-			current_order.topic = "central";
-			current_order.answer = false;
-			current_order.reject_list.add(taxi_id);
-			
-			return true;
+
+		if(initialReceivedOfferCheck()) {
+			return false;
 		}
-		else {
-			
-			if(initialReceivedOfferCheck()) {
-				return false;
-			}
-			
-			current_order = new Order();
-			current_order.taxi_id = taxi_id;
-			current_order.topic = "central";
-			current_order.order_status = Status.TAXI_AVAILABLE;
-			current_order.available = bool;
-			
-			return true;
-		}
+
+		current_order = new Order();
+		current_order.taxi_id = taxi_id;
+		current_order.topic = "central";
+		current_order.order_status = Status.TAXI_AVAILABLE;
+		current_order.available = bool;
+
+		return true;
+
 	}
 
 	public boolean confirm() {
@@ -214,7 +216,10 @@ public class TaxiClient extends Block {
 	}
 
 	public boolean hasMsgToTaxi() {
-		return current_order.msg_to_taxi.length() > 0;
-	}
+		if (current_order == null || current_order.msg_to_taxi == null) {
+			return false;
+		}
 	
+		return  current_order.msg_to_taxi.length() > 0;
+	}
 }
