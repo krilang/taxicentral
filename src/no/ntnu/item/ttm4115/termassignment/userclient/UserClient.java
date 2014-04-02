@@ -73,6 +73,10 @@ public class UserClient extends Block {
 		case CENTRAL_USER_ORDER_Q:
 			return current_order.msg_to_user;
 			
+		case CENTRAL_TOUR_ENDED_CONF:
+			current_order = null;
+			return "Thank you for using the taxi service!";
+			
 		case USER_ORDER:
 			return "You already have an pending request, cancel it to create a new";
 		
@@ -97,16 +101,25 @@ public class UserClient extends Block {
 	public String orderExists() {
 		return current_order.msg_to_user = "Please cancel your previous order to make a new request.";
 	}
-
-	public boolean taxiCanceled() {
+	
+	public boolean objectRecieved() {
 		if(current_order == null) {
 			return false;
 		}
-		if (current_order.order_status == Status.TAXI_USER_ABORT) {
+		
+		switch (current_order.order_status) {
+		
+		case TAXI_USER_ABORT:
 			current_order.topic = "central";
 			current_order.msg_to_user = "Your order was aborted, but is being procesed at the central.";
 			return true;
+			
+		case TOUR_FINISHED:
+			current_order.topic = "central";
+			current_order.msg_to_taxi = "You was picked up, and the tour has ended.";
+			
+		default:
+			return false;
 		}
-		return false;
 	}
 }

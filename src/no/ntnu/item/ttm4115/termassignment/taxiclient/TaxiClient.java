@@ -113,6 +113,7 @@ public class TaxiClient extends Block {
 
 		current_order = new Order();
 		current_order.taxi_id = taxi_id;
+		current_order.taxi_position = position;
 		current_order.topic = "central";
 		current_order.order_status = Status.TAXI_AVAILABLE;
 		current_order.available = bool;
@@ -197,6 +198,7 @@ public class TaxiClient extends Block {
 			current_order.topic = "u"+current_order.user_id;
 			current_order.msg_to_user = "Your order has been confirmed.";
 			current_order.msg_to_taxi = "Your tour with User "+current_order.user_id+" has been confirmed. Pick up at "+current_order.address;
+			current_order.taxi_position = position;
 			return true;
 			
 		case TAXI_USER_COM:
@@ -248,5 +250,19 @@ public class TaxiClient extends Block {
 
 	public void setPositionStatic() {
 		position = new Position(63430549, 10394967);
+	}
+
+	public void setPosByMapStatus(taxiMapStatus taximapstatus) {
+		position = taximapstatus.position;
+		
+		Order o = new Order();
+		o.order_status = Status.TOUR_FINISHED;
+		o.topic = "u"+current_order.user_id;
+		o.taxi_position = position;
+		o.taxi_id = current_order.taxi_id;
+		o.user_id = current_order.user_id;
+		o.msg_to_taxi = "The tour was finished. You are still set as UNAVAILABLE at the taxi central";
+		
+		current_order = o;
 	}
 }

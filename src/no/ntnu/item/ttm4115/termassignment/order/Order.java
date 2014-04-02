@@ -2,6 +2,8 @@ package no.ntnu.item.ttm4115.termassignment.order;
 
 import java.util.ArrayList;
 
+import com.bitreactive.library.android.maps.model.Position;
+
 import no.ntnu.item.ttm4115.termassignment.Status.Status;
 
 public class Order {
@@ -21,6 +23,7 @@ public class Order {
 	
 	// Taxi related
 	public String taxi_id;
+	public Position taxi_position;
 	public boolean on_duty; // Update to central
 	public boolean available; // Update to central
 	public boolean answer; // Answer to central

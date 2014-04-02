@@ -39,6 +39,8 @@ public class TaxiDispatcher extends Block {
 			
 		case TAXI_USER_ABORT:
 			return performTaxiAbortAction(object);
+		case TOUR_FINISHED:
+			return performTourFinishedAction(object);
 			
 		default:
 			System.out.println(object.order_status.toString());
@@ -48,6 +50,15 @@ public class TaxiDispatcher extends Block {
 		}
 		
 		
+	}
+
+	private Order performTourFinishedAction(Order object) {
+		
+		object.order_status = Status.CENTRAL_TOUR_ENDED_CONF;
+		object.topic = "u"+object.user_id;
+		object.msg_to_central = "Order "+object.order_id+" has been completed.";
+		
+		return object;
 	}
 
 	private Order performTaxiAbortAction(Order object) {
