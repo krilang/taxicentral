@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arctis="http:///schemas/arctis/_WFTqUHjGEdyxtoUMycQn9Q/10" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:graphics="http:///schemas/graphics/_gd9EwIuAEdytfOWtpACIqw/6" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/arctis/_WFTqUHjGEdyxtoUMycQn9Q/10 pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q http:///schemas/graphics/_gd9EwIuAEdytfOWtpACIqw/6 pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_geG1wIuAEdytfOWtpACIqw">
+  <uml:Package xmi:id="_LUwu8LpZEeO-kKzlx47Sag" name="no.ntnu.item.ttm4115.termassignment">
+    <packagedElement xmi:type="uml:Activity" xmi:id="_LUwu87pZEeO-kKzlx47Sag" name="RouteDistance" classifierBehavior="_LXR3cLpZEeO-kKzlx47Sag" group="_LUxWALpZEeO-kKzlx47Sag" partition="_LUxWALpZEeO-kKzlx47Sag" node="_ZDESALpZEeO-kKzlx47Sag _cU52MLpZEeO-kKzlx47Sag _ot9dkLpZEeO-kKzlx47Sag _KdB44LpdEeO-kKzlx47Sag">
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_LXR3cLpZEeO-kKzlx47Sag" name="RouteDistance">
+        <region xmi:id="_LXR3crpZEeO-kKzlx47Sag" name="&lt;region>">
+          <transition xmi:id="_Lzr34bpfEeO-kKzlx47Sag" name="journey / " source="_LzrQ0LpfEeO-kKzlx47Sag" target="_Lzr34LpfEeO-kKzlx47Sag"/>
+          <transition xmi:id="_Lzse8bpfEeO-kKzlx47Sag" name=" / distanceAndTaxiId" source="_Lzr34LpfEeO-kKzlx47Sag" target="_LztGALpfEeO-kKzlx47Sag"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_LzrQ0LpfEeO-kKzlx47Sag" name="&lt;initial>"/>
+          <subvertex xmi:type="uml:State" xmi:id="_Lzr34LpfEeO-kKzlx47Sag" name="active"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_LztGALpfEeO-kKzlx47Sag" name="&lt;final>"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_ot-rsLpZEeO-kKzlx47Sag" name="routeToDistance"/>
+      <ownedOperation xmi:id="_5VxH4LpaEeO-kKzlx47Sag" name="findDistance"/>
+      <ownedParameter xmi:id="_cU-usLpZEeO-kKzlx47Sag" name="journey" type="_ZDFgI7pZEeO-kKzlx47Sag"/>
+      <ownedParameter xmi:id="_KdHYcLpdEeO-kKzlx47Sag" name="distanceAndTaxiId" type="_m500MLpeEeO-kKzlx47Sag" direction="out"/>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_p-TEELpZEeO-kKzlx47Sag" name="e0" inPartition="_LUxWALpZEeO-kKzlx47Sag" source="_ZFU70LpZEeO-kKzlx47Sag" target="_5Vxu8LpaEeO-kKzlx47Sag"/>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_qQJpELpZEeO-kKzlx47Sag" name="e1" inPartition="_LUxWALpZEeO-kKzlx47Sag" source="_cU52MLpZEeO-kKzlx47Sag" target="_ZFUUwLpZEeO-kKzlx47Sag"/>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_LerjILpdEeO-kKzlx47Sag" name="e2" inPartition="_LUxWALpZEeO-kKzlx47Sag" source="_CZxNELpdEeO-kKzlx47Sag" target="_KdB44LpdEeO-kKzlx47Sag"/>
+      <group xmi:type="uml:ActivityPartition" xmi:id="_LUxWALpZEeO-kKzlx47Sag" name="main" node="_ZDESALpZEeO-kKzlx47Sag _ZFUUwLpZEeO-kKzlx47Sag _ZFU70LpZEeO-kKzlx47Sag _ZFWJ8LpZEeO-kKzlx47Sag _ZFWxALpZEeO-kKzlx47Sag _cU52MLpZEeO-kKzlx47Sag _ot9dkLpZEeO-kKzlx47Sag _5Vxu8LpaEeO-kKzlx47Sag _CZxNELpdEeO-kKzlx47Sag _KdB44LpdEeO-kKzlx47Sag" edge="_p-TEELpZEeO-kKzlx47Sag _qQJpELpZEeO-kKzlx47Sag _LerjILpdEeO-kKzlx47Sag"/>
+      <node xmi:type="uml:CallBehaviorAction" xmi:id="_ZDESALpZEeO-kKzlx47Sag" name="c0" inPartition="_LUxWALpZEeO-kKzlx47Sag" behavior="_UoBM0aPNEeOl8vvkd4XquA">
+        <argument xmi:id="_ZFUUwLpZEeO-kKzlx47Sag" name="journey" inPartition="_LUxWALpZEeO-kKzlx47Sag" incoming="_qQJpELpZEeO-kKzlx47Sag" type="_ZDFgI7pZEeO-kKzlx47Sag"/>
+        <result xmi:id="_ZFU70LpZEeO-kKzlx47Sag" name="route" inPartition="_LUxWALpZEeO-kKzlx47Sag" outgoing="_p-TEELpZEeO-kKzlx47Sag" type="_ZDGHMLpZEeO-kKzlx47Sag"/>
+        <result xmi:id="_ZFWJ8LpZEeO-kKzlx47Sag" name="remoteError" inPartition="_LUxWALpZEeO-kKzlx47Sag" type="_ZDGHM7pZEeO-kKzlx47Sag"/>
+        <result xmi:id="_ZFWxALpZEeO-kKzlx47Sag" name="localError" inPartition="_LUxWALpZEeO-kKzlx47Sag"/>
+      </node>
+      <node xmi:type="uml:ActivityParameterNode" xmi:id="_cU52MLpZEeO-kKzlx47Sag" name="journey" inPartition="_LUxWALpZEeO-kKzlx47Sag" outgoing="_qQJpELpZEeO-kKzlx47Sag" type="_ZDFgI7pZEeO-kKzlx47Sag" parameter="_cU-usLpZEeO-kKzlx47Sag"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_ot9dkLpZEeO-kKzlx47Sag" name="o0" inPartition="_LUxWALpZEeO-kKzlx47Sag" operation="_ot-rsLpZEeO-kKzlx47Sag">
+        <argument xmi:id="_5Vxu8LpaEeO-kKzlx47Sag" name="r" inPartition="_LUxWALpZEeO-kKzlx47Sag" incoming="_p-TEELpZEeO-kKzlx47Sag" type="_ZDGHMLpZEeO-kKzlx47Sag"/>
+        <result xmi:id="_CZxNELpdEeO-kKzlx47Sag" name="" inPartition="_LUxWALpZEeO-kKzlx47Sag" outgoing="_LerjILpdEeO-kKzlx47Sag" type="_m500MLpeEeO-kKzlx47Sag"/>
+      </node>
+      <node xmi:type="uml:ActivityParameterNode" xmi:id="_KdB44LpdEeO-kKzlx47Sag" name="distanceAndTaxiId" inPartition="_LUxWALpZEeO-kKzlx47Sag" incoming="_LerjILpdEeO-kKzlx47Sag" type="_m500MLpeEeO-kKzlx47Sag" parameter="_KdHYcLpdEeO-kKzlx47Sag"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_ZDFgILpZEeO-kKzlx47Sag" name="no.ntnu.item.ttm4115.simulation">
+      <packagedElement xmi:type="uml:Activity" xmi:id="_UoBM0aPNEeOl8vvkd4XquA" name="Route Planner" classifierBehavior="_ZDGuQLpZEeO-kKzlx47Sag" group="_ZDFgIrpZEeO-kKzlx47Sag" partition="_ZDFgIrpZEeO-kKzlx47Sag" node="_ZDFgJLpZEeO-kKzlx47Sag _ZDGHMbpZEeO-kKzlx47Sag _ZDGHNLpZEeO-kKzlx47Sag _ZDGHNrpZEeO-kKzlx47Sag">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_ZDGuQLpZEeO-kKzlx47Sag" name="Route Planner">
+          <region xmi:id="_ZFR4gbpZEeO-kKzlx47Sag" name="&lt;region>">
+            <transition xmi:id="_ZFR4hbpZEeO-kKzlx47Sag" name="journey / " source="_ZFR4grpZEeO-kKzlx47Sag" target="_ZFR4g7pZEeO-kKzlx47Sag"/>
+            <transition xmi:id="_ZFSfkbpZEeO-kKzlx47Sag" name=" / route" source="_ZFR4g7pZEeO-kKzlx47Sag" target="_ZFR4hLpZEeO-kKzlx47Sag"/>
+            <transition xmi:id="_ZFTGoLpZEeO-kKzlx47Sag" name=" / remoteError" source="_ZFR4g7pZEeO-kKzlx47Sag" target="_ZFR4hLpZEeO-kKzlx47Sag"/>
+            <transition xmi:id="_ZFTtsLpZEeO-kKzlx47Sag" name=" / localError" source="_ZFR4g7pZEeO-kKzlx47Sag" target="_ZFR4hLpZEeO-kKzlx47Sag"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_ZFR4grpZEeO-kKzlx47Sag" name="&lt;initial>"/>
+            <subvertex xmi:type="uml:State" xmi:id="_ZFR4g7pZEeO-kKzlx47Sag" name="active"/>
+            <subvertex xmi:type="uml:FinalState" xmi:id="_ZFR4hLpZEeO-kKzlx47Sag" name="&lt;final>"/>
+          </region>
+        </ownedBehavior>
+        <ownedParameter xmi:id="_ZDFgJbpZEeO-kKzlx47Sag" name="journey" type="_ZDFgI7pZEeO-kKzlx47Sag"/>
+        <ownedParameter xmi:id="_ZDGHMrpZEeO-kKzlx47Sag" name="route" type="_ZDGHMLpZEeO-kKzlx47Sag" direction="out"/>
+        <ownedParameter xmi:id="_ZDGHNbpZEeO-kKzlx47Sag" name="remoteError" type="_ZDGHM7pZEeO-kKzlx47Sag" direction="out"/>
+        <ownedParameter xmi:id="_ZDGHN7pZEeO-kKzlx47Sag" name="localError" direction="out"/>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_ZDFgIrpZEeO-kKzlx47Sag" name="main" node="_ZDFgJLpZEeO-kKzlx47Sag _ZDGHMbpZEeO-kKzlx47Sag _ZDGHNLpZEeO-kKzlx47Sag _ZDGHNrpZEeO-kKzlx47Sag"/>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_ZDFgJLpZEeO-kKzlx47Sag" name="journey" inPartition="_ZDFgIrpZEeO-kKzlx47Sag" type="_ZDFgI7pZEeO-kKzlx47Sag" parameter="_ZDFgJbpZEeO-kKzlx47Sag"/>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_ZDGHMbpZEeO-kKzlx47Sag" name="route" inPartition="_ZDFgIrpZEeO-kKzlx47Sag" type="_ZDGHMLpZEeO-kKzlx47Sag" parameter="_ZDGHMrpZEeO-kKzlx47Sag"/>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_ZDGHNLpZEeO-kKzlx47Sag" name="remoteError" inPartition="_ZDFgIrpZEeO-kKzlx47Sag" type="_ZDGHM7pZEeO-kKzlx47Sag" parameter="_ZDGHNbpZEeO-kKzlx47Sag"/>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_ZDGHNrpZEeO-kKzlx47Sag" name="localError" inPartition="_ZDFgIrpZEeO-kKzlx47Sag" parameter="_ZDGHN7pZEeO-kKzlx47Sag"/>
+      </packagedElement>
+      <profileApplication xmi:id="_ZDGuQbpZEeO-kKzlx47Sag">
+        <eAnnotations xmi:id="_ZDGuQrpZEeO-kKzlx47Sag" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q"/>
+        </eAnnotations>
+        <appliedProfile href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_rE77YK4iEduZSuTiwKs5Lw"/>
+      </profileApplication>
+    </packagedElement>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ZDFgI7pZEeO-kKzlx47Sag" name="no.ntnu.item.ttm4115.simulation.routeplanner.Journey"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ZDGHMLpZEeO-kKzlx47Sag" name="no.ntnu.item.ttm4115.simulation.routeplanner.Route"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ZDGHM7pZEeO-kKzlx47Sag" name="java.lang.String"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_m500MLpeEeO-kKzlx47Sag" name="no.ntnu.item.ttm4115.termassignment.distanceAndId.DistanceAndId"/>
+    <profileApplication xmi:id="_LUwu8bpZEeO-kKzlx47Sag">
+      <eAnnotations xmi:id="_LUwu8rpZEeO-kKzlx47Sag" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_rE77YK4iEduZSuTiwKs5Lw"/>
+    </profileApplication>
+    <profileApplication xmi:id="_LUx9ELpZEeO-kKzlx47Sag">
+      <eAnnotations xmi:id="_LUx9EbpZEeO-kKzlx47Sag" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_geG1wIuAEdytfOWtpACIqw"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_UEANMUVlEduH9aQE_pc66w"/>
+    </profileApplication>
+  </uml:Package>
+  <graphics:Shape xmi:id="_LXQpULpZEeO-kKzlx47Sag" x="180" y="55" width="613" height="55" base_Element="_LUwu87pZEeO-kKzlx47Sag"/>
+  <graphics:Shape xmi:id="_LXRQYLpZEeO-kKzlx47Sag" x="180" y="108" width="613" height="415" base_Element="_LUxWALpZEeO-kKzlx47Sag"/>
+  <arctis:esm xmi:id="_LXR3cbpZEeO-kKzlx47Sag" base_StateMachine="_LXR3cLpZEeO-kKzlx47Sag"/>
+  <arctis:esm xmi:id="_ZFR4gLpZEeO-kKzlx47Sag" base_StateMachine="_ZDGuQLpZEeO-kKzlx47Sag"/>
+  <arctis:event xmi:id="_ZFSfkLpZEeO-kKzlx47Sag" base_Transition="_ZFR4hbpZEeO-kKzlx47Sag" triggers="_ZDFgJLpZEeO-kKzlx47Sag"/>
+  <arctis:event xmi:id="_ZFSfkrpZEeO-kKzlx47Sag" base_Transition="_ZFSfkbpZEeO-kKzlx47Sag" effects="_ZDGHMbpZEeO-kKzlx47Sag"/>
+  <arctis:event xmi:id="_ZFTGobpZEeO-kKzlx47Sag" base_Transition="_ZFTGoLpZEeO-kKzlx47Sag" effects="_ZDGHNLpZEeO-kKzlx47Sag"/>
+  <arctis:event xmi:id="_ZFTtsbpZEeO-kKzlx47Sag" base_Transition="_ZFTtsLpZEeO-kKzlx47Sag" effects="_ZDGHNrpZEeO-kKzlx47Sag"/>
+  <graphics:Shape xmi:id="_ZFXYELpZEeO-kKzlx47Sag" x="18" y="18" base_Element="_ZFU70LpZEeO-kKzlx47Sag" orientation="south"/>
+  <graphics:Shape xmi:id="_ZFXYEbpZEeO-kKzlx47Sag" x="125" y="88" base_Element="_ZFWJ8LpZEeO-kKzlx47Sag" orientation="south"/>
+  <graphics:Shape xmi:id="_ZFX_ILpZEeO-kKzlx47Sag" x="239" y="79" base_Element="_ZFWxALpZEeO-kKzlx47Sag" orientation="south"/>
+  <graphics:Shape xmi:id="_ZFX_IbpZEeO-kKzlx47Sag" x="18" y="18" base_Element="_ZFUUwLpZEeO-kKzlx47Sag" orientation="north"/>
+  <graphics:Shape xmi:id="_ZFYmMLpZEeO-kKzlx47Sag" x="216" y="216" width="253" height="108" base_Element="_ZDESALpZEeO-kKzlx47Sag"/>
+  <graphics:Shape xmi:id="_cVAj4LpZEeO-kKzlx47Sag" x="252" y="162" base_Element="_cU52MLpZEeO-kKzlx47Sag" orientation="north"/>
+  <graphics:Shape xmi:id="_ouK48LpZEeO-kKzlx47Sag" x="180" y="360" width="163" height="55" base_Element="_ot9dkLpZEeO-kKzlx47Sag"/>
+  <graphics:Shape xmi:id="_KdLC0LpdEeO-kKzlx47Sag" x="252" y="468" base_Element="_KdB44LpdEeO-kKzlx47Sag"/>
+  <arctis:event xmi:id="_Lzse8LpfEeO-kKzlx47Sag" base_Transition="_Lzr34bpfEeO-kKzlx47Sag" triggers="_cU52MLpZEeO-kKzlx47Sag"/>
+  <arctis:event xmi:id="_LztGAbpfEeO-kKzlx47Sag" base_Transition="_Lzse8bpfEeO-kKzlx47Sag" effects="_KdB44LpdEeO-kKzlx47Sag"/>
+</xmi:XMI>
