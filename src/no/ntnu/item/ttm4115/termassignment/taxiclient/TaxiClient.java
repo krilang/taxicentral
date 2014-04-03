@@ -91,6 +91,7 @@ public class TaxiClient extends Block {
 		if(isOnTour()) {
 			current_order.order_status = Status.TAXI_USER_ABORT;
 			current_order.topic = "u"+current_order.user_id;
+			current_order.taxi_position = position;
 			current_order.msg_to_taxi = "Your tour has been aborted. You are set as available at the taxicentral.";
 			current_order.reject_list.add(taxi_id);
 			return true;
@@ -255,9 +256,6 @@ public class TaxiClient extends Block {
 	public void setPosByMapStatus(taxiMapStatus taximapstatus) {
 		
 		position = taximapstatus.position;
-		
-		System.out.println("Latitude: "+position.getLatitude());
-		System.out.println("Longitude: "+position.getLongitude());
 		
 		Order o = new Order();
 		o.order_status = Status.TOUR_FINISHED;

@@ -12,5 +12,9 @@ public class TaxiPosition {
 		this.taxi_id = taxi_id;
 		this.taxi_position = taxi_position;
 	}
+	
+	public String positionAsString() {
+		return ""+taxi_position.getLatitude()/1000000+","+taxi_position.getLongitude()/1000000;
+	}
 
 }

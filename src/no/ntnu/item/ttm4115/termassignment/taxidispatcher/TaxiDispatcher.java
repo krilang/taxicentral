@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import no.ntnu.item.arctis.runtime.Block;
 import no.ntnu.item.ttm4115.termassignment.Status.Status;
+import no.ntnu.item.ttm4115.termassignment.TaxiPosition.TaxiPosition;
 import no.ntnu.item.ttm4115.termassignment.order.Order;
 
 public class TaxiDispatcher extends Block {
@@ -13,10 +14,10 @@ public class TaxiDispatcher extends Block {
 	public ArrayList<Order> queued_orders = new ArrayList<Order>();
 	public ArrayList<Integer> canceled_orders = new ArrayList<Integer>();
 
-	public java.util.ArrayList<String> available_taxies;
+	public java.util.ArrayList<TaxiPosition> available_taxies;
 	
 	public void initialize() {
-		available_taxies = new ArrayList<String>();
+		available_taxies = new ArrayList<TaxiPosition>();
 	}
 
 	public Order objectRecieved(Order object) {
@@ -58,9 +59,6 @@ public class TaxiDispatcher extends Block {
 		object.order_status = Status.CENTRAL_TOUR_ENDED_CONF;
 		object.topic = "u"+object.user_id;
 		object.msg_to_central = "Order "+object.order_id+" has been completed.";
-		
-		
-		//TODO Update taxi position
 		
 		return object;
 	}
@@ -125,19 +123,19 @@ public class TaxiDispatcher extends Block {
 		String central_msg = " is still " + ((object.available) ? "AVAILABLE." : "UNAVAILABLE.");
 		
 		if(object.available) {
-			if(!available_taxies.contains(current_taxi_id)) {
+			if(! availableTaxiesContains(current_taxi_id)) {
 				
 				if(availableOrderMatch(object)) {
 					return object;
 				}
 				object.incomming_taxi = false;
 				
-				available_taxies.add(current_taxi_id);
+				available_taxies.add(new TaxiPosition(current_taxi_id, object.taxi_position));
 				msg = "You are now registred as AVAILABLE.";
 				central_msg = " is now AVAILABLE.";
 			}
-		}else if (available_taxies.contains(current_taxi_id)) {
-			available_taxies.remove(current_taxi_id);
+		}else if (availableTaxiesContains(current_taxi_id)) {
+			removeFromAvailableTaxies(current_taxi_id);
 			msg = "You are now registred as UNAVAILABLE.";
 			central_msg = " is now UNAVAILABLE.";
 		}
@@ -191,7 +189,7 @@ public class TaxiDispatcher extends Block {
 		}else if (onduty_taxies.contains(current_taxi_id)) {
 			
 			onduty_taxies.remove(current_taxi_id);
-			available_taxies.remove(current_taxi_id);
+			removeFromAvailableTaxies(current_taxi_id);
 			
 			msg = "You are now registred OFF DUTY.";
 			central_msg = " is now OFF DUTY.";
@@ -239,9 +237,9 @@ public class TaxiDispatcher extends Block {
 		
 		for(int i = 0; i < available_taxies.size(); i++) {
 			
-			if(! (new_order_object.reject_list.contains(available_taxies.get(i)))) {
+			if(! (new_order_object.reject_list.contains(available_taxies.get(i).taxi_id))) {
 				new_order_object.order_status = Status.CENTRAL_TAXI_OFFER;
-				new_order_object.taxi_id = available_taxies.remove(i);
+				new_order_object.taxi_id = available_taxies.remove(i).taxi_id;
 				new_order_object.topic = "t"+new_order_object.taxi_id;
 				return true;
 			}
@@ -286,8 +284,27 @@ public class TaxiDispatcher extends Block {
 			return;
 		}
 		
-		if(! (available_taxies.contains(object.taxi_id))) {
-			available_taxies.add(object.taxi_id);
+		if(!availableTaxiesContains(object.taxi_id)) {
+			available_taxies.add(new TaxiPosition(object.taxi_id,object.taxi_position));
 		}
+	}
+	
+	private void removeFromAvailableTaxies(String taxi_id) {
+		
+		for (TaxiPosition taxiMap : available_taxies) {
+			if (taxiMap.taxi_id == taxi_id) {
+				available_taxies.remove(taxiMap);
+				break;
+			}
+		}
+	}
+	
+	private boolean availableTaxiesContains(String taxi_id) {
+		for (TaxiPosition taxiMap : available_taxies) {
+			if(taxiMap.taxi_id == taxi_id) {
+				return true;
+			}			
+		}
+		return false;
 	}
 }

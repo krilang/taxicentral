@@ -31,7 +31,7 @@
       <edge xmi:type="uml:ObjectFlow" xmi:id="_emRloLgZEeOSv4m9iZWmrA" name="e2" inPartition="_8Z19ELWdEeOv-KguLGS39w" source="_emSzwLgZEeOSv4m9iZWmrA" target="_6SecYLWnEeOv-KguLGS39w"/>
       <edge xmi:type="uml:ObjectFlow" xmi:id="_gSvugLgZEeOSv4m9iZWmrA" name="e3" inPartition="_8Z19ELWdEeOv-KguLGS39w" source="_emSzwLgZEeOSv4m9iZWmrA" target="_WF3JILW7EeOv-KguLGS39w"/>
       <edge xmi:type="uml:ObjectFlow" xmi:id="_gtOEALgZEeOSv4m9iZWmrA" name="e7" inPartition="_8Z19ELWdEeOv-KguLGS39w" source="_Y_JqcbW7EeOv-KguLGS39w" target="_1a_3cLWkEeOv-KguLGS39w"/>
-      <variable xmi:id="_0No68LsfEeOwisBCcnD2pA" name="available_taxies" type="_sWk4ELsfEeOwisBCcnD2pA"/>
+      <variable xmi:id="_0No68LsfEeOwisBCcnD2pA" name="available_taxies" type="_5uVKELskEeOwisBCcnD2pA"/>
       <group xmi:type="uml:ActivityPartition" xmi:id="_8Z19ELWdEeOv-KguLGS39w" name="main" node="_ArZR0LWeEeOv-KguLGS39w _FFZX8LWeEeOv-KguLGS39w _RohSkLWkEeOv-KguLGS39w _1aoEALWkEeOv-KguLGS39w _1a_3cLWkEeOv-KguLGS39w _6SecYLWnEeOv-KguLGS39w _wJ3_QLWoEeOv-KguLGS39w _mnjFsLWuEeOv-KguLGS39w _e-QjoLWvEeOv-KguLGS39w _7J4q4LW6EeOv-KguLGS39w _7KDC8LW6EeOv-KguLGS39w _7KE4ILW6EeOv-KguLGS39w _7KHUYLW6EeOv-KguLGS39w _BRlo8LW7EeOv-KguLGS39w _WF3JILW7EeOv-KguLGS39w _WF0F0LW7EeOv-KguLGS39w _Y_JqcbW7EeOv-KguLGS39w _emSzwLgZEeOSv4m9iZWmrA _P0RtkLphEeOOXPXKCINaTw _P5asQLphEeOOXPXKCINaTw _P5b6YLphEeOOXPXKCINaTw" edge="_GEonYLWeEeOv-KguLGS39w _e-OucLWvEeOv-KguLGS39w _FdJf4LW6EeOv-KguLGS39w _LPT2ULW7EeOv-KguLGS39w _MM3DsLW7EeOv-KguLGS39w _cXQOsLW7EeOv-KguLGS39w _kc5OALgJEeOSv4m9iZWmrA _emRloLgZEeOSv4m9iZWmrA _gSvugLgZEeOSv4m9iZWmrA _gtOEALgZEeOSv4m9iZWmrA"/>
       <node xmi:type="uml:ActivityParameterNode" xmi:id="_ArZR0LWeEeOv-KguLGS39w" name="init" inPartition="_8Z19ELWdEeOv-KguLGS39w" outgoing="_GEonYLWeEeOv-KguLGS39w" parameter="_ArhNoLWeEeOv-KguLGS39w"/>
       <node xmi:type="uml:CallOperationAction" xmi:id="_FFZX8LWeEeOv-KguLGS39w" name="o0" inPartition="_8Z19ELWdEeOv-KguLGS39w" outgoing="_FdJf4LW6EeOv-KguLGS39w" incoming="_GEonYLWeEeOv-KguLGS39w" operation="_FFbNILWeEeOv-KguLGS39w"/>
@@ -136,6 +136,7 @@
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_iDpPsLsfEeOwisBCcnD2pA" name="java.util.ArrayList&lt;String>"/>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_oyS5ALsfEeOwisBCcnD2pA" name="java.util.ArrayList"/>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_sWk4ELsfEeOwisBCcnD2pA" name="java.util.ArrayList&lt;java.lang.String>"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_5uVKELskEeOwisBCcnD2pA" name="java.util.ArrayList&lt;no.ntnu.item.ttm4115.termassignment.TaxiPosition.TaxiPosition>"/>
     <profileApplication xmi:id="_8Z0u8LWdEeOv-KguLGS39w">
       <eAnnotations xmi:id="_8Z0u8bWdEeOv-KguLGS39w" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q"/>
