@@ -9,9 +9,9 @@ public class TaxiUpdater extends Block {
 
 	public no.ntnu.item.ttm4115.termassignment.order.Order order;
 
-	public boolean isDutyUpdate(Order o) {
-		if (o == null) { return false; }
-		return o.order_status == Status.TAXI_DUTY;
+	public boolean isDutyUpdate() {
+		if (order == null) { return false; }
+		return order.order_status == Status.TAXI_DUTY;
 	}
 
 	public boolean isOnDuty() {

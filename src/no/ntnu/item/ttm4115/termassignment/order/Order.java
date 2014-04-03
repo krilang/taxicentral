@@ -3,7 +3,6 @@ package no.ntnu.item.ttm4115.termassignment.order;
 import java.util.ArrayList;
 
 import com.bitreactive.library.android.maps.model.Position;
-
 import no.ntnu.item.ttm4115.termassignment.Status.Status;
 
 public class Order {

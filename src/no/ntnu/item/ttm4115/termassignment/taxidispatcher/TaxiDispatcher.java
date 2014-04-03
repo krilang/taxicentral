@@ -39,6 +39,7 @@ public class TaxiDispatcher extends Block {
 			
 		case TAXI_USER_ABORT:
 			return performTaxiAbortAction(object);
+			
 		case TOUR_FINISHED:
 			return performTourFinishedAction(object);
 			
@@ -234,6 +235,7 @@ public class TaxiDispatcher extends Block {
 		}
 		
 		for(int i = 0; i < available_taxies.size(); i++) {
+			
 			if(! (new_order_object.reject_list.contains(available_taxies.get(i)))) {
 				new_order_object.order_status = Status.CENTRAL_TAXI_OFFER;
 				new_order_object.taxi_id = available_taxies.remove(i);

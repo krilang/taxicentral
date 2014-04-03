@@ -7,13 +7,15 @@ import no.ntnu.item.ttm4115.termassignment.order.Order;
 
 public class OrderToJourney extends Block {
 
-	public boolean isOrderConf(Order order) {
+	public no.ntnu.item.ttm4115.termassignment.order.Order order;
+
+	public boolean isOrderConf() {
 		
 		return order.order_status == Status.TAXI_USER_CONF;
 	}
 
-	public Journey generateJourney(Order o) {
-		return new Journey(o.taxi_id, o.taxi_position.getLatitude()+","+o.taxi_position.getLongitude(), o.address);
+	public Journey generateJourney() {
+		return new Journey(order.taxi_id, order.taxi_position.getLatitude()+","+order.taxi_position.getLongitude(), order.address);
 	}
 
 }
