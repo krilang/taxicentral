@@ -13,6 +13,7 @@
       </ownedBehavior>
       <ownedOperation xmi:id="_ot-rsLpZEeO-kKzlx47Sag" name="routeToDistance"/>
       <ownedOperation xmi:id="_5VxH4LpaEeO-kKzlx47Sag" name="findDistance"/>
+      <ownedOperation xmi:id="_3mpuELszEeORHrW6Iml_cQ" name="distFrom"/>
       <ownedParameter xmi:id="_cU-usLpZEeO-kKzlx47Sag" name="journey" type="_ZDFgI7pZEeO-kKzlx47Sag"/>
       <ownedParameter xmi:id="_KdHYcLpdEeO-kKzlx47Sag" name="distanceAndTaxiId" type="_m500MLpeEeO-kKzlx47Sag" direction="out"/>
       <edge xmi:type="uml:ObjectFlow" xmi:id="_p-TEELpZEeO-kKzlx47Sag" name="e0" inPartition="_LUxWALpZEeO-kKzlx47Sag" source="_ZFU70LpZEeO-kKzlx47Sag" target="_5Vxu8LpaEeO-kKzlx47Sag"/>

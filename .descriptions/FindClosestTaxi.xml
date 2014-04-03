@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="FindClosestTaxi" 
+    uuid="_EGdscLsuEeORHrW6Iml_cQ" 
+    status="under construction" 
+    type="block" 
+    >
+    <required>
+        <block name="c0" uuid="_LUwu87pZEeO-kKzlx47Sag"/>
+    </required>
+</block>

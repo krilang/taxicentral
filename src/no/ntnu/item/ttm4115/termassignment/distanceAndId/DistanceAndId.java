@@ -7,7 +7,6 @@ public class DistanceAndId {
 	
 	
 	public DistanceAndId(double distance, String id) {
-		// TODO Auto-generated constructor stub
 		
 		this.distance=distance;
 		this.id=id;

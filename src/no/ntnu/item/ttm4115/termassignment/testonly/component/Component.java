@@ -13,8 +13,8 @@ public class Component extends Block {
 
 	public Journey createJourney() {
 		String taxiAlias= "en";
-		String fromAddress="Stavanger, Norge";
-		String toAddress="Oslo, Norge";
+		String fromAddress="Bassengbakken 1, 7042 Trondheim, Norge";
+		String toAddress="Thoning Owesens gate 26, 7044 Trondheim, Norge";
 		
 		Journey j=new Journey(taxiAlias, fromAddress, toAddress);
 		return j;
