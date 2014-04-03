@@ -55,6 +55,7 @@ public class TaxiClient extends Block {
 		
 		current_order = new Order();
 		current_order.taxi_id = taxi_id;
+		current_order.taxi_position = position;
 		current_order.topic = "central";
 		current_order.order_status = Status.TAXI_DUTY;
 		current_order.on_duty = duty_status;
@@ -247,16 +248,16 @@ public class TaxiClient extends Block {
 		return current_order.on_duty;
 	}
 
-	public taxiMapStatus taxiOnMap() {
-		return new taxiMapStatus(taxi_id, position);
-	}
-
 	public void setPositionStatic() {
 		position = new Position(63430549, 10394967);
 	}
 
 	public void setPosByMapStatus(taxiMapStatus taximapstatus) {
+		
 		position = taximapstatus.position;
+		
+		System.out.println("Latitude: "+position.getLatitude());
+		System.out.println("Longitude: "+position.getLongitude());
 		
 		Order o = new Order();
 		o.order_status = Status.TOUR_FINISHED;

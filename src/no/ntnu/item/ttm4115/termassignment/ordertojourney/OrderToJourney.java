@@ -15,7 +15,9 @@ public class OrderToJourney extends Block {
 	}
 
 	public Journey generateJourney() {
-		return new Journey(order.taxi_id, order.taxi_position.getLatitude()+","+order.taxi_position.getLongitude(), order.address);
+		String lat = ""+order.taxi_position.getLatitude()/1000000+"";
+		String lng = ""+order.taxi_position.getLongitude()/1000000+"";
+		return new Journey(order.taxi_id, lat+","+lng, order.address);
 	}
 
 }

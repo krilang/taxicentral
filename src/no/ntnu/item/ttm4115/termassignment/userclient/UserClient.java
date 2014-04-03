@@ -90,7 +90,9 @@ public class UserClient extends Block {
 			return current_order.msg_to_user;
 			
 		default:
-			return current_order.order_status.toString();
+			System.out.println(current_order.order_status.toString());
+			return current_order.msg_to_user;
+			
 		}
 	}
 
@@ -116,7 +118,8 @@ public class UserClient extends Block {
 			
 		case TOUR_FINISHED:
 			current_order.topic = "central";
-			current_order.msg_to_taxi = "You was picked up, and the tour has ended.";
+			current_order.msg_to_user = "You were picked up, and the tour has ended.";
+			return true;
 			
 		default:
 			return false;
