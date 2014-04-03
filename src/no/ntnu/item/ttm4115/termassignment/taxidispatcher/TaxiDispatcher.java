@@ -9,14 +9,14 @@ import no.ntnu.item.ttm4115.termassignment.order.Order;
 public class TaxiDispatcher extends Block {
 
 	public ArrayList<String> onduty_taxies = new ArrayList<String>();
-	public ArrayList<String> available_taxies = new ArrayList<String>();
 	
 	public ArrayList<Order> queued_orders = new ArrayList<Order>();
 	public ArrayList<Integer> canceled_orders = new ArrayList<Integer>();
+
+	public java.util.ArrayList<String> available_taxies;
 	
 	public void initialize() {
-		
-		// nix
+		available_taxies = new ArrayList<String>();
 	}
 
 	public Order objectRecieved(Order object) {
@@ -58,6 +58,9 @@ public class TaxiDispatcher extends Block {
 		object.order_status = Status.CENTRAL_TOUR_ENDED_CONF;
 		object.topic = "u"+object.user_id;
 		object.msg_to_central = "Order "+object.order_id+" has been completed.";
+		
+		
+		//TODO Update taxi position
 		
 		return object;
 	}
