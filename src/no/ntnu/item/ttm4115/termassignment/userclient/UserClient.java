@@ -108,6 +108,9 @@ public class UserClient extends Block {
 		if(current_order == null) {
 			return false;
 		}
+		if (current_order.order_status == null) {
+			return false;
+		}
 		
 		switch (current_order.order_status) {
 		

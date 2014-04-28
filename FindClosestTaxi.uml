@@ -28,6 +28,7 @@
       <ownedOperation xmi:id="_1-_mALsuEeORHrW6Iml_cQ" name="setIncommingOrder"/>
       <ownedOperation xmi:id="_xc9IwLsvEeORHrW6Iml_cQ" name="returnOrder"/>
       <ownedOperation xmi:id="_8OlQkM69EeOmE-gvrFUWVA" name="returnClosestTaxi"/>
+      <ownedOperation xmi:id="_CcX7oM7WEeOVEI4FFUzKNQ" name="FindClosestTaxi"/>
       <ownedParameter xmi:id="_NH-JMLsuEeORHrW6Iml_cQ" name="init"/>
       <ownedParameter xmi:id="_XqH5ULsuEeORHrW6Iml_cQ" name="taxiList" type="_7i4sYLsuEeORHrW6Iml_cQ" isStream="true"/>
       <ownedParameter xmi:id="_0mnoYLsvEeORHrW6Iml_cQ" name="orderOut" type="_V8f54LsuEeORHrW6Iml_cQ" direction="out" isStream="true"/>

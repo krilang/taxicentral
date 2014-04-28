@@ -24,6 +24,10 @@ public class FindClosestTaxi extends Block {
 	public ArrayList<DistanceAndId> proxList;
 
 	public java.util.ArrayList<no.ntnu.item.ttm4115.termassignment.TaxiPosition.TaxiPosition> taxiList;
+	
+	public FindClosestTaxi() {
+		proxList = new ArrayList<DistanceAndId>();
+	}
 
 	public void setIncommingOrder(Order order) {
 		this.incommingOrder = order;
@@ -34,6 +38,11 @@ public class FindClosestTaxi extends Block {
 
 		this.taxiList= taxiList;
 		taxiListSize=taxiList.size();
+		
+		proxList.clear();
+		
+		System.out.println("Incomming taxilist:");
+		System.out.println(taxiList);
 
 	}
 
@@ -58,11 +67,12 @@ public class FindClosestTaxi extends Block {
 	}
 
 	public void addToProxList(DistanceAndId dai) {
+		System.out.println("dai was added to proxList");
 		proxList.add(dai);
 	}
 
 	public boolean checkLast() {
-		return (counter < taxiListSize-1);
+		return (counter == taxiListSize-1);
 		
 	}
 	public Order returnOrder() {
