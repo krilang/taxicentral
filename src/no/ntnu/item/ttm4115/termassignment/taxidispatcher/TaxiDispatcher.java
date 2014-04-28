@@ -344,4 +344,12 @@ public class TaxiDispatcher extends Block {
 		
 		return true;
 	}
+
+	public Order setTaxiUnavailable(Order o) {
+		
+		removeFromAvailableTaxies(o.taxi_id);
+		o.msg_to_central= "User "+o.user_id+"s order at address: "+o.address+", is being processed.";
+		
+		return o;
+	}
 }
