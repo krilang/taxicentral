@@ -15,6 +15,12 @@ public class TaxiDispatcher extends Block {
 	public ArrayList<Integer> canceled_orders = new ArrayList<Integer>();
 
 	public java.util.ArrayList<TaxiPosition> available_taxies;
+
+	public boolean requiresTaxi;
+
+	public no.ntnu.item.ttm4115.termassignment.order.Order current_order;
+
+	public java.util.ArrayList<no.ntnu.item.ttm4115.termassignment.TaxiPosition.TaxiPosition> proxy_taxies;
 	
 	public void initialize() {
 		available_taxies = new ArrayList<TaxiPosition>();
@@ -306,5 +312,36 @@ public class TaxiDispatcher extends Block {
 			}			
 		}
 		return false;
+	}
+
+	public boolean setRequiresTaxi() {
+		
+		Order o = current_order;
+		
+		if(o.order_status == Status.USER_ORDER) { return isAvailableTaxi(o); }
+		
+		if(o.order_status == Status.TAXI_ANSWER && o.answer == false && o.incomming_taxi == false) {
+			setTaxiAsAvailable(o);
+			return isAvailableTaxi(o);
+		}
+		
+		return false;
+	}
+	
+	private boolean isAvailableTaxi(Order o) {
+		
+		if(available_taxies.size() == 0) { return false; }
+		
+		for (TaxiPosition tp : available_taxies) {
+			if(! o.reject_list.contains(tp.taxi_id)) {
+				proxy_taxies.add(tp);
+			}
+		}
+		
+		if (proxy_taxies.size() == 0) {
+			return false;
+		}
+		
+		return true;
 	}
 }
