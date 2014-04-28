@@ -24,6 +24,7 @@ public class TaxiDispatcher extends Block {
 	
 	public void initialize() {
 		available_taxies = new ArrayList<TaxiPosition>();
+		proxy_taxies = new ArrayList<TaxiPosition>();
 	}
 
 	public Order objectRecieved(Order object) {

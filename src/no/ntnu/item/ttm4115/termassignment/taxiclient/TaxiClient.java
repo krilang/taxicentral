@@ -177,7 +177,7 @@ public class TaxiClient extends Block {
 			return "No orders in the system";
 		}
 		if (current_order.order_status == null) {
-			return "No orders in the system";
+			return current_order.msg_to_taxi;
 		}
 		
 		switch (current_order.order_status) {
