@@ -5,13 +5,15 @@
       <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_EKiUILsuEeORHrW6Iml_cQ" name="FindClosestTaxi">
         <region xmi:id="_EKiUIrsuEeORHrW6Iml_cQ" name="&lt;region>">
           <transition xmi:id="_Ldrz0c7FEeOmE-gvrFUWVA" name="init / " source="_LdrMwM7FEeOmE-gvrFUWVA" target="_Ldrz0M7FEeOmE-gvrFUWVA"/>
-          <transition xmi:id="_Ldsa4c7FEeOmE-gvrFUWVA" name=" / orderOut" source="_Ldrz0M7FEeOmE-gvrFUWVA" target="_Ldrz0M7FEeOmE-gvrFUWVA"/>
-          <transition xmi:id="_LdtB8M7FEeOmE-gvrFUWVA" name="taxiList / " source="_Ldrz0M7FEeOmE-gvrFUWVA" target="_Ldrz0M7FEeOmE-gvrFUWVA"/>
-          <transition xmi:id="_LdtB8s7FEeOmE-gvrFUWVA" name="orderIn / " source="_Ldrz0M7FEeOmE-gvrFUWVA" target="_Ldrz0M7FEeOmE-gvrFUWVA"/>
+          <transition xmi:id="_Ldsa4c7FEeOmE-gvrFUWVA" name=" / orderOut" source="_q9yD4M7NEeO7CrIFtgPuaA" target="_Ldrz0M7FEeOmE-gvrFUWVA"/>
+          <transition xmi:id="_LdtB8M7FEeOmE-gvrFUWVA" name="taxiList+orderIn / " source="_Ldrz0M7FEeOmE-gvrFUWVA" target="_q9yD4M7NEeO7CrIFtgPuaA"/>
           <transition xmi:id="_OkGyMM7FEeOmE-gvrFUWVA" name="/ " source="_Ldrz0M7FEeOmE-gvrFUWVA" target="_OkHZQc7FEeOmE-gvrFUWVA"/>
+          <transition xmi:id="_xIn1gM7NEeO7CrIFtgPuaA" name="/ " source="_q9yD4M7NEeO7CrIFtgPuaA" target="_xOYfQM7NEeO7CrIFtgPuaA"/>
           <subvertex xmi:type="uml:Pseudostate" xmi:id="_LdrMwM7FEeOmE-gvrFUWVA" name="&lt;initial>"/>
           <subvertex xmi:type="uml:State" xmi:id="_Ldrz0M7FEeOmE-gvrFUWVA" name="active"/>
           <subvertex xmi:type="uml:FinalState" xmi:id="_OkHZQc7FEeOmE-gvrFUWVA" name="&lt;final>"/>
+          <subvertex xmi:type="uml:State" xmi:id="_q9yD4M7NEeO7CrIFtgPuaA" name="active2"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_xOYfQM7NEeO7CrIFtgPuaA" name="&lt;final>"/>
         </region>
       </ownedBehavior>
       <ownedOperation xmi:id="_LDM1ELsuEeORHrW6Iml_cQ" name="initCounter"/>
@@ -181,7 +183,7 @@
   <graphics:Shape xmi:id="_Qu-jwM7EEeOmE-gvrFUWVA" x="725" y="423" base_Element="_Qu8ukc7EEeOmE-gvrFUWVA"/>
   <arctis:event xmi:id="_Ldsa4M7FEeOmE-gvrFUWVA" base_Transition="_Ldrz0c7FEeOmE-gvrFUWVA" triggers="_NHzKELsuEeORHrW6Iml_cQ"/>
   <arctis:event xmi:id="_Ldsa4s7FEeOmE-gvrFUWVA" base_Transition="_Ldsa4c7FEeOmE-gvrFUWVA" effects="_TNbrkLsuEeORHrW6Iml_cQ"/>
-  <arctis:event xmi:id="_LdtB8c7FEeOmE-gvrFUWVA" base_Transition="_LdtB8M7FEeOmE-gvrFUWVA" triggers="_XqCZwLsuEeORHrW6Iml_cQ"/>
-  <arctis:event xmi:id="_LdtpAM7FEeOmE-gvrFUWVA" base_Transition="_LdtB8s7FEeOmE-gvrFUWVA" triggers="_--MgMLsvEeORHrW6Iml_cQ"/>
+  <arctis:event xmi:id="_LdtB8c7FEeOmE-gvrFUWVA" base_Transition="_LdtB8M7FEeOmE-gvrFUWVA" triggers="_XqCZwLsuEeORHrW6Iml_cQ _--MgMLsvEeORHrW6Iml_cQ"/>
   <arctis:event xmi:id="_OkHZQM7FEeOmE-gvrFUWVA" base_Transition="_OkGyMM7FEeOmE-gvrFUWVA"/>
+  <arctis:event xmi:id="_xOX4MM7NEeO7CrIFtgPuaA" base_Transition="_xIn1gM7NEeO7CrIFtgPuaA"/>
 </xmi:XMI>
