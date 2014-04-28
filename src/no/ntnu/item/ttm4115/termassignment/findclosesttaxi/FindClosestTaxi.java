@@ -90,7 +90,7 @@ public class FindClosestTaxi extends Block {
 		DistanceAndId tempdai=proxList.get(0);
 		
 		for (DistanceAndId dai : proxList){
-			if(dai.distance<=tempdai.distance){
+			if(dai.distance < tempdai.distance){
 				tempdai=dai;
 				
 			}
@@ -98,7 +98,7 @@ public class FindClosestTaxi extends Block {
 		return tempdai.id;
 	}
 
-				private Order generateOrder(String taxi_id) {
+	private Order generateOrder(String taxi_id) {
 		
 		incommingOrder.taxi_id=taxi_id;
 		incommingOrder.topic="t"+taxi_id;
