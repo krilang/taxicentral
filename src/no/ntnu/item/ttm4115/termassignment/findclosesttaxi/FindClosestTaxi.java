@@ -7,6 +7,7 @@ import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
 
 import no.ntnu.item.arctis.runtime.Block;
 import no.ntnu.item.ttm4115.simulation.routeplanner.Journey;
+import no.ntnu.item.ttm4115.termassignment.Status.Status;
 import no.ntnu.item.ttm4115.termassignment.TaxiPosition.TaxiPosition;
 import no.ntnu.item.ttm4115.termassignment.distanceAndId.DistanceAndId;
 import no.ntnu.item.ttm4115.termassignment.order.Order;
@@ -79,12 +80,31 @@ public class FindClosestTaxi extends Block {
 			}
 		}
 		
-		// TODO sorter og return closest;
-		return incommingOrder;
+		
+	
+		return generateOrder(returnClosestTaxi());
+	}
+	
+	public String returnClosestTaxi(){
+		
+		DistanceAndId tempdai=proxList.get(0);
+		
+		for (DistanceAndId dai : proxList){
+			if(dai.distance<=tempdai.distance){
+				tempdai=dai;
+				
+			}
+		}
+		return tempdai.id;
 	}
 
-	private Order generateOrder(String taxi_id) {
-		// TODO 
-		return null;
+				private Order generateOrder(String taxi_id) {
+		
+		incommingOrder.taxi_id=taxi_id;
+		incommingOrder.topic="t"+taxi_id;
+		incommingOrder.order_status=Status.CENTRAL_TAXI_OFFER;
+		
+		
+		return incommingOrder;
 	}
 }
