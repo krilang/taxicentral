@@ -44,6 +44,7 @@
       <edge xmi:type="uml:ObjectFlow" xmi:id="_7L1wULpoEeOOXPXKCINaTw" name="e5" inPartition="_O0DKULjaEeOAS6yevuLbXw" source="_sCOwILmoEeOfytKDws6UEg" target="_Q8VFcLjaEeOAS6yevuLbXw"/>
       <variable xmi:id="_LIrH4LmiEeOfytKDws6UEg" name="taxiMapId" type="_Qy3AYLjaEeOAS6yevuLbXw"/>
       <variable xmi:id="_MoiYILmiEeOfytKDws6UEg" name="tempPosition" type="_QAnuQLmiEeOfytKDws6UEg"/>
+      <variable xmi:id="_Bi0PoM-VEeOmJYNEJ0sG9Q" name="taxiType" type="_IAXh4M-VEeOmJYNEJ0sG9Q"/>
       <group xmi:type="uml:ActivityPartition" xmi:id="_O0DKULjaEeOAS6yevuLbXw" name="main" node="_QyvEkLjaEeOAS6yevuLbXw _Q8SpMLjaEeOAS6yevuLbXw _Q8VFcLjaEeOAS6yevuLbXw _Q8W6oLjaEeOAS6yevuLbXw _Q8Z98LjaEeOAS6yevuLbXw _Q8bzILjaEeOAS6yevuLbXw _Q8e2cLjaEeOAS6yevuLbXw _Q8hSsLjaEeOAS6yevuLbXw _Q8ju8LjaEeOAS6yevuLbXw _Q8mLMLjaEeOAS6yevuLbXw _Q8qcoLjaEeOAS6yevuLbXw _SKBAkLjaEeOAS6yevuLbXw _SKjMELjaEeOAS6yevuLbXw _SKlBQLjaEeOAS6yevuLbXw _SKwAYLjaEeOAS6yevuLbXw _Ukk-gLjaEeOAS6yevuLbXw _Uk3SYLjaEeOAS6yevuLbXw _Uk68wLjaEeOAS6yevuLbXw _Uk-nILjaEeOAS6yevuLbXw _UlBqcLjaEeOAS6yevuLbXw _dXtBALjaEeOAS6yevuLbXw _tatrMLmWEeOfytKDws6UEg _1NuUgLmWEeOfytKDws6UEg _5EvCULmWEeOfytKDws6UEg _D1t4oLmXEeOfytKDws6UEg _YRarULmYEeOfytKDws6UEg _jJ1a0LmiEeOfytKDws6UEg _zByK8LmiEeOfytKDws6UEg _6fKigLmiEeOfytKDws6UEg _PXGasLmjEeOfytKDws6UEg _YIqW8LmjEeOfytKDws6UEg _y5riYLmjEeOfytKDws6UEg _sCOwILmoEeOfytKDws6UEg _F3D_ILm0EeOfytKDws6UEg _JqChgLm0EeOfytKDws6UEg _SqywULm0EeOfytKDws6UEg _mSOp8Lm0EeOfytKDws6UEg _CKSV8Lm1EeOfytKDws6UEg _SE70wbm1EeOfytKDws6UEg" edge="_lwi7QLjaEeOAS6yevuLbXw _rf_D4LmWEeOfytKDws6UEg _uQHpMLmWEeOfytKDws6UEg _upmgMLmWEeOfytKDws6UEg _zI7LMLmWEeOfytKDws6UEg _5EubQLmWEeOfytKDws6UEg _jJ0zwLmiEeOfytKDws6UEg _2IDYULmiEeOfytKDws6UEg _ZuSQ8LmjEeOfytKDws6UEg _Z7XqsLmjEeOfytKDws6UEg _UvqLELm0EeOfytKDws6UEg _DViBELm1EeOfytKDws6UEg _E9XhkLm1EeOfytKDws6UEg _SE7NsLm1EeOfytKDws6UEg _7L1wULpoEeOOXPXKCINaTw"/>
       <node xmi:type="uml:CallBehaviorAction" xmi:id="_QyvEkLjaEeOAS6yevuLbXw" name="c0" inPartition="_O0DKULjaEeOAS6yevuLbXw" behavior="_npFb46N-EeO_erXR8oUgTA">
         <argument xmi:id="_Q8VFcLjaEeOAS6yevuLbXw" name="subscribe" inPartition="_O0DKULjaEeOAS6yevuLbXw" incoming="_7L1wULpoEeOOXPXKCINaTw"/>
@@ -235,6 +236,7 @@
         <expr xmi:type="uml:LiteralString" xmi:id="_CSLRMbm2EeOfytKDws6UEg" name="t1" value="100"/>
       </when>
     </packagedElement>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_IAXh4M-VEeOmJYNEJ0sG9Q" name="java.lang.Enum"/>
     <profileApplication xmi:id="_O0CjQLjaEeOAS6yevuLbXw">
       <eAnnotations xmi:id="_O0CjQbjaEeOAS6yevuLbXw" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q"/>
@@ -319,4 +321,6 @@
   <arctis:event xmi:id="_luJvsLm4EeOfytKDws6UEg" base_Transition="_luJIoLm4EeOfytKDws6UEg"/>
   <graphics:Shape xmi:id="_Hqz7wLsUEeOdy_hoqoOyMw" aux1="0 68 -54 -58  54 68 0 -58 " base_Element="_UvqLELm0EeOfytKDws6UEg"/>
   <graphics:Shape xmi:id="_LegP0LsUEeOdy_hoqoOyMw" aux1="0 21 36 -36  -36 21 0 -36 " base_Element="_DViBELm1EeOfytKDws6UEg"/>
+  <arctis:location xmi:id="_BlB2IM-VEeOmJYNEJ0sG9Q" base_Variable="_Bi0PoM-VEeOmJYNEJ0sG9Q" partition="_O0DKULjaEeOAS6yevuLbXw"/>
+  <graphics:Shape xmi:id="_BlCdMM-VEeOmJYNEJ0sG9Q" x="648" y="162" base_Element="_Bi0PoM-VEeOmJYNEJ0sG9Q"/>
 </xmi:XMI>

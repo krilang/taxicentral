@@ -11,12 +11,15 @@ public class TaxiSimulator extends Block {
 
 	public java.lang.String taxiMapId;
 	public com.bitreactive.library.android.maps.model.Position tempPosition;
+	public java.lang.Enum taxiType;
 
 	public MapUpdate createMapUpdate(taxiMapStatus tms) {
 		System.out.println("starting");
 		MapUpdate mu= new MapUpdate();
 		Position p=tms.position;
-		Marker m1 = Marker.createMarker(tms.mTaxiID).position(p);
+		System.out.println("taxitype er "+tms.taxiType);
+		Marker m1 = Marker.createMarker(tms.mTaxiID).description("description").title(tms.mTaxiID).position(p).hue(Marker.HUE_GREEN);
+		m1.showWindow(true);
 		mu.addMarker(m1);
 		mu.setCenter(p);
 		mu.setZoom(15);
@@ -30,7 +33,7 @@ public class TaxiSimulator extends Block {
 	}
 
 	public  taxiMapStatus createTaxiStatus() {
-		taxiMapStatus tms=new taxiMapStatus(taxiMapId, tempPosition);
+		taxiMapStatus tms=new taxiMapStatus(taxiMapId, tempPosition); //her burde taxitype settes
 		return tms;
 	}
 

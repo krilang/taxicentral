@@ -37,7 +37,11 @@ public class Component extends Block {
 		
 		Position p1 =new  Position(1.0371261596679688 * 1E7, 6.338902282714844 * 1E7);
 		MapUpdate mu=new MapUpdate();
-		mu.addMarker(Marker.createMarker("id").position(p1));
+		Marker mm= Marker.createMarker("id").description("description").title("title").position(p1).hue(45);
+		
+		mu.addMarker(mm);
+		mu.setCenter(p1);
+		mu.setZoom(15);
 		System.out.println("returning mapupdate");
 		return mu;
 	}

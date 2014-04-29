@@ -19,6 +19,8 @@ public class TaxiUpdater extends Block {
 	}
 
 	public taxiMapStatus mapUpdate() {
-		return new taxiMapStatus(order.taxi_id, order.taxi_position);
+		taxiMapStatus tms= new taxiMapStatus(order.taxi_id, order.taxi_position);
+		tms.taxiType=order.taxiType;
+		return tms;
 	}
 }

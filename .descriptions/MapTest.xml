@@ -6,6 +6,7 @@
     type="system" 
     >
     <required>
-        <block name="c0" uuid="_O0CjQrjaEeOAS6yevuLbXw"/>
+        <block name="c0" uuid="_npFb46N-EeO_erXR8oUgTA"/>
+        <block name="c1" uuid="_O0CjQrjaEeOAS6yevuLbXw"/>
     </required>
 </block>
