@@ -3,6 +3,7 @@ package no.ntnu.item.ttm4115.termassignment.userclient;
 import no.ntnu.item.arctis.runtime.Block;
 import no.ntnu.item.ttm4115.mqtt.basicmqtt.BasicMQTT.AdvancedConfiguration;
 import no.ntnu.item.ttm4115.termassignment.Status.Status;
+import no.ntnu.item.ttm4115.termassignment.TaxiType.TaxiType;
 import no.ntnu.item.ttm4115.termassignment.order.Order;
 
 public class UserClient extends Block {
@@ -22,13 +23,22 @@ public class UserClient extends Block {
 
 	public boolean request(String address) {
 
+		String[] parts= address.split("@|\\#");
+		
+		
+		
+		
 		if (current_order != null) { return false; }
 
 		current_order = new Order();
 		current_order.order_status = Status.USER_ORDER;
 		current_order.topic = "central";
 		current_order.user_id = user_id;
-		current_order.address = address;
+		current_order.address = parts[0];
+		if(address.contains("#")){
+			current_order.taxiType=TaxiType.stringToEnum(parts[1]);
+		}
+		System.out.println("address is "+current_order.address+" and taxitype is "+current_order.taxiType);
 		
 		return true;
 	}
