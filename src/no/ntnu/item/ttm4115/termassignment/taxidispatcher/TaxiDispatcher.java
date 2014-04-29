@@ -29,7 +29,6 @@ public class TaxiDispatcher extends Block {
 
 	public Order objectRecieved(Order object) {
 		
-		System.out.println(object);
 		if(object.order_status == null) {
 			return object;
 		}
@@ -304,7 +303,7 @@ public class TaxiDispatcher extends Block {
 	private void removeFromAvailableTaxies(String taxi_id) {
 		
 		for (TaxiPosition taxiMap : available_taxies) {
-			if (taxiMap.taxi_id == taxi_id) {
+			if (taxiMap.taxi_id.equals(taxi_id)) {
 				available_taxies.remove(taxiMap);
 				break;
 			}
@@ -313,7 +312,7 @@ public class TaxiDispatcher extends Block {
 	
 	private boolean availableTaxiesContains(String taxi_id) {
 		for (TaxiPosition taxiMap : available_taxies) {
-			if(taxiMap.taxi_id == taxi_id) {
+			if(taxiMap.taxi_id.equals(taxi_id)) {
 				return true;
 			}			
 		}
