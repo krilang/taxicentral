@@ -5,6 +5,7 @@ import com.bitreactive.library.android.maps.model.Position;
 import no.ntnu.item.arctis.runtime.Block;
 import no.ntnu.item.ttm4115.mqtt.basicmqtt.BasicMQTT.AdvancedConfiguration;
 import no.ntnu.item.ttm4115.termassignment.Status.Status;
+import no.ntnu.item.ttm4115.termassignment.TaxiType.TaxiType;
 import no.ntnu.item.ttm4115.termassignment.order.Order;
 import no.ntnu.item.ttm4115.termassignment.taximapstatus.taxiMapStatus;
 
@@ -14,6 +15,7 @@ public class TaxiClient extends Block {
 	public String taxi_id;
 	public boolean on_duty;
 	public com.bitreactive.library.android.maps.model.Position position;
+	public TaxiType taxi_type;
 	
 	public boolean onDuty() {
 		
@@ -92,6 +94,7 @@ public class TaxiClient extends Block {
 			current_order.order_status = Status.TAXI_USER_ABORT;
 			current_order.topic = "u"+current_order.user_id;
 			current_order.taxi_position = position;
+			current_order.taxiType = this.taxi_type;
 			current_order.msg_to_taxi = "Your tour has been aborted. You are set as available at the taxicentral.";
 			current_order.reject_list.add(taxi_id);
 			return true;
@@ -116,6 +119,7 @@ public class TaxiClient extends Block {
 		current_order = new Order();
 		current_order.taxi_id = taxi_id;
 		current_order.taxi_position = position;
+		current_order.taxiType = this.taxi_type;
 		current_order.topic = "central";
 		current_order.order_status = Status.TAXI_AVAILABLE;
 		current_order.available = bool;
@@ -276,5 +280,23 @@ public class TaxiClient extends Block {
 	}
 
 	public void setTaxiType() {
+		switch (this.taxi_id) {
+		case "0":
+			this.taxi_type = TaxiType.TAXI;
+			break;
+		case "1":
+			this.taxi_type = TaxiType.TAXI;
+			break;
+		case "2":
+			this.taxi_type = TaxiType.MAXITAXI;
+			break;
+		case "3":
+			this.taxi_type = TaxiType.CARGOTAXI;
+			break;
+
+
+		default:
+			break;
+		}
 	}
 }
