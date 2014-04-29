@@ -136,7 +136,7 @@ public class UserClient extends Block {
 			current_order.topic = "central";
 			current_order.msg_to_user = "You were picked up, and the tour has ended.";
 			return true;
-			
+		
 		default:
 			return false;
 		}
