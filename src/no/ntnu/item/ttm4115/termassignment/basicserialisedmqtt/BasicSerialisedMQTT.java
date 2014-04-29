@@ -15,7 +15,7 @@ public class BasicSerialisedMQTT extends Block {
 		return order.topic;
 	}
 
-	public void printer(String s) {
-		System.out.println("Error at BasicSerializedMQTT: "+s);
+	public void printer(Object s) {
+		System.out.println("Error at BasicSerializedMQTT: "+s.toString());
 	}
 }
