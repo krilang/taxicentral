@@ -8,7 +8,7 @@ import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
 import no.ntnu.item.arctis.runtime.Block;
 import no.ntnu.item.ttm4115.simulation.routeplanner.Journey;
 import no.ntnu.item.ttm4115.termassignment.Status.Status;
-import no.ntnu.item.ttm4115.termassignment.TaxiPosition.TaxiPosition;
+import no.ntnu.item.ttm4115.termassignment.TaxiPosition.TaxiInformation;
 import no.ntnu.item.ttm4115.termassignment.distanceAndId.DistanceAndId;
 import no.ntnu.item.ttm4115.termassignment.order.Order;
 
@@ -23,7 +23,7 @@ public class FindClosestTaxi extends Block {
 
 	public ArrayList<DistanceAndId> proxList;
 
-	public java.util.ArrayList<no.ntnu.item.ttm4115.termassignment.TaxiPosition.TaxiPosition> taxiList;
+	public java.util.ArrayList<no.ntnu.item.ttm4115.termassignment.TaxiPosition.TaxiInformation> taxiList;
 	
 	public FindClosestTaxi() {
 		proxList = new ArrayList<DistanceAndId>();
@@ -34,7 +34,7 @@ public class FindClosestTaxi extends Block {
 		this.orderLocation= order.address;
 	}
 
-	public void setListSize(ArrayList<TaxiPosition> taxiList) {
+	public void setListSize(ArrayList<TaxiInformation> taxiList) {
 
 		this.taxiList= taxiList;
 		taxiListSize=taxiList.size();
@@ -61,7 +61,6 @@ public class FindClosestTaxi extends Block {
 	}
 
 	public void addToProxList(DistanceAndId dai) {
-		System.out.println("dai was added to proxList");
 		proxList.add(dai);
 	}
 

@@ -274,4 +274,7 @@ public class TaxiClient extends Block {
 		
 		current_order = o;
 	}
+
+	public void setTaxiType() {
+	}
 }
