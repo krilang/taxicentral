@@ -5,15 +5,18 @@
       <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_8QgCcs-JEeOUXfZYiViiBA" name="ChatDialog">
         <region xmi:id="_8QgCc8-JEeOUXfZYiViiBA" name="&lt;region>">
           <transition xmi:id="_JGSMoc-LEeOUXfZYiViiBA" name="init / " source="_JGRlkM-LEeOUXfZYiViiBA" target="_JGSMoM-LEeOUXfZYiViiBA"/>
-          <transition xmi:id="_JL6Tgc-LEeOUXfZYiViiBA" name=" / exit" source="_JGSMoM-LEeOUXfZYiViiBA" target="_JL66kM-LEeOUXfZYiViiBA"/>
+          <transition xmi:id="_JL6Tgc-LEeOUXfZYiViiBA" name="close / " source="_JGSMoM-LEeOUXfZYiViiBA" target="_bqWbYM-kEeOQXsXzXjElFQ"/>
           <transition xmi:id="_JL7hoc-LEeOUXfZYiViiBA" name=" / request" source="_JGSMoM-LEeOUXfZYiViiBA" target="_JGSMoM-LEeOUXfZYiViiBA"/>
           <transition xmi:id="_JL8vwc-LEeOUXfZYiViiBA" name="message / " source="_JGSMoM-LEeOUXfZYiViiBA" target="_JGSMoM-LEeOUXfZYiViiBA"/>
-          <transition xmi:id="_JL994c-LEeOUXfZYiViiBA" name="close / " source="_JGSMoM-LEeOUXfZYiViiBA" target="_JGSMoM-LEeOUXfZYiViiBA"/>
           <transition xmi:id="_NI8JwM-LEeOUXfZYiViiBA" name="/ " source="_JGSMoM-LEeOUXfZYiViiBA" target="_NI9X4M-LEeOUXfZYiViiBA"/>
+          <transition xmi:id="_g--9wM-kEeOQXsXzXjElFQ" name=" / exit" source="_bqWbYM-kEeOQXsXzXjElFQ" target="_hGU74M-kEeOQXsXzXjElFQ"/>
+          <transition xmi:id="_ja5mkM-kEeOQXsXzXjElFQ" name=" / exit" source="_JGSMoM-LEeOUXfZYiViiBA" target="_ja60sc-kEeOQXsXzXjElFQ"/>
           <subvertex xmi:type="uml:Pseudostate" xmi:id="_JGRlkM-LEeOUXfZYiViiBA" name="&lt;initial>"/>
           <subvertex xmi:type="uml:State" xmi:id="_JGSMoM-LEeOUXfZYiViiBA" name="active"/>
-          <subvertex xmi:type="uml:FinalState" xmi:id="_JL66kM-LEeOUXfZYiViiBA" name="&lt;final>"/>
           <subvertex xmi:type="uml:FinalState" xmi:id="_NI9X4M-LEeOUXfZYiViiBA" name="&lt;final>"/>
+          <subvertex xmi:type="uml:State" xmi:id="_bqWbYM-kEeOQXsXzXjElFQ" name="active2"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_hGU74M-kEeOQXsXzXjElFQ" name="&lt;final>"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_ja60sc-kEeOQXsXzXjElFQ" name="&lt;final>"/>
         </region>
       </ownedBehavior>
       <ownedOperation xmi:id="_8QgCfs-JEeOUXfZYiViiBA" name="show"/>
@@ -116,9 +119,10 @@
   <graphics:Shape xmi:id="_8QgC4c-JEeOUXfZYiViiBA" x="198" y="306" width="145" height="55" base_Element="_8QgCu8-JEeOUXfZYiViiBA"/>
   <graphics:Shape xmi:id="_8QgC4s-JEeOUXfZYiViiBA" x="405" y="315" width="37" height="37" base_Element="_8QgCvM-JEeOUXfZYiViiBA"/>
   <arctis:event xmi:id="_JL6TgM-LEeOUXfZYiViiBA" base_Transition="_JGSMoc-LEeOUXfZYiViiBA" triggers="_8QgCpM-JEeOUXfZYiViiBA"/>
-  <arctis:event xmi:id="_JL7hoM-LEeOUXfZYiViiBA" base_Transition="_JL6Tgc-LEeOUXfZYiViiBA" effects="_8QgCrs-JEeOUXfZYiViiBA"/>
+  <arctis:event xmi:id="_JL7hoM-LEeOUXfZYiViiBA" base_Transition="_JL6Tgc-LEeOUXfZYiViiBA" triggers="_8QgCus-JEeOUXfZYiViiBA"/>
   <arctis:event xmi:id="_JL8vwM-LEeOUXfZYiViiBA" base_Transition="_JL7hoc-LEeOUXfZYiViiBA" effects="_8QgCr8-JEeOUXfZYiViiBA"/>
   <arctis:event xmi:id="_JL994M-LEeOUXfZYiViiBA" base_Transition="_JL8vwc-LEeOUXfZYiViiBA" triggers="_8QgCsM-JEeOUXfZYiViiBA"/>
-  <arctis:event xmi:id="_JL-k8M-LEeOUXfZYiViiBA" base_Transition="_JL994c-LEeOUXfZYiViiBA" triggers="_8QgCus-JEeOUXfZYiViiBA"/>
   <arctis:event xmi:id="_NI8w0M-LEeOUXfZYiViiBA" base_Transition="_NI8JwM-LEeOUXfZYiViiBA"/>
+  <arctis:event xmi:id="_hGLK4M-kEeOQXsXzXjElFQ" base_Transition="_g--9wM-kEeOQXsXzXjElFQ" effects="_8QgCrs-JEeOUXfZYiViiBA"/>
+  <arctis:event xmi:id="_ja60sM-kEeOQXsXzXjElFQ" base_Transition="_ja5mkM-kEeOQXsXzXjElFQ" effects="_8QgCrs-JEeOUXfZYiViiBA"/>
 </xmi:XMI>

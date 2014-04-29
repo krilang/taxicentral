@@ -77,24 +77,26 @@
             <transition xmi:id="_n4NkkM-SEeOKQMVzIDm6EQ" name=" / exit" source="_n4DzkM-SEeOKQMVzIDm6EQ" target="_n4G24M-SEeOKQMVzIDm6EQ"/>
             <transition xmi:id="_n4OysM-SEeOKQMVzIDm6EQ" name=" / request" source="_n4DzkM-SEeOKQMVzIDm6EQ" target="_n4DzkM-SEeOKQMVzIDm6EQ"/>
             <transition xmi:id="_n4QA0M-SEeOKQMVzIDm6EQ" name="message / " source="_n4DzkM-SEeOKQMVzIDm6EQ" target="_n4DzkM-SEeOKQMVzIDm6EQ"/>
-            <transition xmi:id="_n4RO8M-SEeOKQMVzIDm6EQ" name="close / " source="_n4DzkM-SEeOKQMVzIDm6EQ" target="_n4DzkM-SEeOKQMVzIDm6EQ"/>
             <transition xmi:id="_n4SdEM-SEeOKQMVzIDm6EQ" name="/ " source="_n4DzkM-SEeOKQMVzIDm6EQ" target="_n4G24M-SEeOKQMVzIDm6EQ"/>
+            <transition xmi:id="_NcFJYM-lEeOQXsXzXjElFQ" name="close / " source="_n4DzkM-SEeOKQMVzIDm6EQ" target="_NcCGEM-lEeOQXsXzXjElFQ"/>
+            <transition xmi:id="_Ng9pYM-lEeOQXsXzXjElFQ" name=" / exit" source="_NcCGEM-lEeOQXsXzXjElFQ" target="_n4G24M-SEeOKQMVzIDm6EQ"/>
             <subvertex xmi:type="uml:Pseudostate" xmi:id="_n4DMgs-SEeOKQMVzIDm6EQ" name="&lt;initial>"/>
             <subvertex xmi:type="uml:State" xmi:id="_n4DzkM-SEeOKQMVzIDm6EQ" name="active"/>
             <subvertex xmi:type="uml:FinalState" xmi:id="_n4G24M-SEeOKQMVzIDm6EQ" name="&lt;final>"/>
+            <subvertex xmi:type="uml:State" xmi:id="_NcCGEM-lEeOQXsXzXjElFQ" name="active2"/>
           </region>
         </ownedBehavior>
-        <ownedParameter xmi:id="_n3-7Ec-SEeOKQMVzIDm6EQ" name="init"/>
-        <ownedParameter xmi:id="_n3_iIc-SEeOKQMVzIDm6EQ" name="exit" direction="out"/>
-        <ownedParameter xmi:id="_n4AJMs-SEeOKQMVzIDm6EQ" name="request" type="_n4AJMM-SEeOKQMVzIDm6EQ" direction="out" isStream="true"/>
-        <ownedParameter xmi:id="_n4AwQc-SEeOKQMVzIDm6EQ" name="message" type="_n4AJMM-SEeOKQMVzIDm6EQ" isStream="true"/>
-        <ownedParameter xmi:id="_n4BXUc-SEeOKQMVzIDm6EQ" name="close" isStream="true"/>
+        <ownedParameter xmi:id="_Nb_CwM-lEeOQXsXzXjElFQ" name="init"/>
+        <ownedParameter xmi:id="_Nb_p0M-lEeOQXsXzXjElFQ" name="exit" direction="out"/>
+        <ownedParameter xmi:id="_NcAQ4M-lEeOQXsXzXjElFQ" name="request" type="_n4AJMM-SEeOKQMVzIDm6EQ" direction="out" isStream="true"/>
+        <ownedParameter xmi:id="_NcAQ4c-lEeOQXsXzXjElFQ" name="message" type="_n4AJMM-SEeOKQMVzIDm6EQ" isStream="true"/>
+        <ownedParameter xmi:id="_NcA38M-lEeOQXsXzXjElFQ" name="close" isStream="true"/>
         <group xmi:type="uml:ActivityPartition" xmi:id="_n3-UAM-SEeOKQMVzIDm6EQ" name="main" node="_n3-7EM-SEeOKQMVzIDm6EQ _n3_iIM-SEeOKQMVzIDm6EQ _n4AJMc-SEeOKQMVzIDm6EQ _n4AwQM-SEeOKQMVzIDm6EQ _n4BXUM-SEeOKQMVzIDm6EQ"/>
-        <node xmi:type="uml:ActivityParameterNode" xmi:id="_n3-7EM-SEeOKQMVzIDm6EQ" name="init" inPartition="_n3-UAM-SEeOKQMVzIDm6EQ" parameter="_n3-7Ec-SEeOKQMVzIDm6EQ"/>
-        <node xmi:type="uml:ActivityParameterNode" xmi:id="_n3_iIM-SEeOKQMVzIDm6EQ" name="exit" inPartition="_n3-UAM-SEeOKQMVzIDm6EQ" parameter="_n3_iIc-SEeOKQMVzIDm6EQ"/>
-        <node xmi:type="uml:ActivityParameterNode" xmi:id="_n4AJMc-SEeOKQMVzIDm6EQ" name="request" inPartition="_n3-UAM-SEeOKQMVzIDm6EQ" type="_n4AJMM-SEeOKQMVzIDm6EQ" parameter="_n4AJMs-SEeOKQMVzIDm6EQ"/>
-        <node xmi:type="uml:ActivityParameterNode" xmi:id="_n4AwQM-SEeOKQMVzIDm6EQ" name="message" inPartition="_n3-UAM-SEeOKQMVzIDm6EQ" type="_n4AJMM-SEeOKQMVzIDm6EQ" parameter="_n4AwQc-SEeOKQMVzIDm6EQ"/>
-        <node xmi:type="uml:ActivityParameterNode" xmi:id="_n4BXUM-SEeOKQMVzIDm6EQ" name="close" inPartition="_n3-UAM-SEeOKQMVzIDm6EQ" parameter="_n4BXUc-SEeOKQMVzIDm6EQ"/>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_n3-7EM-SEeOKQMVzIDm6EQ" name="init" inPartition="_n3-UAM-SEeOKQMVzIDm6EQ" parameter="_Nb_CwM-lEeOQXsXzXjElFQ"/>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_n3_iIM-SEeOKQMVzIDm6EQ" name="exit" inPartition="_n3-UAM-SEeOKQMVzIDm6EQ" parameter="_Nb_p0M-lEeOQXsXzXjElFQ"/>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_n4AJMc-SEeOKQMVzIDm6EQ" name="request" inPartition="_n3-UAM-SEeOKQMVzIDm6EQ" type="_n4AJMM-SEeOKQMVzIDm6EQ" parameter="_NcAQ4M-lEeOQXsXzXjElFQ"/>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_n4AwQM-SEeOKQMVzIDm6EQ" name="message" inPartition="_n3-UAM-SEeOKQMVzIDm6EQ" type="_n4AJMM-SEeOKQMVzIDm6EQ" parameter="_NcAQ4c-lEeOQXsXzXjElFQ"/>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_n4BXUM-SEeOKQMVzIDm6EQ" name="close" inPartition="_n3-UAM-SEeOKQMVzIDm6EQ" parameter="_NcA38M-lEeOQXsXzXjElFQ"/>
       </packagedElement>
       <profileApplication xmi:id="_n4ClcM-SEeOKQMVzIDm6EQ">
         <eAnnotations xmi:id="_n4Clcc-SEeOKQMVzIDm6EQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -205,7 +207,6 @@
   <arctis:event xmi:id="_n4Nkkc-SEeOKQMVzIDm6EQ" base_Transition="_n4NkkM-SEeOKQMVzIDm6EQ" effects="_n3_iIM-SEeOKQMVzIDm6EQ"/>
   <arctis:event xmi:id="_n4Oysc-SEeOKQMVzIDm6EQ" base_Transition="_n4OysM-SEeOKQMVzIDm6EQ" effects="_n4AJMc-SEeOKQMVzIDm6EQ"/>
   <arctis:event xmi:id="_n4QA0c-SEeOKQMVzIDm6EQ" base_Transition="_n4QA0M-SEeOKQMVzIDm6EQ" triggers="_n4AwQM-SEeOKQMVzIDm6EQ"/>
-  <arctis:event xmi:id="_n4RO8c-SEeOKQMVzIDm6EQ" base_Transition="_n4RO8M-SEeOKQMVzIDm6EQ" triggers="_n4BXUM-SEeOKQMVzIDm6EQ"/>
   <arctis:event xmi:id="_n4SdEc-SEeOKQMVzIDm6EQ" base_Transition="_n4SdEM-SEeOKQMVzIDm6EQ"/>
   <graphics:Shape xmi:id="_n4YjsM-SEeOKQMVzIDm6EQ" x="14" y="28" base_Element="_n4X8oM-SEeOKQMVzIDm6EQ" orientation="west"/>
   <graphics:Shape xmi:id="_n4a_8M-SEeOKQMVzIDm6EQ" x="30" y="96" base_Element="_n4aY4M-SEeOKQMVzIDm6EQ" orientation="west"/>
@@ -250,4 +251,6 @@
   <arctis:event xmi:id="_CoPQgM-eEeOKQMVzIDm6EQ" base_Transition="_CoOpcM-eEeOKQMVzIDm6EQ" triggers="_3Fn_YM-REeOKQMVzIDm6EQ"/>
   <arctis:event xmi:id="_CoQeoM-eEeOKQMVzIDm6EQ" base_Transition="_CoP3kM-eEeOKQMVzIDm6EQ" triggers="_5l_DUM-REeOKQMVzIDm6EQ"/>
   <arctis:event xmi:id="_FKw3oM-eEeOKQMVzIDm6EQ" base_Transition="_FKvpgM-eEeOKQMVzIDm6EQ"/>
+  <arctis:event xmi:id="_Ng8bQM-lEeOQXsXzXjElFQ" base_Transition="_NcFJYM-lEeOQXsXzXjElFQ" triggers="_n4BXUM-SEeOKQMVzIDm6EQ"/>
+  <arctis:event xmi:id="_Ng-QcM-lEeOQXsXzXjElFQ" base_Transition="_Ng9pYM-lEeOQXsXzXjElFQ" effects="_n3_iIM-SEeOKQMVzIDm6EQ"/>
 </xmi:XMI>
