@@ -204,7 +204,7 @@
     </profileApplication>
   </uml:Package>
   <graphics:Shape xmi:id="_8gLOkLWdEeOv-KguLGS39w" x="72" y="0" width="1153" height="55" base_Element="_8Z0u8rWdEeOv-KguLGS39w"/>
-  <graphics:Shape xmi:id="_8gL1oLWdEeOv-KguLGS39w" x="72" y="54" width="1153" height="451" base_Element="_8Z19ELWdEeOv-KguLGS39w"/>
+  <graphics:Shape xmi:id="_8gL1oLWdEeOv-KguLGS39w" x="108" y="54" width="1153" height="451" base_Element="_8Z19ELWdEeOv-KguLGS39w"/>
   <arctis:esm xmi:id="_8gNDwLWdEeOv-KguLGS39w" base_StateMachine="_8gMcsLWdEeOv-KguLGS39w"/>
   <graphics:Shape xmi:id="_AxhvALWeEeOv-KguLGS39w" x="36" y="90" base_Element="_ArZR0LWeEeOv-KguLGS39w" orientation="west"/>
   <graphics:Shape xmi:id="_FF6VULWeEeOv-KguLGS39w" x="108" y="72" width="199" height="55" base_Element="_FFZX8LWeEeOv-KguLGS39w"/>
