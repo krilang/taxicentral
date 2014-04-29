@@ -38,7 +38,10 @@ public class UserClient extends Block {
 		if(address.contains("#")){
 			current_order.taxiType=TaxiType.stringToEnum(parts[1]);
 		}
-		System.out.println("address is "+current_order.address+" and taxitype is "+current_order.taxiType);
+		if(address.contains("@")){
+			current_order.order_status=Status.USER_PREBOOK;
+		}
+		System.out.println("address is "+current_order.address+" and taxitype is "+current_order.taxiType+" and it is a "+current_order.order_status);
 		
 		return true;
 	}
