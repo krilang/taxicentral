@@ -168,16 +168,18 @@ public class TaxiDispatcher extends Block {
 		for (int i = 0; i < queued_orders.size(); i++) {
 			Order o = queued_orders.get(i);
 			if(! (o.reject_list.contains(taxi_avail_object.taxi_id))) {
-				taxi_avail_object.order_status = Status.CENTRAL_TAXI_OFFER;
-				taxi_avail_object.topic = "t"+taxi_avail_object.taxi_id;
-				taxi_avail_object.order_id = o.order_id;
-				taxi_avail_object.user_id = o.user_id;
-				taxi_avail_object.address = o.address;
-				taxi_avail_object.incomming_taxi = true;
-				
-				taxi_avail_object.msg_to_central = "Taxi "+taxi_avail_object.taxi_id+" was offered order "+o.order_id+" at "+o.address;
-				
-				return true;
+				if( (o.requestedTaxiType != null && o.requestedTaxiType == taxi_avail_object.taxiType) || o.requestedTaxiType == null) {
+					taxi_avail_object.order_status = Status.CENTRAL_TAXI_OFFER;
+					taxi_avail_object.topic = "t"+taxi_avail_object.taxi_id;
+					taxi_avail_object.order_id = o.order_id;
+					taxi_avail_object.user_id = o.user_id;
+					taxi_avail_object.address = o.address;
+					taxi_avail_object.incomming_taxi = true;
+
+					taxi_avail_object.msg_to_central = "Taxi "+taxi_avail_object.taxi_id+" was offered order "+o.order_id+" at "+o.address;
+
+					return true;
+				}
 			}
 		}
 		
@@ -341,7 +343,9 @@ public class TaxiDispatcher extends Block {
 		
 		for (TaxiInformation ti : available_taxies) {
 			if(! o.reject_list.contains(ti.taxi_id)) {
-				proxy_taxies.add(ti);
+				if ( (o.requestedTaxiType != null && o.requestedTaxiType == ti.taxi_type) || o.requestedTaxiType == null ) {
+					proxy_taxies.add(ti);
+				}
 			}
 		}
 		
