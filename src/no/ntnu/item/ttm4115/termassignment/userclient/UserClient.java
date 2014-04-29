@@ -81,7 +81,7 @@ public class UserClient extends Block {
 			return "Your order has been canceled."; 
 
 		case CENTRAL_USER_ORDER_CONF:
-			return "Your order is handeld, you will be picked up by "+current_order.taxi_id;
+			return current_order.msg_to_user;
 			
 		case CENTRAL_USER_ORDER_Q:
 			return current_order.msg_to_user;

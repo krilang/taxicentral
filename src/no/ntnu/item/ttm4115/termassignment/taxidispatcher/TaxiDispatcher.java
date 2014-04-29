@@ -21,10 +21,13 @@ public class TaxiDispatcher extends Block {
 	public no.ntnu.item.ttm4115.termassignment.order.Order current_order;
 
 	public java.util.ArrayList<no.ntnu.item.ttm4115.termassignment.TaxiPosition.TaxiInformation> proxy_taxies;
+
+	public java.util.ArrayList <no.ntnu.item.ttm4115.termassignment.order.Order> prebook_orders;
 	
 	public void initialize() {
 		available_taxies = new ArrayList<TaxiInformation>();
 		proxy_taxies = new ArrayList<TaxiInformation>();
+		prebook_orders= new ArrayList<Order>();
 	}
 
 	public Order objectRecieved(Order object) {
@@ -49,6 +52,9 @@ public class TaxiDispatcher extends Block {
 		case USER_CANCEL:
 			return performCancelOrder(object);
 			
+		case USER_PREBOOK:
+			return performPrebook(object);
+			
 		case TAXI_USER_ABORT:
 			return performTaxiAbortAction(object);
 			
@@ -63,6 +69,15 @@ public class TaxiDispatcher extends Block {
 		}
 		
 		
+	}
+
+	private Order performPrebook(Order object) {
+		prebook_orders.add(object);
+		object.msg_to_central="Order with id: "+object.order_id+" was added in prebook list";
+		object.msg_to_user="Your prebooking was successful";
+		object.topic = "u"+object.user_id;
+		object.order_status=Status.CENTRAL_USER_ORDER_CONF;
+		return object;
 	}
 
 	private Order performTourFinishedAction(Order object) {
@@ -97,6 +112,7 @@ public class TaxiDispatcher extends Block {
 				object.order_status = Status.CENTRAL_TAXI_ORDER_CONF;
 				object.topic = "t"+object.taxi_id;
 				object.msg_to_central = "Order "+object.order_id+" is now being hadeled by taxi "+object.taxi_id+".";
+				object.msg_to_user="Your order is handled, you will be picked up by "+current_order.taxi_id;
 				
 			} else {
 				object.order_status = Status.CENTRAL_TAXI_ORDER_CANCELED;
@@ -330,6 +346,9 @@ public class TaxiDispatcher extends Block {
 		if(o.order_status == Status.TAXI_ANSWER && o.answer == false && o.incomming_taxi == false) {
 			setTaxiAsAvailable(o);
 			return isAvailableTaxi(o);
+		}
+		if(o.order_status==Status.USER_PREBOOK){
+			return false;
 		}
 		
 		return false;
