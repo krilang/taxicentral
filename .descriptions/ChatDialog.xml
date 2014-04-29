@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="ChatDialog" 
+    author="&#216;yvin Richardsen &lt;desarc00@gmail.com&gt;, Y&#248;rn de Jong &lt;git@yorn.priv.no&gt;" 
+    provider="NTNU" 
+    purpose="Allow users to order a taxi and to cancel it" 
+    uuid="_8QgCcc-JEeOUXfZYiViiBA" 
+    status="published" 
+    type="block" 
+    >
+</block>
