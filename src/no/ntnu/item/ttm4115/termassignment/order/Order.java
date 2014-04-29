@@ -3,7 +3,9 @@ package no.ntnu.item.ttm4115.termassignment.order;
 import java.util.ArrayList;
 
 import com.bitreactive.library.android.maps.model.Position;
+
 import no.ntnu.item.ttm4115.termassignment.Status.Status;
+import no.ntnu.item.ttm4115.termassignment.TaxiType.TaxiType;
 
 public class Order {
 	
@@ -17,7 +19,7 @@ public class Order {
 	// User related
 	public String user_id;
 	public String address;
-	
+	public TaxiType requestedTaxiType;
 	public String msg_to_user;
 	
 	// Taxi related
@@ -27,6 +29,7 @@ public class Order {
 	public boolean available; // Update to central
 	public boolean answer; // Answer to central
 	public boolean incomming_taxi;
+	public TaxiType taxiType;
 	
 	public ArrayList<String> reject_list = new ArrayList<String>();
 	
