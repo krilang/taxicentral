@@ -62,7 +62,7 @@ public class ChatDialog extends Block {
 		controls.add(message, c);
 		c.gridwidth = 1;
 
-		send = frame.createEventButton(MESSAGE, "Send message", chatMessage.toString());
+		send = frame.createEventButton(MESSAGE, "Send message", chatMessage);
 		c.gridy = 1;
 		controls.add(send, c);
 

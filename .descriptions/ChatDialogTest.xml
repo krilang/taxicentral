@@ -8,5 +8,7 @@
     <required>
         <block name="c0" uuid="_OzyqYM99EeOUXfZYiViiBA"/>
         <block name="c1" uuid="_OzyqYM99EeOUXfZYiViiBA"/>
+        <block name="c2" uuid="_0vEpoaOdEeOlvM2Rtrpuog"/>
+        <block name="c3" uuid="_0vEpoaOdEeOlvM2Rtrpuog"/>
     </required>
 </block>
