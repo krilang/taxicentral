@@ -28,6 +28,11 @@ public class TaxiDispatcher extends Block {
 	}
 
 	public Order objectRecieved(Order object) {
+		
+		System.out.println(object);
+		if(object.order_status == null) {
+			return object;
+		}
 
 		switch (object.order_status) {
 		case TAXI_DUTY:
@@ -331,9 +336,6 @@ public class TaxiDispatcher extends Block {
 	
 	private boolean isAvailableTaxi(Order o) {
 		
-		System.out.println("Available taxies:");
-		System.out.println(available_taxies.size());
-		
 		if(available_taxies.size() == 0) { return false; }
 		
 		proxy_taxies.clear();
@@ -343,9 +345,6 @@ public class TaxiDispatcher extends Block {
 				proxy_taxies.add(tp);
 			}
 		}
-		
-		System.out.println("ProxyTaxies@disp:");
-		System.out.println(proxy_taxies.size());
 		
 		if (proxy_taxies.size() == 0) {
 			return false;

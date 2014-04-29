@@ -196,6 +196,13 @@ public class TaxiClient extends Block {
 
 	public boolean objectReceived() {
 		
+		if(current_order == null) {
+			return false;
+		}
+		if(current_order.order_status == null) {
+			return false;
+		}
+		
 		switch (current_order.order_status) {
 		
 		case CENTRAL_TAXI_ORDER_CONF:

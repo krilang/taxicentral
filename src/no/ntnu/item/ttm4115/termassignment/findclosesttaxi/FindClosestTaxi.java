@@ -40,10 +40,6 @@ public class FindClosestTaxi extends Block {
 		taxiListSize=taxiList.size();
 		
 		proxList.clear();
-		
-		System.out.println("Incomming taxilist:");
-		System.out.println(taxiList);
-
 	}
 
 	public Journey sendTaxiJourney() {
@@ -52,8 +48,6 @@ public class FindClosestTaxi extends Block {
 		String toAddress= taxiList.get(counter).positionAsString();
 		
 		return new Journey(taxiAlias, orderLocation, toAddress);
-
-
 	}
 
 	public void incrementCounter() {
@@ -91,7 +85,7 @@ public class FindClosestTaxi extends Block {
 		}
 		
 		
-	
+		
 		return generateOrder(returnClosestTaxi());
 	}
 	

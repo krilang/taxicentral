@@ -56,5 +56,16 @@ public class Order {
 		return new Integer(order_id);
 	}
 	
+	public String toString() {
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append("OrderID: "+order_id+"\n");
+		sb.append("TaxiID: "+taxi_id+"\n");
+		sb.append("UserID: "+user_id+"\n");
+		sb.append("Status: "+order_status+"\n");
+		sb.append("Topic: "+topic);
+		
+		return sb.toString();
+	}
 	
 }
