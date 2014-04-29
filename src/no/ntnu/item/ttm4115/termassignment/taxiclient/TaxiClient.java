@@ -58,6 +58,7 @@ public class TaxiClient extends Block {
 		current_order = new Order();
 		current_order.taxi_id = taxi_id;
 		current_order.taxi_position = position;
+		current_order.taxiType = this.taxi_type;
 		current_order.topic = "central";
 		current_order.order_status = Status.TAXI_DUTY;
 		current_order.on_duty = duty_status;
