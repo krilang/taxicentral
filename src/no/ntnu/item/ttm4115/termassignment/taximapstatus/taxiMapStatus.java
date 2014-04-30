@@ -9,6 +9,8 @@ public class taxiMapStatus {
 	public String mTaxiID;
 	public Position position;
 	public TaxiType taxiType;
+	public boolean available;
+	public boolean onDuty;
 	
 	
 	public taxiMapStatus(String taxiID, Position position) {
