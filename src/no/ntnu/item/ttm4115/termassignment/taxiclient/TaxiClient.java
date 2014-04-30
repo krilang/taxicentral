@@ -173,7 +173,7 @@ public class TaxiClient extends Block {
 		}
 		Status s = current_order.order_status;
 		
-		return s == Status.TAXI_USER_COM || s == Status.TAXI_USER_CONF;
+		return s == Status.TAXI_USER_CONF;
 	}
 	
 	public String getOrderMessage() {
@@ -217,9 +217,6 @@ public class TaxiClient extends Block {
 			current_order.msg_to_taxi = "Your tour with User "+current_order.user_id+" has been confirmed. Pick up at "+current_order.address;
 			current_order.taxi_position = position;
 			return true;
-			
-		case TAXI_USER_COM:
-			return false;
 			
 		case USER_CANCEL:
 			current_order.topic = "central";

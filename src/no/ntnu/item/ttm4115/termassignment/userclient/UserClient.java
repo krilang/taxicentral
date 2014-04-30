@@ -96,9 +96,6 @@ public class UserClient extends Block {
 		case TAXI_USER_CONF:
 			return current_order.msg_to_user;
 			
-		case TAXI_USER_COM:
-			return current_order.msg_to_user;
-			
 		case TAXI_USER_ABORT:
 			return current_order.msg_to_user;
 			
