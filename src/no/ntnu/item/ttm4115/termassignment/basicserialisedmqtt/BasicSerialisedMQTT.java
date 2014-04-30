@@ -18,4 +18,12 @@ public class BasicSerialisedMQTT extends Block {
 	public void printer(Object s) {
 		System.out.println("Error at BasicSerializedMQTT: "+s.toString());
 	}
+
+	public void okPrinter(Object s) {
+		System.out.println("Successfully deserialized at BasicSerializedMQTT: "+s.toString());
+	}
+
+	public void publishOk() {
+		System.out.println("Publishing want OK");
+	}
 }
