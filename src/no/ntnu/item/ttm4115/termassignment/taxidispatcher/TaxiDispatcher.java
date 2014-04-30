@@ -229,13 +229,14 @@ public class TaxiDispatcher extends Block {
 				queued_orders.add(0,object);
 				object.queue_position = 1;
 				object.msg_to_user = "Your order was aborted. You are currently in queue. Position: 1";
+				object.order_status = Status.CENTRAL_USER_TAXI_ABORTED;
 			} else {
 				queued_orders.add(object);
 				object.queue_position = queued_orders.size();
 				object.msg_to_user = "You are currently in queue. Position: "+object.queue_position;
+				object.order_status = Status.CENTRAL_USER_ORDER_Q;
 			}
 			
-			object.order_status = Status.CENTRAL_USER_ORDER_Q;
 			object.topic = "u"+object.user_id;
 			
 			return object;

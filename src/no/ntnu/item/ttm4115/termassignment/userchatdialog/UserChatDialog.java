@@ -23,9 +23,10 @@ public class UserChatDialog extends Block {
 		if(oStat == Status.TAXI_USER_CONF || oStat == Status.CENTRAL_USER_ORDER_CONF) {
 			return 1; // Opening chatwindow
 		}
-		if(oStat == Status.CENTRAL_USER_CANCEL_CONF || oStat == Status.TAXI_USER_ABORT) {
-			return 2; // Closing chatwindow
-		}
+		if(oStat == Status.CENTRAL_USER_CANCEL_CONF || 
+				oStat == Status.TAXI_USER_ABORT || 
+				oStat == Status.CENTRAL_TOUR_ENDED_CONF ||
+				oStat == Status.CENTRAL_USER_TAXI_ABORTED) { return 2; } // Closing chatwindow 
 		
 		return 0;
 	}
