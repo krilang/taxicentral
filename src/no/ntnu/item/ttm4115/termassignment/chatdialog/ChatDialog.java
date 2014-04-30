@@ -16,7 +16,7 @@ import no.ntnu.item.ttm4115.termassignment.clientframe.PlaceholderTextField;
 
 public class ChatDialog extends Block {
 
-	public final String MESSAGE = "MESSAGE";
+	public final String SEND_MSG = "SEND";
 
 	/** Swing GUI */
 	private ClientFrame frame;
@@ -62,7 +62,7 @@ public class ChatDialog extends Block {
 		controls.add(message, c);
 		c.gridwidth = 1;
 
-		send = frame.createEventButton(MESSAGE, "Send message", chatMessage.toString());
+		send = frame.createEventButton(SEND_MSG, "Send message", chatMessage);
 		c.gridy = 1;
 		controls.add(send, c);
 

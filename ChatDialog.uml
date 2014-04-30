@@ -6,7 +6,7 @@
         <region xmi:id="_O6S7Ac99EeOUXfZYiViiBA" name="&lt;region>">
           <transition xmi:id="_wPcacM-AEeOUXfZYiViiBA" name="init / " source="_wPalQM-AEeOUXfZYiViiBA" target="_wPbMUM-AEeOUXfZYiViiBA"/>
           <transition xmi:id="_wPdokc-AEeOUXfZYiViiBA" name="message / " source="_wPbMUM-AEeOUXfZYiViiBA" target="_wPbMUM-AEeOUXfZYiViiBA"/>
-          <transition xmi:id="_wPe2sc-AEeOUXfZYiViiBA" name="close / " source="_wPbMUM-AEeOUXfZYiViiBA" target="_wPbMUM-AEeOUXfZYiViiBA"/>
+          <transition xmi:id="_wPe2sc-AEeOUXfZYiViiBA" name="close / exit" source="_wPbMUM-AEeOUXfZYiViiBA" target="_wPbMUM-AEeOUXfZYiViiBA"/>
           <transition xmi:id="_wPgE0c-AEeOUXfZYiViiBA" name=" / exit" source="_wPbMUM-AEeOUXfZYiViiBA" target="_wPgr4M-AEeOUXfZYiViiBA"/>
           <transition xmi:id="_wPh6AM-AEeOUXfZYiViiBA" name=" / messageOut" source="_wPbMUM-AEeOUXfZYiViiBA" target="_wPbMUM-AEeOUXfZYiViiBA"/>
           <subvertex xmi:type="uml:Pseudostate" xmi:id="_wPalQM-AEeOUXfZYiViiBA" name="&lt;initial>"/>
@@ -96,7 +96,7 @@
   <graphics:Shape xmi:id="_es_QUM-AEeOUXfZYiViiBA" x="648" y="162" base_Element="_es04QM-AEeOUXfZYiViiBA" orientation="east"/>
   <arctis:event xmi:id="_wPdokM-AEeOUXfZYiViiBA" base_Transition="_wPcacM-AEeOUXfZYiViiBA" triggers="_GkLvMM9-EeOUXfZYiViiBA"/>
   <arctis:event xmi:id="_wPe2sM-AEeOUXfZYiViiBA" base_Transition="_wPdokc-AEeOUXfZYiViiBA" triggers="_C-RtkM-AEeOUXfZYiViiBA"/>
-  <arctis:event xmi:id="_wPgE0M-AEeOUXfZYiViiBA" base_Transition="_wPe2sc-AEeOUXfZYiViiBA" triggers="_Ftj-UM-AEeOUXfZYiViiBA"/>
+  <arctis:event xmi:id="_wPgE0M-AEeOUXfZYiViiBA" base_Transition="_wPe2sc-AEeOUXfZYiViiBA" triggers="_Ftj-UM-AEeOUXfZYiViiBA" effects="_Tj_ioM-AEeOUXfZYiViiBA"/>
   <arctis:event xmi:id="_wPhS8M-AEeOUXfZYiViiBA" base_Transition="_wPgE0c-AEeOUXfZYiViiBA" effects="_Tj_ioM-AEeOUXfZYiViiBA"/>
   <arctis:event xmi:id="_wPihEM-AEeOUXfZYiViiBA" base_Transition="_wPh6AM-AEeOUXfZYiViiBA" effects="_es04QM-AEeOUXfZYiViiBA"/>
 </xmi:XMI>
