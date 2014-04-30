@@ -2,9 +2,13 @@ package no.ntnu.item.ttm4115.termassignment.taxisimulator;
 
 import com.bitreactive.library.android.maps.model.MapUpdate;
 import com.bitreactive.library.android.maps.model.Marker;
+import com.bitreactive.library.android.maps.model.Polyline;
 import com.bitreactive.library.android.maps.model.Position;
 
 import no.ntnu.item.arctis.runtime.Block;
+import no.ntnu.item.ttm4115.simulation.routeplanner.Leg;
+import no.ntnu.item.ttm4115.simulation.routeplanner.Route;
+import no.ntnu.item.ttm4115.simulation.routeplanner.Step;
 import no.ntnu.item.ttm4115.termassignment.TaxiType.TaxiType;
 import no.ntnu.item.ttm4115.termassignment.taximapstatus.taxiMapStatus;
 
@@ -56,6 +60,34 @@ public class TaxiSimulator extends Block {
 		mu.addMarker(m1);
 
 		return mu;
+	}
+
+	public MapUpdate routeDiscover(Route r) {
+		
+		System.out.println("kjører polylies");
+		MapUpdate mu=new MapUpdate();
+		Polyline p= new Polyline("id");
+		p.hue(Marker.HUE_BLUE);
+		
+		System.out.println(r.legs.size()+"Legs size <-");
+		System.out.println(r.legs.get(0).steps.size() + "Steps size");
+		int size = r.legs.get(0).steps.size();
+		for (int i = 0; i < size; i++) {
+			
+			float latitude= r.legs.get(0).steps.get(i).startLocation.latitude*1000000;
+			float longitude= r.legs.get(0).steps.get(i).startLocation.longitude*1000000;
+			
+			p.addPoint(new Position(latitude, longitude));
+			
+		}
+		
+		mu.addPolyline(p);
+		return mu;
+		
+		
+		
+		
+		
 	}
 
 }
