@@ -58,6 +58,7 @@ public class TaxiClient extends Block {
 		current_order = new Order();
 		current_order.taxi_id = taxi_id;
 		current_order.taxi_position = position;
+		current_order.taxiType=taxi_type;
 		current_order.topic = "central";
 		current_order.order_status = Status.TAXI_DUTY;
 		current_order.on_duty = duty_status;
@@ -111,7 +112,7 @@ public class TaxiClient extends Block {
 	}
 
 	public boolean setAvailableStatus(boolean bool) {
-
+		
 		if(initialReceivedOfferCheck()) {
 			return false;
 		}
@@ -280,6 +281,7 @@ public class TaxiClient extends Block {
 	}
 
 	public void setTaxiType() {
+		System.out.println("kjører set taxitype");
 		switch (this.taxi_id) {
 		case "0":
 			this.taxi_type = TaxiType.TAXI;

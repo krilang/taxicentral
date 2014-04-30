@@ -12,10 +12,11 @@
           <transition xmi:id="_TQnGgbRLEeOO6P0Ijuj5iw" name=" / confirm" source="_TQhm8LRLEeOO6P0Ijuj5iw" target="_TQhm8LRLEeOO6P0Ijuj5iw"/>
           <transition xmi:id="_TQoUoLRLEeOO6P0Ijuj5iw" name=" / exit" source="_TQhm8LRLEeOO6P0Ijuj5iw" target="_TQoUobRLEeOO6P0Ijuj5iw"/>
           <transition xmi:id="_TQpiwbRLEeOO6P0Ijuj5iw" name="message / " source="_TQhm8LRLEeOO6P0Ijuj5iw" target="_TQhm8LRLEeOO6P0Ijuj5iw"/>
-          <transition xmi:id="_TQqw4bRLEeOO6P0Ijuj5iw" name="close / " source="_TQhm8LRLEeOO6P0Ijuj5iw" target="_TQhm8LRLEeOO6P0Ijuj5iw"/>
+          <transition xmi:id="_TQqw4bRLEeOO6P0Ijuj5iw" name="close / exit" source="_TQhm8LRLEeOO6P0Ijuj5iw" target="_C2hg4NBeEeOvYYZERKBPog"/>
           <subvertex xmi:type="uml:Pseudostate" xmi:id="_TQgY0LRLEeOO6P0Ijuj5iw" name="&lt;initial>"/>
           <subvertex xmi:type="uml:State" xmi:id="_TQhm8LRLEeOO6P0Ijuj5iw" name="active"/>
           <subvertex xmi:type="uml:FinalState" xmi:id="_TQoUobRLEeOO6P0Ijuj5iw" name="&lt;final>"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_C2hg4NBeEeOvYYZERKBPog" name="&lt;final>"/>
         </region>
       </ownedBehavior>
       <ownedOperation xmi:id="_svMCAKOdEeOlvM2Rtrpuog" name="show"/>
@@ -180,5 +181,5 @@
   <arctis:event xmi:id="_TQntkLRLEeOO6P0Ijuj5iw" base_Transition="_TQnGgbRLEeOO6P0Ijuj5iw" effects="_svMCPKOdEeOlvM2Rtrpuog"/>
   <arctis:event xmi:id="_TQpiwLRLEeOO6P0Ijuj5iw" base_Transition="_TQoUoLRLEeOO6P0Ijuj5iw" effects="_svMCP6OdEeOlvM2Rtrpuog"/>
   <arctis:event xmi:id="_TQqw4LRLEeOO6P0Ijuj5iw" base_Transition="_TQpiwbRLEeOO6P0Ijuj5iw" triggers="_svMCQKOdEeOlvM2Rtrpuog"/>
-  <arctis:event xmi:id="_TQrX8LRLEeOO6P0Ijuj5iw" base_Transition="_TQqw4bRLEeOO6P0Ijuj5iw" triggers="_FblagKiREeOFfujtF58JjQ"/>
+  <arctis:event xmi:id="_TQrX8LRLEeOO6P0Ijuj5iw" base_Transition="_TQqw4bRLEeOO6P0Ijuj5iw" triggers="_FblagKiREeOFfujtF58JjQ" effects="_svMCP6OdEeOlvM2Rtrpuog"/>
 </xmi:XMI>
