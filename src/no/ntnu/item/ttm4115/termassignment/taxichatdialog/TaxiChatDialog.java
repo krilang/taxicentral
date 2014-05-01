@@ -19,17 +19,16 @@ public class TaxiChatDialog extends Block {
 	}
 
 	public int analyzeOrder(Order o) {
-		System.out.println(o);
+		
 		if(o == null || o.order_status == null) { return -1; }
 		
 		Status oStat = o.order_status;
-		current_user = o.user_id;
 		
 		if(oStat == Status.CENTRAL_TAXI_ORDER_CONF) {
-			System.out.println("taxi getting order conf, returning 1");
+			current_user = o.user_id;
 			return 1; // Opening chatwindow
 		}
-		if(oStat == Status.CENTRAL_TAXI_ORDER_CANCELED || oStat == Status.TAXI_USER_ABORT || oStat == Status.TOUR_FINISHED) {
+		if(oStat == Status.CENTRAL_TAXI_ORDER_CANCELED || oStat == Status.USER_CANCEL || oStat == Status.TOUR_FINISHED) {
 			return 2;  // Closing chatwindow  
 		}
 		
@@ -37,12 +36,10 @@ public class TaxiChatDialog extends Block {
 	}
 
 	public String getTopic() {
-		System.out.println("taxichat, sending on "+"u"+current_user+"chat");
 		return "u"+current_user+"chat"; 
 	}
 
 	public String getTaxiID() {
-		System.out.println("getting taxiID for chat");
 		return "t"+taxi_ID;
 	}
 
