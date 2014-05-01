@@ -78,6 +78,7 @@ public class TaxiClient extends Block {
 		if (current_order != null && current_order.order_status == Status.CENTRAL_TAXI_OFFER) {
 			current_order.order_status = Status.TAXI_ANSWER;
 			current_order.topic = "central";
+			current_order.taxi_position = this.position;
 			current_order.answer = false;
 			current_order.reject_list.add(taxi_id);
 			
