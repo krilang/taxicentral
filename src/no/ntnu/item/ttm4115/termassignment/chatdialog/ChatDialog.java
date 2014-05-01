@@ -46,8 +46,8 @@ public class ChatDialog extends Block {
 	 * Initialise and show the GUI. Should only be called *once* per user
 	 * @param alias	Alias for this user
 	 */
-	public void show() {
-		frame = new ClientFrame(this, "Chat");
+	public void show(String s) {
+		frame = new ClientFrame(this, s+"Chat");
 		controls = new JPanel(new GridBagLayout());
 		stateLabel = new JLabel("<html>Location: <i>unknown");
 
