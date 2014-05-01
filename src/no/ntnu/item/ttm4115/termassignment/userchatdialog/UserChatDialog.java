@@ -8,10 +8,8 @@ import no.ntnu.item.ttm4115.termassignment.order.Order;
 public class UserChatDialog extends Block {
 
 	public java.lang.String current_taxi;
-	public java.lang.String user_id;
 
 	public AdvancedConfiguration getAdvConfig(String uid) {
-		user_id = uid;
 		return new AdvancedConfiguration("u"+uid+"chat",99);
 	}
 
@@ -35,10 +33,6 @@ public class UserChatDialog extends Block {
 
 	public String getTopic() {
 		return "t"+current_taxi+"chat";
-	}
-
-	public String getUserID() {
-		return "u"+user_id;
 	}
 
 }
