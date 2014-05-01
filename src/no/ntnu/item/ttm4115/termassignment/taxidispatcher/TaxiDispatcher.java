@@ -120,6 +120,7 @@ public class TaxiDispatcher extends Block {
 		}
 		else {
 			setTaxiAsAvailable(object);
+			object.taxi_id = null;
 			return performReceivedUserOrder(object, false);
 		}
 		
