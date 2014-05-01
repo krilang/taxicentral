@@ -14,7 +14,7 @@ public class TaxiClient extends Block {
 	public no.ntnu.item.ttm4115.termassignment.order.Order current_order;
 	public String taxi_id;
 	public boolean on_duty;
-	public Position position;
+	public com.bitreactive.library.android.maps.model.Position position;
 	public TaxiType taxi_type;
 	
 	public boolean onDuty() {
