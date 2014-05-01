@@ -20,8 +20,7 @@ public class TaxiSimulator extends Block {
 
 	public MapUpdate createMapUpdate(taxiMapStatus tms) {
 		
-		System.out.println("starting");
-		System.out.println(tms.taxiType.toString());
+		
 		MapUpdate mu= new MapUpdate();
 		Position p=tms.position;
 		Marker m1 = Marker.createMarker(tms.mTaxiID).position(p).title("taxiNr"+tms.mTaxiID);
@@ -37,7 +36,7 @@ public class TaxiSimulator extends Block {
 		mu.addMarker(m1);
 		mu.setCenter(p);
 		mu.setZoom(15);
-		System.out.println("sending mapupdate");
+		
 		return mu;
 	}
 
@@ -67,13 +66,12 @@ public class TaxiSimulator extends Block {
 	public MapUpdate routeDiscover(Route r) {
 		
 		
-		System.out.println("kjører polylies");
+		
 		MapUpdate mu=new MapUpdate();
 		Polyline p= new Polyline(r.taxiAlias);
 		p.hue(Marker.HUE_BLUE);
 		
-		System.out.println(r.legs.size()+"Legs size <-");
-		System.out.println(r.legs.get(0).steps.size() + "Steps size");
+		
 		int size = r.legs.get(0).steps.size();
 		for (int i = 0; i < size; i++) {
 			

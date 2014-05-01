@@ -278,7 +278,7 @@ public class TaxiClient extends Block {
 	}
 
 	public void setTaxiType() {
-		System.out.println("kjører set taxitype");
+		
 		switch (this.taxi_id) {
 		case "0":
 			this.taxi_type = TaxiType.TAXI;

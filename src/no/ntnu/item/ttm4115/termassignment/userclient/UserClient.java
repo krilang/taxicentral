@@ -41,7 +41,6 @@ public class UserClient extends Block {
 		if(address.contains("@")){
 			current_order.order_status=Status.USER_PREBOOK;
 		}
-		System.out.println("address is "+current_order.address+" and taxitype is "+current_order.taxiType+" and it is a "+current_order.order_status);
 		
 		return true;
 	}
@@ -100,7 +99,7 @@ public class UserClient extends Block {
 			return current_order.msg_to_user;
 			
 		default:
-			System.out.println(current_order.order_status.toString());
+			
 			return current_order.msg_to_user;
 			
 		}

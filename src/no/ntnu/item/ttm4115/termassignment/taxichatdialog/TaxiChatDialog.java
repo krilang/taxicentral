@@ -12,8 +12,10 @@ public class TaxiChatDialog extends Block {
 
 	public AdvancedConfiguration getAdvConfig(String taxi_id) {
 		taxi_ID=taxi_id;
-		System.out.println("taxichat listen on "+"t"+taxi_id+"chat");
+		
 		return new AdvancedConfiguration("t"+taxi_id+"chat", 99);
+		
+		
 	}
 
 	public int analyzeOrder(Order o) {

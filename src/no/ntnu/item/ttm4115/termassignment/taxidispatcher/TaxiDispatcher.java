@@ -56,7 +56,7 @@ public class TaxiDispatcher extends Block {
 			return performTourFinishedAction(object);
 			
 		default:
-			System.out.println(object.order_status.toString());
+			
 			object.msg_to_central = "Default action was triggered";
 			object.topic = "";
 			return object;
