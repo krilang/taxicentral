@@ -45,6 +45,9 @@
         <argument xmi:id="_BGsUQdBZEeOuz9FKd7uZUg" name="disconnect" inPartition="_94iWMNBYEeOuz9FKd7uZUg"/>
         <argument xmi:id="_BGsURNBZEeOuz9FKd7uZUg" name="publishTopic" inPartition="_94iWMNBYEeOuz9FKd7uZUg" incoming="_-WevENBbEeOuz9FKd7uZUg" type="_BAx5gdBZEeOuz9FKd7uZUg"/>
         <argument xmi:id="_BG4hgNBZEeOuz9FKd7uZUg" name="advancedSubscribe" inPartition="_94iWMNBYEeOuz9FKd7uZUg" incoming="_f-z38NBZEeOuz9FKd7uZUg" type="_BA4AKdBZEeOuz9FKd7uZUg"/>
+        <argument xmi:type="uml:ValuePin" xmi:id="_ZhC5gNE5EeOXrL1CGZHtpg" name="group" type="_BA4ALtBZEeOuz9FKd7uZUg">
+          <value xmi:type="uml:LiteralInteger" xmi:id="_ZhC5gdE5EeOXrL1CGZHtpg" name="group" type="_BA4ALtBZEeOuz9FKd7uZUg" value="99"/>
+        </argument>
         <result xmi:id="_BGgHAdBZEeOuz9FKd7uZUg" name="connected" inPartition="_94iWMNBYEeOuz9FKd7uZUg"/>
         <result xmi:id="_BGgHA9BZEeOuz9FKd7uZUg" name="publishError" inPartition="_94iWMNBYEeOuz9FKd7uZUg" type="_BAx5gdBZEeOuz9FKd7uZUg"/>
         <result xmi:id="_BGmNoNBZEeOuz9FKd7uZUg" name="messageData" inPartition="_94iWMNBYEeOuz9FKd7uZUg" outgoing="__zxMcNBbEeOuz9FKd7uZUg" type="_BAx5gdBZEeOuz9FKd7uZUg"/>
