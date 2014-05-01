@@ -16,6 +16,7 @@ public class TaxiSimulator extends Block {
 
 	public java.lang.String taxiMapId;
 	public com.bitreactive.library.android.maps.model.Position tempPosition;
+	public Polyline polyTemp;
 
 	public MapUpdate createMapUpdate(taxiMapStatus tms) {
 		
@@ -47,6 +48,7 @@ public class TaxiSimulator extends Block {
 
 	public  taxiMapStatus createTaxiStatus() {
 		taxiMapStatus tms=new taxiMapStatus(taxiMapId, tempPosition);
+		
 		return tms;
 	}
 
@@ -64,9 +66,10 @@ public class TaxiSimulator extends Block {
 
 	public MapUpdate routeDiscover(Route r) {
 		
+		
 		System.out.println("kjører polylies");
 		MapUpdate mu=new MapUpdate();
-		Polyline p= new Polyline("id");
+		Polyline p= new Polyline(r.taxiAlias);
 		p.hue(Marker.HUE_BLUE);
 		
 		System.out.println(r.legs.size()+"Legs size <-");
@@ -80,7 +83,7 @@ public class TaxiSimulator extends Block {
 			p.addPoint(new Position(latitude, longitude));
 			
 		}
-		
+		polyTemp=p;
 		mu.addPolyline(p);
 		return mu;
 		
@@ -88,6 +91,17 @@ public class TaxiSimulator extends Block {
 		
 		
 		
+	}
+
+	public MapUpdate removePolyLine() {
+		MapUpdate mu=new MapUpdate();
+		
+		//removePolyLine().addPolyline(polyTemp);		
+		
+		polyTemp.setRemove();
+		mu.addPolyline(polyTemp);
+		
+		return mu;
 	}
 
 }
