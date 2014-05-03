@@ -106,12 +106,14 @@ public class TaxiSimulator extends Block {
 		return mu;
 	}
 
-	public MapUpdate setIsCanceled(taxiMapStatus tms) {
-		isCanceled=true;
+	public MapUpdate setIsCanceled(boolean b) {
 		MapUpdate mu= new MapUpdate();
+		if (b){
+		isCanceled=true;
 		polyTemp.setRemove();
 		mu.addPolyline(polyTemp);
 		System.out.println("removing polyline: "+polyTemp.getId());
+		}
 		return mu;
 	}
 

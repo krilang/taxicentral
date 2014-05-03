@@ -300,4 +300,12 @@ public class TaxiClient extends Block {
 			break;
 		}
 	}
+
+	public boolean isUserCancel() {
+		
+		if(current_order.order_status==Status.USER_CANCEL){
+			System.out.println("is a user cancel");
+			return true;
+		}else{return false;}
+	}
 }
