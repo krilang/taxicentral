@@ -252,7 +252,12 @@ public class TaxiDispatcher extends Block {
 		
 		for(int i = 0; i < available_taxies.size(); i++) {
 			
-			if(! (new_order_object.reject_list.contains(available_taxies.get(i).taxi_id))) {
+			TaxiInformation ti = available_taxies.get(i);
+			
+			if(! (new_order_object.reject_list.contains(ti.taxi_id))) {
+				if(new_order_object.requestedTaxiType != ti.taxi_type && new_order_object.requestedTaxiType != null) {
+					break;
+				}
 				new_order_object.order_status = Status.CENTRAL_TAXI_OFFER;
 				new_order_object.taxi_id = available_taxies.remove(i).taxi_id;
 				new_order_object.topic = "t"+new_order_object.taxi_id;
@@ -345,7 +350,10 @@ public class TaxiDispatcher extends Block {
 		
 		for (TaxiInformation ti : available_taxies) {
 			if(! o.reject_list.contains(ti.taxi_id)) {
-				if ( (o.requestedTaxiType != null && o.requestedTaxiType == ti.taxi_type) || o.requestedTaxiType == null ) {
+				
+				if (o.requestedTaxiType != null && o.requestedTaxiType.equals(ti.taxi_type)) {
+					proxy_taxies.add(ti);
+				} else if (o.requestedTaxiType == null ) {
 					proxy_taxies.add(ti);
 				}
 			}

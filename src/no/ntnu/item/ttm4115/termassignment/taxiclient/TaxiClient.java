@@ -296,6 +296,7 @@ public class TaxiClient extends Block {
 
 
 		default:
+			this.taxi_type = TaxiType.TAXI;
 			break;
 		}
 	}

@@ -18,7 +18,7 @@
         <node xmi:type="uml:CallBehaviorAction" xmi:id="_BsH54LQ8EeOO6P0Ijuj5iw" name="c1" inPartition="_pQHc0LQhEeOO6P0Ijuj5iw" behavior="__m9lcGJOEeGrjfXhcH6cAA">
           <argument xmi:id="_BsWjYLQ8EeOO6P0Ijuj5iw" name="start" inPartition="_pQHc0LQhEeOO6P0Ijuj5iw" incoming="_DfKk0LQ8EeOO6P0Ijuj5iw"/>
           <argument xmi:type="uml:ValuePin" xmi:id="_xv-qULW8EeOv-KguLGS39w" name="instances" type="_EAdA4rQkEeOO6P0Ijuj5iw">
-            <value xmi:type="uml:LiteralInteger" xmi:id="_H0CIYM7MEeO7CrIFtgPuaA" name="instances" type="_EAdA4rQkEeOO6P0Ijuj5iw" value="2"/>
+            <value xmi:type="uml:LiteralInteger" xmi:id="_eWx-cNKvEeOTF98Wzp0LmQ" name="instances" type="_EAdA4rQkEeOO6P0Ijuj5iw" value="4"/>
           </argument>
           <result xmi:id="_BsYYkLQ8EeOO6P0Ijuj5iw" name="create" inPartition="_pQHc0LQhEeOO6P0Ijuj5iw" outgoing="_D2KvkLQ8EeOO6P0Ijuj5iw" type="_EAXhULQkEeOO6P0Ijuj5iw"/>
           <result xmi:id="_Bsbb4LQ8EeOO6P0Ijuj5iw" name="end" inPartition="_pQHc0LQhEeOO6P0Ijuj5iw" outgoing="_WjL88LpeEeOOXPXKCINaTw"/>

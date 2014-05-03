@@ -6,14 +6,13 @@ public enum TaxiType {
 
 	public static TaxiType stringToEnum(String str){
 		String s=str.toUpperCase();
-		if (s.equals(CARGOTAXI.toString())){
+		if ( s.equals(CARGOTAXI.toString()) || s.contains("CARGO") ){
 			return CARGOTAXI;
-		}else if(s.equals(MAXITAXI.toString())){
+		}else if(s.equals(MAXITAXI.toString()) || s.contains("MAXI")){
 			return MAXITAXI;
-		}else if(s.equals(TAXI.toString())){
+		}
+		else{
 			return TAXI;
-		}else{
-			return null;
 		}
 		
 	}
