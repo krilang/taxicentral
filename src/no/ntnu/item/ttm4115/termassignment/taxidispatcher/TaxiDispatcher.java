@@ -72,7 +72,7 @@ public class TaxiDispatcher extends Block {
 		
 		int pos = getQueuePosition(object);
 		
-		if(pos > 0) {
+		if(pos >= 0) {
 			object.queue_position = pos + 1;
 		}
 		
@@ -104,7 +104,14 @@ public class TaxiDispatcher extends Block {
 		
 		if(object.answer) {
 
-			if (! (canceled_orders.contains(Integer.valueOf(object.order_id)))) {
+			if(!(getQueuePosition(object) >= 0)) {
+				object.order_status = Status.CENTRAL_TAXI_ORDER_CANCELED;
+				object.msg_to_taxi = "The order was already accepted by another taxi. You are set as unavailable.";
+				object.msg_to_central = "Taxi "+object.taxi_id+" was informed that the order was taken.";
+				object.topic = "t"+object.taxi_id;
+			}
+			
+			else if (! (canceled_orders.contains(Integer.valueOf(object.order_id)))) {
 				
 				int pos = getQueuedOrderByID(object.order_id);
 				
@@ -118,11 +125,10 @@ public class TaxiDispatcher extends Block {
 				
 			} else {
 				object.order_status = Status.CENTRAL_TAXI_ORDER_CANCELED;
-				object.msg_to_taxi = "The order was canceled. You are set as available.";
+				object.msg_to_taxi = "The order was canceled. You are set as unavailable.";
 				object.msg_to_central = "Taxi "+object.taxi_id+" was informed that the order was canceled.";
 				object.topic = "t"+object.taxi_id;
 				
-				setTaxiAsAvailable(object);
 			}
 			return object;
 		}
