@@ -145,7 +145,7 @@ public class TaxiClient extends Block {
 			return false;
 		}
 		
-		
+		current_order.taxi_position=position;
 		current_order.order_status = Status.TAXI_ANSWER;
 		current_order.topic = "central";
 		current_order.answer = true;

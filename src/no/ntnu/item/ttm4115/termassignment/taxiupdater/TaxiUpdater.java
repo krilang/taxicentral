@@ -15,9 +15,11 @@ public class TaxiUpdater extends Block {
 			return 1;
 		}if(order.order_status==Status.TAXI_AVAILABLE){
 			return 2;
-		}if(order.order_status==Status.USER_CANCEL){
-			return 3;
+		}if(order.order_status==Status.CENTRAL_TAXI_ORDER_CANCELED){
+			order.available=false;
+			return 2;
 		}
+		
 		else {return 0;
 		
 		}
