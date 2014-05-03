@@ -2,6 +2,8 @@ package no.ntnu.item.ttm4115.termassignment.taxidispatcher;
 
 import java.util.ArrayList;
 
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
+
 import no.ntnu.item.arctis.runtime.Block;
 import no.ntnu.item.ttm4115.termassignment.Status.Status;
 import no.ntnu.item.ttm4115.termassignment.TaxiPosition.TaxiInformation;
@@ -13,7 +15,8 @@ public class TaxiDispatcher extends Block {
 	
 	public ArrayList<Order> queued_orders = new ArrayList<Order>();
 	public ArrayList<Integer> canceled_orders = new ArrayList<Integer>();
-
+	public ArrayList<Integer> accepted_orders = new ArrayList<Integer>(); 
+	
 	public java.util.ArrayList<TaxiInformation> available_taxies;
 
 	public boolean requiresTaxi;
@@ -104,14 +107,23 @@ public class TaxiDispatcher extends Block {
 		
 		if(object.answer) {
 
-			if(!(getQueuePosition(object) >= 0)) {
+			if(canceled_orders.contains(Integer.valueOf(object.order_id))) {
+				
+				object.order_status = Status.CENTRAL_TAXI_ORDER_CANCELED;
+				object.msg_to_taxi = "The order was canceled. You are set as unavailable.";
+				object.msg_to_central = "Taxi "+object.taxi_id+" was informed that the order was canceled.";
+				object.topic = "t"+object.taxi_id;
+			}
+			
+			else if(accepted_orders.contains(object.orderIDToInteger())) {
+				
 				object.order_status = Status.CENTRAL_TAXI_ORDER_CANCELED;
 				object.msg_to_taxi = "The order was already accepted by another taxi. You are set as unavailable.";
 				object.msg_to_central = "Taxi "+object.taxi_id+" was informed that the order was taken.";
 				object.topic = "t"+object.taxi_id;
 			}
 			
-			else if (! (canceled_orders.contains(Integer.valueOf(object.order_id)))) {
+			else {
 				
 				int pos = getQueuedOrderByID(object.order_id);
 				
@@ -119,17 +131,13 @@ public class TaxiDispatcher extends Block {
 					queued_orders.remove(pos);
 				}
 				
+				
 				object.order_status = Status.CENTRAL_TAXI_ORDER_CONF;
 				object.topic = "t"+object.taxi_id;
 				object.msg_to_central = "Order "+object.order_id+" is now being hadeled by taxi "+object.taxi_id+".";
-				
-			} else {
-				object.order_status = Status.CENTRAL_TAXI_ORDER_CANCELED;
-				object.msg_to_taxi = "The order was canceled. You are set as unavailable.";
-				object.msg_to_central = "Taxi "+object.taxi_id+" was informed that the order was canceled.";
-				object.topic = "t"+object.taxi_id;
-				
-			}
+				accepted_orders.add(object.order_id);
+			} 
+			
 			return object;
 		}
 		else if(object.incomming_taxi) {
