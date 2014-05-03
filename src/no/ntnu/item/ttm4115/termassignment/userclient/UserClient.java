@@ -25,22 +25,21 @@ public class UserClient extends Block {
 
 		String[] parts= address.split("@|\\#");
 		
-		
-		
-		
 		if (current_order != null) { return false; }
 
 		current_order = new Order();
 		current_order.order_status = Status.USER_ORDER;
 		current_order.topic = "central";
 		current_order.user_id = user_id;
-		current_order.address = parts[0];
+		
 		if(address.contains("#")){
-			current_order.taxiType=TaxiType.stringToEnum(parts[1]);
+			current_order.requestedTaxiType = TaxiType.stringToEnum(parts[1]);
 		}
 		if(address.contains("@")){
 			current_order.order_status=Status.USER_PREBOOK;
 		}
+		
+		current_order.address = parts[0];
 		
 		return true;
 	}
@@ -110,7 +109,7 @@ public class UserClient extends Block {
 	}
 	
 	public String orderExists() {
-		return current_order.msg_to_user = "Please cancel your previous order to make a new request.";
+		return "Please cancel your previous order to make a new request.";
 	}
 	
 	public boolean objectRecieved() {
