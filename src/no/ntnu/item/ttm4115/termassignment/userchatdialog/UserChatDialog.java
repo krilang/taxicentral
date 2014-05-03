@@ -12,6 +12,7 @@ public class UserChatDialog extends Block {
 
 	public AdvancedConfiguration getAdvConfig(String uid) {
 		user_ID=uid;
+		System.out.println("setting userchat to "+"u"+uid+"chat");
 		return new AdvancedConfiguration("u"+uid+"chat",99);
 	}
 
