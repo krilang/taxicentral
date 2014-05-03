@@ -10,6 +10,7 @@ public class UserClient extends Block {
 
 	public Order current_order;
 	public String user_id;
+	public boolean in_queue;
 
 	public static String getAlias(String user_id) {
 		return user_id;
@@ -20,7 +21,13 @@ public class UserClient extends Block {
 	}
 
 	public boolean request(String address) {
-
+		
+		if(in_queue) {
+			current_order.order_status = Status.USER_Q_REQUEST;
+			current_order.topic = "central";
+			return true;
+		}
+		
 		String[] parts= address.split("@|\\#");
 		
 		if (current_order != null) { return false; }
@@ -74,26 +81,20 @@ public class UserClient extends Block {
 		
 		case CENTRAL_USER_CANCEL_CONF:
 			current_order = null;
+			in_queue = false;
 			return "Your order has been canceled."; 
 
 		case CENTRAL_USER_ORDER_CONF:
+			in_queue = false;
 			return "Your order is handeld, you will be picked up by "+current_order.taxi_id;
-			
-		case CENTRAL_USER_ORDER_Q:
-			return current_order.msg_to_user;
 			
 		case CENTRAL_TOUR_ENDED_CONF:
 			current_order = null;
+			in_queue = false;
 			return "Thank you for using the taxi service!";
 			
 		case USER_ORDER:
 			return "You already have an pending request, cancel it to create a new";
-		
-		case TAXI_USER_CONF:
-			return current_order.msg_to_user;
-			
-		case TAXI_USER_ABORT:
-			return current_order.msg_to_user;
 			
 		default:
 			
@@ -103,6 +104,9 @@ public class UserClient extends Block {
 	}
 
 	public String requestSent() {
+		if (current_order.order_status == Status.USER_Q_REQUEST) {
+			return "Please wait for your updated queue position..";
+		}
 		return "Your request is beeing handeled";
 	}
 	
@@ -129,6 +133,10 @@ public class UserClient extends Block {
 			current_order.topic = "central";
 			current_order.msg_to_user = "You were picked up, and the tour has ended.";
 			return true;
+			
+		case CENTRAL_USER_ORDER_Q: 
+			this.in_queue = true;
+			return false;
 			
 		default:
 			return false;

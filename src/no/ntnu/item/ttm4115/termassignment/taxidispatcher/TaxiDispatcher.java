@@ -54,6 +54,9 @@ public class TaxiDispatcher extends Block {
 			
 		case TOUR_FINISHED:
 			return performTourFinishedAction(object);
+		
+		case USER_Q_REQUEST:
+			return performQueueRequestAction(object);
 			
 		default:
 			
@@ -63,6 +66,21 @@ public class TaxiDispatcher extends Block {
 		}
 		
 		
+	}
+
+	private Order performQueueRequestAction(Order object) {
+		
+		int pos = getQueuePosition(object);
+		
+		if(pos > 0) {
+			object.queue_position = pos + 1;
+		}
+		
+		object.msg_to_user = "You are currently in queue. Position: "+object.queue_position;
+		object.msg_to_central = "User "+object.user_id+" was updated on its queue position: "+object.queue_position;
+		object.topic = "u"+object.user_id;
+		
+		return object;
 	}
 
 	private Order performTourFinishedAction(Order object) {
@@ -326,6 +344,17 @@ public class TaxiDispatcher extends Block {
 			}			
 		}
 		return false;
+	}
+	
+	private int getQueuePosition(Order o) {
+		
+		for (int i = 0; i < queued_orders.size(); i++) {
+			Order qo = queued_orders.get(i);
+			if (qo.order_id == o.order_id) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
 	public boolean setRequiresTaxi() {
