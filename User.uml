@@ -14,7 +14,7 @@
         <node xmi:type="uml:CallBehaviorAction" xmi:id="_ccbRcLQtEeODLLWTWELv9A" name="c1" inPartition="_Vt29ILQsEeODLLWTWELv9A" behavior="__m9lcGJOEeGrjfXhcH6cAA">
           <argument xmi:id="_cchYELQtEeODLLWTWELv9A" name="start" inPartition="_Vt29ILQsEeODLLWTWELv9A" incoming="_QhnHcLQ8EeODLLWTWELv9A"/>
           <argument xmi:type="uml:ValuePin" xmi:id="_YnFgwLjREeOAS6yevuLbXw" name="instances" type="_cce70LQtEeODLLWTWELv9A">
-            <value xmi:type="uml:LiteralInteger" xmi:id="_YnJLILjREeOAS6yevuLbXw" name="instances" type="_cce70LQtEeODLLWTWELv9A" value="1"/>
+            <value xmi:type="uml:LiteralInteger" xmi:id="_tyJrINFNEeOAfMgEqv3MWQ" name="instances" type="_cce70LQtEeODLLWTWELv9A" value="4"/>
           </argument>
           <result xmi:id="_ccimMLQtEeODLLWTWELv9A" name="create" inPartition="_Vt29ILQsEeODLLWTWELv9A" outgoing="_i-NjcLQtEeODLLWTWELv9A" type="_zDxuQrQsEeODLLWTWELv9A"/>
           <result xmi:id="_ccjNQLQtEeODLLWTWELv9A" name="end" inPartition="_Vt29ILQsEeODLLWTWELv9A" outgoing="_l0hpQLQtEeODLLWTWELv9A"/>

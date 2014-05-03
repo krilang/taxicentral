@@ -15,7 +15,10 @@ public class TaxiUpdater extends Block {
 			return 1;
 		}if(order.order_status==Status.TAXI_AVAILABLE){
 			return 2;
-		}else {return 0;
+		}if(order.order_status==Status.USER_CANCEL){
+			return 3;
+		}
+		else {return 0;
 		
 		}
 	}
@@ -29,6 +32,10 @@ public class TaxiUpdater extends Block {
 		tms.available=order.available;
 		tms.onDuty=order.on_duty;
 		tms.taxiType=order.taxiType;
+		if(order.order_status == Status.USER_CANCEL){
+			tms.isCaneled=true;
+		}else{tms.isCaneled=false;
+		}
 		return tms;
 	}
 }

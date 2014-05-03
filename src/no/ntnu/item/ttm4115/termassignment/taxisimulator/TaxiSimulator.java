@@ -6,6 +6,7 @@ import com.bitreactive.library.android.maps.model.Polyline;
 import com.bitreactive.library.android.maps.model.Position;
 
 import no.ntnu.item.arctis.runtime.Block;
+import no.ntnu.item.ttm4115.simulation.routeplanner.Journey;
 import no.ntnu.item.ttm4115.simulation.routeplanner.Leg;
 import no.ntnu.item.ttm4115.simulation.routeplanner.Route;
 import no.ntnu.item.ttm4115.simulation.routeplanner.Step;
@@ -17,6 +18,7 @@ public class TaxiSimulator extends Block {
 	public java.lang.String taxiMapId;
 	public com.bitreactive.library.android.maps.model.Position tempPosition;
 	public Polyline polyTemp;
+	public boolean isCanceled;
 
 	public MapUpdate createMapUpdate(taxiMapStatus tms) {
 		
@@ -41,11 +43,13 @@ public class TaxiSimulator extends Block {
 	}
 
 	public void setTaxiandPosition(MapUpdate mu) {
+		if(!isCanceled){
 		tempPosition=mu.getMarkers().get(0).getPosition();
-		taxiMapId = mu.getMarkers().get(0).getId();
+		taxiMapId = mu.getMarkers().get(0).getId();}
 	}
 
 	public  taxiMapStatus createTaxiStatus() {
+		isCanceled=false;
 		taxiMapStatus tms=new taxiMapStatus(taxiMapId, tempPosition);
 		
 		return tms;
@@ -100,6 +104,32 @@ public class TaxiSimulator extends Block {
 		mu.addPolyline(polyTemp);
 		
 		return mu;
+	}
+
+	public MapUpdate setIsCanceled(taxiMapStatus tms) {
+		isCanceled=true;
+		MapUpdate mu= new MapUpdate();
+		polyTemp.setRemove();
+		mu.addPolyline(polyTemp);
+		System.out.println("removing polyline: "+polyTemp.getId());
+		return mu;
+	}
+
+	
+
+	
+
+	public MapUpdate cancelCheck(MapUpdate mu) {
+		if(isCanceled){
+			System.out.println("not updating");
+			
+			MapUpdate empty=new MapUpdate();
+			polyTemp.setRemove();
+			empty.addPolyline(polyTemp);
+			return empty;
+		}else{
+			return mu;
+		}
 	}
 
 }

@@ -11,6 +11,7 @@ public class taxiMapStatus {
 	public TaxiType taxiType;
 	public boolean available;
 	public boolean onDuty;
+	public boolean isCaneled;
 	
 	public taxiMapStatus(String taxiID, Position position) {
 		
